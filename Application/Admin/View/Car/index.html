@@ -1,0 +1,92 @@
+<extend name="Public/base" />
+
+<block name="body">
+	<!-- 标题栏 -->
+	<div class="main-title">
+		<h2>车辆列表</h2>
+	</div>
+	<div class="cf">
+		<div class="fl">
+            <a class="btn" href="{:U('Car/add')}">新 增</a>
+            <button class="btn ajax-post confirm" url="{:U('Car/changeStatus',array('method'=>'deleteUser'))}" target-form="ids">删 除</button>
+        </div>
+
+        <!-- 高级搜索 -->
+		<div class="search-form fr cf">
+			<div class="sleft">
+				<input type="text" name="nickname" class="search-input" value="{:I('car_title')}" placeholder="请输入车名/车牌">
+				<a class="sch-btn" href="javascript:;" id="search" url="{:U('index')}"><i class="btn-search"></i></a>
+			</div>
+		</div>
+    </div>
+    <!-- 数据列表 -->
+    <div class="data-table table-striped">
+	<table class="">
+    <thead>
+        <tr>
+		<th class="row-selected row-selected"><input class="check-all" type="checkbox"/></th>
+		<th class="">图片</th>
+		<th class="">车名</th>
+		<th class="">车牌</th>
+		<th class="">归属</th>
+		<th class="">状态</th>
+		<th class="">操作</th>
+		</tr>
+    </thead>
+    <tbody>
+		<volist name="_list" id="vo">
+		<tr>
+            <td><input class="ids" type="checkbox" name="id[]" value="{$vo.id}" /></td>
+			<td>{$vo.car_title}</td>
+			<td>{$vo.car_licence}</td>
+			<td>
+				<neq name="vo.car_ownership" value="1">
+					外调
+				<else/>
+					公司
+				</neq>
+				<!--{$vo.car_ownership}-->
+			</td>
+			<td>{$vo.car_status}</td>
+			<td>
+				<a href="{:U('Car/edit?id='.$vo['id'])}">编辑</a>
+				<a href="{:U('Cost/edit?id='.$vo['id'])}">统计</a>
+				<a href="{:U('Car/remove?id='.$vo['id'])}" class="confirm ajax-get">删除</a>
+		</tr>
+		</volist>
+	</tbody>
+    </table> 
+	</div>
+    <div class="page">
+        {$_page}
+    </div>
+</block>
+
+<block name="script">
+	<script src="__STATIC__/thinkbox/jquery.thinkbox.js"></script>
+
+	<script type="text/javascript">
+	//搜索功能
+	$("#search").click(function(){
+		var url = $(this).attr('url');
+        var query  = $('.search-form').find('input').serialize();
+        query = query.replace(/(&|^)(\w*?\d*?\-*?_*?)*?=?((?=&)|(?=$))/g,'');
+        query = query.replace(/^&/g,'');
+        if( url.indexOf('?')>0 ){
+            url += '&' + query;
+        }else{
+            url += '?' + query;
+        }
+		window.location.href = url;
+	});
+	//回车搜索
+	$(".search-input").keyup(function(e){
+		if(e.keyCode === 13){
+			$("#search").click();
+			return false;
+		}
+	});
+    //导航高亮
+    $('.side-sub-menu').find('a[href="{:U('Car/index')}"]').closest('li').addClass('current');
+	</script>
+</block>

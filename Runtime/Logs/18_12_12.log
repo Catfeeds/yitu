@@ -1,0 +1,1843 @@
+[ 2018-12-12T08:52:43+08:00 ] 127.0.0.1 /yitu/index.php?s=/admin/public/login.html
+INFO: [ app_begin ] --START--
+INFO: Run Think\Behavior\ReadHtmlCache [ RunTime:0.000081s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000354s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000035s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead E:\php\tool\wamp64\www\yitu\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `yt_ucenter_member` [ RunTime:0.007842s ]
+SQL: SELECT * FROM `yt_ucenter_member` WHERE ( `username` = 'cd_leo' ) LIMIT 1   [ RunTime:0.000227s ]
+SQL: UPDATE `yt_ucenter_member` SET `last_login_time`=1544575963,`last_login_ip`='2130706433' WHERE ( `id` = 1 ) [ RunTime:0.000226s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead E:\php\tool\wamp64\www\yitu\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `yt_member` [ RunTime:0.005162s ]
+SQL: SELECT `uid`,`nickname`,`sex`,`birthday`,`qq`,`score`,`login`,`reg_ip`,`reg_time`,`last_login_ip`,`last_login_time`,`status` FROM `yt_member` WHERE ( `uid` = 1 ) LIMIT 1   [ RunTime:0.000204s ]
+SQL: SHOW COLUMNS FROM `yt_action` [ RunTime:0.014510s ]
+SQL: SELECT * FROM `yt_action` WHERE ( `name` = 'user_login' ) LIMIT 1   [ RunTime:0.000243s ]
+SQL: SHOW COLUMNS FROM `yt_action_log` [ RunTime:0.000727s ]
+SQL: INSERT INTO `yt_action_log` (`action_id`,`user_id`,`action_ip`,`model`,`record_id`,`create_time`,`remark`) VALUES (1,1,2130706433,'member',1,1544575963,'操作url：/yitu/index.php?s=/admin/public/login.html') [ RunTime:0.000278s ]
+SQL: SELECT * FROM `yt_action` WHERE ( `name` = 'user_login' ) LIMIT 1   [ RunTime:0.000194s ]
+NOTIC: [8] Undefined offset: 1 E:\php\tool\wamp64\www\yitu\Application\Common\Common\function.php 第 605 行.
+NOTIC: [2] array_key_exists() expects parameter 2 to be array, null given E:\php\tool\wamp64\www\yitu\Application\Common\Common\function.php 第 605 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `yt_action_log` WHERE ( `action_id` = 1 ) AND ( `user_id` = 1 ) AND ( `create_time` > 1544489563 ) LIMIT 1   [ RunTime:0.000643s ]
+SQL: SHOW COLUMNS FROM `yt_member` [ RunTime:0.000351s ]
+SQL: UPDATE `yt_member` SET `score`=score+10 WHERE ( uid=1 AND status>-1 ) [ RunTime:0.000221s ]
+SQL: UPDATE `yt_member` SET `login`=`login`+1,`last_login_time`=1544575963,`last_login_ip`='2130706433' WHERE ( `uid` = 1 ) [ RunTime:0.000186s ]
+
+[ 2018-12-12T08:55:59+08:00 ] 127.0.0.1 /yitu/index.php?s=/admin/menu/add/pid/0.html
+INFO: [ app_begin ] --START--
+INFO: Run Think\Behavior\ReadHtmlCache [ RunTime:0.000091s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001221s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000041s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead E:\php\tool\wamp64\www\yitu\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `yt_menu` [ RunTime:0.001565s ]
+SQL: INSERT INTO `yt_menu` (`title`,`sort`,`url`,`pid`,`group`,`hide`,`is_dev`,`tip`,`id`) VALUES ('车辆管理',0,'Car/index',0,'',0,0,'',0) [ RunTime:0.000484s ]
+SQL: SHOW COLUMNS FROM `yt_action` [ RunTime:0.000501s ]
+SQL: SELECT * FROM `yt_action` WHERE ( `name` = 'update_menu' ) LIMIT 1   [ RunTime:0.000157s ]
+SQL: SHOW COLUMNS FROM `yt_action_log` [ RunTime:0.000445s ]
+SQL: INSERT INTO `yt_action_log` (`action_id`,`user_id`,`action_ip`,`model`,`record_id`,`create_time`,`remark`) VALUES (10,1,2130706433,'Menu',118,1544576159,'操作url：/yitu/index.php?s=/admin/menu/add/pid/0.html') [ RunTime:0.000335s ]
+
+[ 2018-12-12T08:58:00+08:00 ] 127.0.0.1 /yitu/index.php?s=/admin/menu/add/pid/0.html
+INFO: [ app_begin ] --START--
+INFO: Run Think\Behavior\ReadHtmlCache [ RunTime:0.000081s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000358s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000032s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead E:\php\tool\wamp64\www\yitu\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `yt_menu` [ RunTime:0.001231s ]
+SQL: INSERT INTO `yt_menu` (`title`,`sort`,`url`,`pid`,`group`,`hide`,`is_dev`,`tip`,`id`) VALUES ('车辆出勤',0,'Attendance/index',0,'',0,0,'',0) [ RunTime:0.001070s ]
+SQL: SHOW COLUMNS FROM `yt_action` [ RunTime:0.000634s ]
+SQL: SELECT * FROM `yt_action` WHERE ( `name` = 'update_menu' ) LIMIT 1   [ RunTime:0.000179s ]
+SQL: SHOW COLUMNS FROM `yt_action_log` [ RunTime:0.005078s ]
+SQL: INSERT INTO `yt_action_log` (`action_id`,`user_id`,`action_ip`,`model`,`record_id`,`create_time`,`remark`) VALUES (10,1,2130706433,'Menu',119,1544576280,'操作url：/yitu/index.php?s=/admin/menu/add/pid/0.html') [ RunTime:0.000218s ]
+
+[ 2018-12-12T09:00:39+08:00 ] 127.0.0.1 /yitu/index.php?s=/admin/menu/add/pid/0.html
+INFO: [ app_begin ] --START--
+INFO: Run Think\Behavior\ReadHtmlCache [ RunTime:0.000081s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000350s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000033s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead E:\php\tool\wamp64\www\yitu\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `yt_menu` [ RunTime:0.000322s ]
+SQL: INSERT INTO `yt_menu` (`title`,`sort`,`url`,`pid`,`group`,`hide`,`is_dev`,`tip`,`id`) VALUES ('车辆费用',0,'Cost/index',0,'',0,0,'',0) [ RunTime:0.000683s ]
+SQL: SHOW COLUMNS FROM `yt_action` [ RunTime:0.000388s ]
+SQL: SELECT * FROM `yt_action` WHERE ( `name` = 'update_menu' ) LIMIT 1   [ RunTime:0.000211s ]
+SQL: SHOW COLUMNS FROM `yt_action_log` [ RunTime:0.004599s ]
+SQL: INSERT INTO `yt_action_log` (`action_id`,`user_id`,`action_ip`,`model`,`record_id`,`create_time`,`remark`) VALUES (10,1,2130706433,'Menu',120,1544576439,'操作url：/yitu/index.php?s=/admin/menu/add/pid/0.html') [ RunTime:0.000237s ]
+
+[ 2018-12-12T10:36:37+08:00 ] 127.0.0.1 /yitu/index.php?s=/admin/car/index.html
+ERR: 无法加载控制器:Car
+
+[ 2018-12-12T10:42:00+08:00 ] 127.0.0.1 /yitu/index.php?s=/admin/model/update.html
+INFO: [ app_begin ] --START--
+INFO: Run Think\Behavior\ReadHtmlCache [ RunTime:0.000090s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000434s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000054s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead E:\php\tool\wamp64\www\yitu\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `yt_model` [ RunTime:0.000676s ]
+SQL: SELECT * FROM `yt_model` WHERE ( `name` = 'car' ) LIMIT 1   [ RunTime:0.000199s ]
+NOTIC: [2] Missing argument 1 for Admin\Model\ModelModel::getFields() E:\php\tool\wamp64\www\yitu\Application\Admin\Model\ModelModel.class.php 第 77 行.
+SQL: INSERT INTO `yt_model` (`name`,`title`,`extend`,`need_pk`,`id`,`create_time`,`update_time`,`status`,`field_sort`) VALUES ('car','车辆管理',0,1,0,1544582520,1544582520,1,'') [ RunTime:0.000178s ]
+NOTIC: [2] unlink(./Runtime/Temp/8badceef8761e1f2fa41d8bf7e2cdf39.php): No such file or directory E:\php\tool\wamp64\www\yitu\ThinkPHP\Library\Think\Cache\Driver\File.class.php 第 157 行.
+SQL: SHOW COLUMNS FROM `yt_action` [ RunTime:0.000500s ]
+SQL: SELECT * FROM `yt_action` WHERE ( `name` = 'update_model' ) LIMIT 1   [ RunTime:0.000169s ]
+SQL: SHOW COLUMNS FROM `yt_action_log` [ RunTime:0.000467s ]
+SQL: INSERT INTO `yt_action_log` (`action_id`,`user_id`,`action_ip`,`model`,`record_id`,`create_time`,`remark`) VALUES (7,1,2130706433,'model',19,1544582520,'操作url：/yitu/index.php?s=/admin/model/update.html') [ RunTime:0.000229s ]
+
+[ 2018-12-12T10:44:46+08:00 ] 127.0.0.1 /yitu/index.php?s=/admin/attribute/update.html
+INFO: [ app_begin ] --START--
+INFO: Run Think\Behavior\ReadHtmlCache [ RunTime:0.000081s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000409s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000035s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead E:\php\tool\wamp64\www\yitu\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `yt_addons` [ RunTime:0.000631s ]
+SQL: SELECT `title`,`name` FROM `yt_addons` WHERE ( status=1 AND has_adminlist=1 )  [ RunTime:0.000209s ]
+SQL: SHOW COLUMNS FROM `yt_attribute` [ RunTime:0.000518s ]
+SQL: SELECT * FROM `yt_attribute` WHERE ( `name` = 'car_photo' ) AND ( `model_id` = 19 ) LIMIT 1   [ RunTime:0.000190s ]
+SQL: INSERT INTO `yt_attribute` (`name`,`title`,`type`,`field`,`extra`,`value`,`remark`,`is_show`,`is_must`,`id`,`model_id`,`status`,`create_time`,`update_time`) VALUES ('car_photo','车辆照片','string','varchar(255) NOT NULL','','','',1,0,0,19,1,1544582686,1544582686) [ RunTime:0.000187s ]
+SQL: SHOW COLUMNS FROM `yt_model` [ RunTime:0.000515s ]
+SQL: SELECT `name`,`extend` FROM `yt_model` WHERE ( `id` = 19 ) LIMIT 1   [ RunTime:0.000190s ]
+SQL: 				SHOW TABLES LIKE 'yt_car'; [ RunTime:0.000312s ]
+SQL: SELECT `need_pk` FROM `yt_model` WHERE ( `id` = 19 ) LIMIT 1   [ RunTime:0.000175s ]
+SQL: 				CREATE TABLE IF NOT EXISTS `yt_car` (
+				`id`  int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT '主键' ,
+				`car_photo`  varchar(255) NOT NULL  COMMENT '车辆照片' ,
+				PRIMARY KEY (`id`)
+				)
+				ENGINE=MyISAM
+				DEFAULT CHARACTER SET=utf8 COLLATE=utf8_general_ci
+				CHECKSUM=0
+				ROW_FORMAT=DYNAMIC
+				DELAY_KEY_WRITE=0
+				; [ RunTime:0.012713s ]
+SQL: SHOW COLUMNS FROM `yt_action` [ RunTime:0.001659s ]
+SQL: SELECT * FROM `yt_action` WHERE ( `name` = 'update_attribute' ) LIMIT 1   [ RunTime:0.000165s ]
+SQL: SHOW COLUMNS FROM `yt_action_log` [ RunTime:0.004359s ]
+SQL: INSERT INTO `yt_action_log` (`action_id`,`user_id`,`action_ip`,`model`,`record_id`,`create_time`,`remark`) VALUES (8,1,2130706433,'attribute',187,1544582686,'操作url：/yitu/index.php?s=/admin/attribute/update.html') [ RunTime:0.000209s ]
+
+[ 2018-12-12T10:46:08+08:00 ] 127.0.0.1 /yitu/index.php?s=/admin/attribute/update.html
+INFO: [ app_begin ] --START--
+INFO: Run Think\Behavior\ReadHtmlCache [ RunTime:0.000081s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000375s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000033s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead E:\php\tool\wamp64\www\yitu\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `yt_addons` [ RunTime:0.000410s ]
+SQL: SELECT `title`,`name` FROM `yt_addons` WHERE ( status=1 AND has_adminlist=1 )  [ RunTime:0.000204s ]
+SQL: SHOW COLUMNS FROM `yt_attribute` [ RunTime:0.000349s ]
+SQL: SELECT * FROM `yt_attribute` WHERE ( `name` = 'car_model' ) AND ( `model_id` = 19 ) LIMIT 1   [ RunTime:0.000252s ]
+SQL: INSERT INTO `yt_attribute` (`name`,`title`,`type`,`field`,`extra`,`value`,`remark`,`is_show`,`is_must`,`id`,`model_id`,`status`,`create_time`,`update_time`) VALUES ('car_model','车辆型号','string','varchar(255) NOT NULL','','','',1,0,0,19,1,1544582768,1544582768) [ RunTime:0.000184s ]
+SQL: SHOW COLUMNS FROM `yt_model` [ RunTime:0.000371s ]
+SQL: SELECT `name`,`extend` FROM `yt_model` WHERE ( `id` = 19 ) LIMIT 1   [ RunTime:0.000178s ]
+SQL: 				SHOW TABLES LIKE 'yt_car'; [ RunTime:0.002386s ]
+SQL: 				ALTER TABLE `yt_car`
+ADD COLUMN `car_model`  varchar(255) NOT NULL  COMMENT '车辆型号'; [ RunTime:0.021439s ]
+SQL: SHOW COLUMNS FROM `yt_action` [ RunTime:0.000380s ]
+SQL: SELECT * FROM `yt_action` WHERE ( `name` = 'update_attribute' ) LIMIT 1   [ RunTime:0.000161s ]
+SQL: SHOW COLUMNS FROM `yt_action_log` [ RunTime:0.000256s ]
+SQL: INSERT INTO `yt_action_log` (`action_id`,`user_id`,`action_ip`,`model`,`record_id`,`create_time`,`remark`) VALUES (8,1,2130706433,'attribute',188,1544582768,'操作url：/yitu/index.php?s=/admin/attribute/update.html') [ RunTime:0.000139s ]
+
+[ 2018-12-12T10:47:55+08:00 ] 127.0.0.1 /yitu/index.php?s=/admin/attribute/update.html
+INFO: [ app_begin ] --START--
+INFO: Run Think\Behavior\ReadHtmlCache [ RunTime:0.000081s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000356s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000033s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead E:\php\tool\wamp64\www\yitu\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `yt_addons` [ RunTime:0.000426s ]
+SQL: SELECT `title`,`name` FROM `yt_addons` WHERE ( status=1 AND has_adminlist=1 )  [ RunTime:0.000198s ]
+SQL: SHOW COLUMNS FROM `yt_attribute` [ RunTime:0.000342s ]
+SQL: SELECT * FROM `yt_attribute` WHERE ( `name` = 'car_licence' ) AND ( `model_id` = 19 ) LIMIT 1   [ RunTime:0.000216s ]
+SQL: INSERT INTO `yt_attribute` (`name`,`title`,`type`,`field`,`extra`,`value`,`remark`,`is_show`,`is_must`,`id`,`model_id`,`status`,`create_time`,`update_time`) VALUES ('car_licence','车辆牌照','string','varchar(255) NOT NULL','','','川A66666',1,0,0,19,1,1544582875,1544582875) [ RunTime:0.000138s ]
+SQL: SHOW COLUMNS FROM `yt_model` [ RunTime:0.000312s ]
+SQL: SELECT `name`,`extend` FROM `yt_model` WHERE ( `id` = 19 ) LIMIT 1   [ RunTime:0.000134s ]
+SQL: 				SHOW TABLES LIKE 'yt_car'; [ RunTime:0.000581s ]
+SQL: 				ALTER TABLE `yt_car`
+ADD COLUMN `car_licence`  varchar(255) NOT NULL  COMMENT '车辆牌照'; [ RunTime:0.021736s ]
+SQL: SHOW COLUMNS FROM `yt_action` [ RunTime:0.000615s ]
+SQL: SELECT * FROM `yt_action` WHERE ( `name` = 'update_attribute' ) LIMIT 1   [ RunTime:0.000181s ]
+SQL: SHOW COLUMNS FROM `yt_action_log` [ RunTime:0.000325s ]
+SQL: INSERT INTO `yt_action_log` (`action_id`,`user_id`,`action_ip`,`model`,`record_id`,`create_time`,`remark`) VALUES (8,1,2130706433,'attribute',189,1544582875,'操作url：/yitu/index.php?s=/admin/attribute/update.html') [ RunTime:0.000230s ]
+
+[ 2018-12-12T10:48:10+08:00 ] 127.0.0.1 /yitu/index.php?s=/admin/attribute/update.html
+INFO: [ app_begin ] --START--
+INFO: Run Think\Behavior\ReadHtmlCache [ RunTime:0.000080s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000348s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000033s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead E:\php\tool\wamp64\www\yitu\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `yt_addons` [ RunTime:0.000634s ]
+SQL: SELECT `title`,`name` FROM `yt_addons` WHERE ( status=1 AND has_adminlist=1 )  [ RunTime:0.000219s ]
+SQL: SHOW COLUMNS FROM `yt_attribute` [ RunTime:0.000357s ]
+SQL: SELECT * FROM `yt_attribute` WHERE ( `name` = 'car_licence' ) AND ( `model_id` = 19 ) AND ( `id` <> '189' ) LIMIT 1   [ RunTime:0.000273s ]
+SQL: SHOW COLUMNS FROM `yt_model` [ RunTime:0.000394s ]
+SQL: SELECT `name`,`extend` FROM `yt_model` WHERE ( `id` = 19 ) LIMIT 1   [ RunTime:0.000200s ]
+SQL: 				SHOW TABLES LIKE 'yt_car'; [ RunTime:0.000738s ]
+SQL: SELECT `name` FROM `yt_attribute` WHERE ( `id` = 189 ) LIMIT 1   [ RunTime:0.000120s ]
+SQL: 			ALTER TABLE `yt_car`
+CHANGE COLUMN `car_licence` `car_licence`  varchar(255) NOT NULL  COMMENT '车辆牌照' ; [ RunTime:0.010079s ]
+SQL: UPDATE `yt_attribute` SET `name`='car_licence',`title`='车辆牌照',`type`='string',`field`='varchar(255) NOT NULL',`extra`='',`value`='',`remark`='川A66666',`is_show`=1,`is_must`=1,`model_id`=19,`update_time`=1544582890 WHERE ( `id` = 189 ) [ RunTime:0.000220s ]
+SQL: SHOW COLUMNS FROM `yt_action` [ RunTime:0.000563s ]
+SQL: SELECT * FROM `yt_action` WHERE ( `name` = 'update_attribute' ) LIMIT 1   [ RunTime:0.000180s ]
+SQL: SHOW COLUMNS FROM `yt_action_log` [ RunTime:0.004367s ]
+SQL: INSERT INTO `yt_action_log` (`action_id`,`user_id`,`action_ip`,`model`,`record_id`,`create_time`,`remark`) VALUES (8,1,2130706433,'attribute',189,1544582890,'操作url：/yitu/index.php?s=/admin/attribute/update.html') [ RunTime:0.000195s ]
+
+[ 2018-12-12T10:50:16+08:00 ] 127.0.0.1 /yitu/index.php?s=/admin/attribute/update.html
+INFO: [ app_begin ] --START--
+INFO: Run Think\Behavior\ReadHtmlCache [ RunTime:0.000081s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000408s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000032s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead E:\php\tool\wamp64\www\yitu\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `yt_addons` [ RunTime:0.000581s ]
+SQL: SELECT `title`,`name` FROM `yt_addons` WHERE ( status=1 AND has_adminlist=1 )  [ RunTime:0.000136s ]
+SQL: SHOW COLUMNS FROM `yt_attribute` [ RunTime:0.000489s ]
+SQL: SELECT * FROM `yt_attribute` WHERE ( `name` = 'car_ownership' ) AND ( `model_id` = 19 ) LIMIT 1   [ RunTime:0.000255s ]
+SQL: INSERT INTO `yt_attribute` (`name`,`title`,`type`,`field`,`extra`,`value`,`remark`,`is_show`,`is_must`,`id`,`model_id`,`status`,`create_time`,`update_time`) VALUES ('car_ownership','车辆归属','radio','char(10) NOT NULL','','1','1:公司\r\n2:调取',1,0,0,19,1,1544583016,1544583016) [ RunTime:0.000186s ]
+SQL: SHOW COLUMNS FROM `yt_model` [ RunTime:0.000553s ]
+SQL: SELECT `name`,`extend` FROM `yt_model` WHERE ( `id` = 19 ) LIMIT 1   [ RunTime:0.000183s ]
+SQL: 				SHOW TABLES LIKE 'yt_car'; [ RunTime:0.000377s ]
+SQL: 				ALTER TABLE `yt_car`
+ADD COLUMN `car_ownership`  char(10) NOT NULL  DEFAULT 1 COMMENT '车辆归属'; [ RunTime:0.021885s ]
+SQL: SHOW COLUMNS FROM `yt_action` [ RunTime:0.000637s ]
+SQL: SELECT * FROM `yt_action` WHERE ( `name` = 'update_attribute' ) LIMIT 1   [ RunTime:0.000214s ]
+SQL: SHOW COLUMNS FROM `yt_action_log` [ RunTime:0.004477s ]
+SQL: INSERT INTO `yt_action_log` (`action_id`,`user_id`,`action_ip`,`model`,`record_id`,`create_time`,`remark`) VALUES (8,1,2130706433,'attribute',190,1544583016,'操作url：/yitu/index.php?s=/admin/attribute/update.html') [ RunTime:0.000208s ]
+
+[ 2018-12-12T10:55:13+08:00 ] 127.0.0.1 /yitu/index.php?s=/admin/attribute/update.html
+INFO: [ app_begin ] --START--
+INFO: Run Think\Behavior\ReadHtmlCache [ RunTime:0.000081s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000352s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000033s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead E:\php\tool\wamp64\www\yitu\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `yt_addons` [ RunTime:0.000365s ]
+SQL: SELECT `title`,`name` FROM `yt_addons` WHERE ( status=1 AND has_adminlist=1 )  [ RunTime:0.000159s ]
+SQL: SHOW COLUMNS FROM `yt_attribute` [ RunTime:0.000333s ]
+SQL: SELECT * FROM `yt_attribute` WHERE ( `name` = 'car_status' ) AND ( `model_id` = 19 ) LIMIT 1   [ RunTime:0.000242s ]
+SQL: INSERT INTO `yt_attribute` (`name`,`title`,`type`,`field`,`extra`,`value`,`remark`,`is_show`,`is_must`,`id`,`model_id`,`status`,`create_time`,`update_time`) VALUES ('car_status','车辆状态','radio','char(10) NOT NULL','','','1:未出车\r\n2:已出车',1,0,0,19,1,1544583313,1544583313) [ RunTime:0.000190s ]
+SQL: SHOW COLUMNS FROM `yt_model` [ RunTime:0.000376s ]
+SQL: SELECT `name`,`extend` FROM `yt_model` WHERE ( `id` = 19 ) LIMIT 1   [ RunTime:0.000184s ]
+SQL: 				SHOW TABLES LIKE 'yt_car'; [ RunTime:0.000644s ]
+SQL: 				ALTER TABLE `yt_car`
+ADD COLUMN `car_status`  char(10) NOT NULL  COMMENT '车辆状态'; [ RunTime:0.022551s ]
+SQL: SHOW COLUMNS FROM `yt_action` [ RunTime:0.000836s ]
+SQL: SELECT * FROM `yt_action` WHERE ( `name` = 'update_attribute' ) LIMIT 1   [ RunTime:0.000213s ]
+SQL: SHOW COLUMNS FROM `yt_action_log` [ RunTime:0.004297s ]
+SQL: INSERT INTO `yt_action_log` (`action_id`,`user_id`,`action_ip`,`model`,`record_id`,`create_time`,`remark`) VALUES (8,1,2130706433,'attribute',191,1544583313,'操作url：/yitu/index.php?s=/admin/attribute/update.html') [ RunTime:0.000143s ]
+
+[ 2018-12-12T10:55:40+08:00 ] 127.0.0.1 /yitu/index.php?s=/admin/car/index.html
+ERR: 无法加载控制器:Car
+
+[ 2018-12-12T10:57:28+08:00 ] 127.0.0.1 /yitu/index.php?s=/admin/model/update.html
+INFO: [ app_begin ] --START--
+INFO: Run Think\Behavior\ReadHtmlCache [ RunTime:0.000081s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000404s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000032s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead E:\php\tool\wamp64\www\yitu\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `yt_model` [ RunTime:0.000546s ]
+SQL: SELECT * FROM `yt_model` WHERE ( `name` = 'car' ) AND ( `id` <> '19' ) LIMIT 1   [ RunTime:0.000295s ]
+NOTIC: [2] Missing argument 1 for Admin\Model\ModelModel::getFields() E:\php\tool\wamp64\www\yitu\Application\Admin\Model\ModelModel.class.php 第 77 行.
+SQL: UPDATE `yt_model` SET `name`='car',`title`='车辆管理',`extend`=0,`field_group`='1:基础',`list_grid`='id:编号',`search_key`='car_model',`search_list`='',`template_list`='',`template_add`='',`template_edit`='',`list_row`=0,`update_time`=1544583448,`field_sort`='' WHERE ( `id` = 19 ) [ RunTime:0.000248s ]
+NOTIC: [2] unlink(./Runtime/Temp/8badceef8761e1f2fa41d8bf7e2cdf39.php): No such file or directory E:\php\tool\wamp64\www\yitu\ThinkPHP\Library\Think\Cache\Driver\File.class.php 第 157 行.
+SQL: SHOW COLUMNS FROM `yt_action` [ RunTime:0.000549s ]
+SQL: SELECT * FROM `yt_action` WHERE ( `name` = 'update_model' ) LIMIT 1   [ RunTime:0.000195s ]
+SQL: SHOW COLUMNS FROM `yt_action_log` [ RunTime:0.004821s ]
+SQL: INSERT INTO `yt_action_log` (`action_id`,`user_id`,`action_ip`,`model`,`record_id`,`create_time`,`remark`) VALUES (7,1,2130706433,'model',19,1544583448,'操作url：/yitu/index.php?s=/admin/model/update.html') [ RunTime:0.000208s ]
+
+[ 2018-12-12T11:00:10+08:00 ] 127.0.0.1 /yitu/index.php?s=/admin/attendance/index.html
+ERR: 无法加载控制器:Attendance
+
+[ 2018-12-12T11:00:42+08:00 ] 127.0.0.1 /yitu/index.php?s=/admin/model/update.html
+INFO: [ app_begin ] --START--
+INFO: Run Think\Behavior\ReadHtmlCache [ RunTime:0.000081s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000399s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000033s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead E:\php\tool\wamp64\www\yitu\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `yt_model` [ RunTime:0.000403s ]
+SQL: SELECT * FROM `yt_model` WHERE ( `name` = 'attendance' ) LIMIT 1   [ RunTime:0.000205s ]
+NOTIC: [2] Missing argument 1 for Admin\Model\ModelModel::getFields() E:\php\tool\wamp64\www\yitu\Application\Admin\Model\ModelModel.class.php 第 77 行.
+SQL: INSERT INTO `yt_model` (`name`,`title`,`extend`,`need_pk`,`id`,`create_time`,`update_time`,`status`,`field_sort`) VALUES ('attendance','车辆出勤',0,1,0,1544583642,1544583642,1,'') [ RunTime:0.000160s ]
+NOTIC: [2] unlink(./Runtime/Temp/8badceef8761e1f2fa41d8bf7e2cdf39.php): No such file or directory E:\php\tool\wamp64\www\yitu\ThinkPHP\Library\Think\Cache\Driver\File.class.php 第 157 行.
+SQL: SHOW COLUMNS FROM `yt_action` [ RunTime:0.000292s ]
+SQL: SELECT * FROM `yt_action` WHERE ( `name` = 'update_model' ) LIMIT 1   [ RunTime:0.000168s ]
+SQL: SHOW COLUMNS FROM `yt_action_log` [ RunTime:0.000335s ]
+SQL: INSERT INTO `yt_action_log` (`action_id`,`user_id`,`action_ip`,`model`,`record_id`,`create_time`,`remark`) VALUES (7,1,2130706433,'model',20,1544583642,'操作url：/yitu/index.php?s=/admin/model/update.html') [ RunTime:0.000243s ]
+
+[ 2018-12-12T11:01:44+08:00 ] 127.0.0.1 /yitu/index.php?s=/admin/attribute/update.html
+INFO: [ app_begin ] --START--
+INFO: Run Think\Behavior\ReadHtmlCache [ RunTime:0.000081s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000347s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000033s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead E:\php\tool\wamp64\www\yitu\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `yt_addons` [ RunTime:0.000563s ]
+SQL: SELECT `title`,`name` FROM `yt_addons` WHERE ( status=1 AND has_adminlist=1 )  [ RunTime:0.000136s ]
+SQL: SHOW COLUMNS FROM `yt_attribute` [ RunTime:0.005717s ]
+SQL: SELECT * FROM `yt_attribute` WHERE ( `name` = 'car_id' ) AND ( `model_id` = 20 ) LIMIT 1   [ RunTime:0.000289s ]
+SQL: INSERT INTO `yt_attribute` (`name`,`title`,`type`,`field`,`extra`,`value`,`remark`,`is_show`,`is_must`,`id`,`model_id`,`status`,`create_time`,`update_time`) VALUES ('car_id','车辆id','num','int(20) UNSIGNED NOT NULL','','','',1,1,0,20,1,1544583704,1544583704) [ RunTime:0.000191s ]
+SQL: SHOW COLUMNS FROM `yt_model` [ RunTime:0.000399s ]
+SQL: SELECT `name`,`extend` FROM `yt_model` WHERE ( `id` = 20 ) LIMIT 1   [ RunTime:0.000187s ]
+SQL: 				SHOW TABLES LIKE 'yt_attendance'; [ RunTime:0.000358s ]
+SQL: SELECT `need_pk` FROM `yt_model` WHERE ( `id` = 20 ) LIMIT 1   [ RunTime:0.000180s ]
+SQL: 				CREATE TABLE IF NOT EXISTS `yt_attendance` (
+				`id`  int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT '主键' ,
+				`car_id`  int(20) UNSIGNED NOT NULL  COMMENT '车辆id' ,
+				PRIMARY KEY (`id`)
+				)
+				ENGINE=MyISAM
+				DEFAULT CHARACTER SET=utf8 COLLATE=utf8_general_ci
+				CHECKSUM=0
+				ROW_FORMAT=DYNAMIC
+				DELAY_KEY_WRITE=0
+				; [ RunTime:0.012336s ]
+SQL: SHOW COLUMNS FROM `yt_action` [ RunTime:0.000403s ]
+SQL: SELECT * FROM `yt_action` WHERE ( `name` = 'update_attribute' ) LIMIT 1   [ RunTime:0.000201s ]
+SQL: SHOW COLUMNS FROM `yt_action_log` [ RunTime:0.000320s ]
+SQL: INSERT INTO `yt_action_log` (`action_id`,`user_id`,`action_ip`,`model`,`record_id`,`create_time`,`remark`) VALUES (8,1,2130706433,'attribute',192,1544583704,'操作url：/yitu/index.php?s=/admin/attribute/update.html') [ RunTime:0.000190s ]
+
+[ 2018-12-12T11:05:27+08:00 ] 127.0.0.1 /yitu/index.php?s=/admin/attribute/update.html
+INFO: [ app_begin ] --START--
+INFO: Run Think\Behavior\ReadHtmlCache [ RunTime:0.000079s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000394s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000032s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead E:\php\tool\wamp64\www\yitu\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `yt_addons` [ RunTime:0.000418s ]
+SQL: SELECT `title`,`name` FROM `yt_addons` WHERE ( status=1 AND has_adminlist=1 )  [ RunTime:0.000215s ]
+SQL: SHOW COLUMNS FROM `yt_attribute` [ RunTime:0.000353s ]
+SQL: SELECT * FROM `yt_attribute` WHERE ( `name` = 'car_ownership' ) AND ( `model_id` = 19 ) AND ( `id` <> '190' ) LIMIT 1   [ RunTime:0.000280s ]
+SQL: SHOW COLUMNS FROM `yt_model` [ RunTime:0.000374s ]
+SQL: SELECT `name`,`extend` FROM `yt_model` WHERE ( `id` = 19 ) LIMIT 1   [ RunTime:0.000182s ]
+SQL: 				SHOW TABLES LIKE 'yt_car'; [ RunTime:0.003321s ]
+SQL: SELECT `name` FROM `yt_attribute` WHERE ( `id` = 190 ) LIMIT 1   [ RunTime:0.000225s ]
+SQL: 			ALTER TABLE `yt_car`
+CHANGE COLUMN `car_ownership` `car_ownership`  tinyint(2) NOT NULL  DEFAULT 1 COMMENT '车辆归属' ; [ RunTime:0.020924s ]
+SQL: UPDATE `yt_attribute` SET `name`='car_ownership',`title`='车辆归属',`type`='num',`field`='tinyint(2) NOT NULL',`extra`='',`value`='1',`remark`='1:公司\r\n2:调取',`is_show`=1,`is_must`=0,`model_id`=19,`update_time`=1544583927 WHERE ( `id` = 190 ) [ RunTime:0.000207s ]
+SQL: SHOW COLUMNS FROM `yt_action` [ RunTime:0.000312s ]
+SQL: SELECT * FROM `yt_action` WHERE ( `name` = 'update_attribute' ) LIMIT 1   [ RunTime:0.000136s ]
+SQL: SHOW COLUMNS FROM `yt_action_log` [ RunTime:0.000289s ]
+SQL: INSERT INTO `yt_action_log` (`action_id`,`user_id`,`action_ip`,`model`,`record_id`,`create_time`,`remark`) VALUES (8,1,2130706433,'attribute',190,1544583927,'操作url：/yitu/index.php?s=/admin/attribute/update.html') [ RunTime:0.000141s ]
+
+[ 2018-12-12T11:07:29+08:00 ] 127.0.0.1 /yitu/index.php?s=/admin/attribute/update.html
+INFO: [ app_begin ] --START--
+INFO: Run Think\Behavior\ReadHtmlCache [ RunTime:0.000081s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000407s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000032s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead E:\php\tool\wamp64\www\yitu\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `yt_addons` [ RunTime:0.000405s ]
+SQL: SELECT `title`,`name` FROM `yt_addons` WHERE ( status=1 AND has_adminlist=1 )  [ RunTime:0.000213s ]
+SQL: SHOW COLUMNS FROM `yt_attribute` [ RunTime:0.004345s ]
+SQL: SELECT * FROM `yt_attribute` WHERE ( `name` = 'car_licence' ) AND ( `model_id` = 20 ) AND ( `id` <> '192' ) LIMIT 1   [ RunTime:0.000283s ]
+SQL: SHOW COLUMNS FROM `yt_model` [ RunTime:0.000380s ]
+SQL: SELECT `name`,`extend` FROM `yt_model` WHERE ( `id` = 20 ) LIMIT 1   [ RunTime:0.000185s ]
+SQL: 				SHOW TABLES LIKE 'yt_attendance'; [ RunTime:0.000727s ]
+SQL: SELECT `name` FROM `yt_attribute` WHERE ( `id` = 192 ) LIMIT 1   [ RunTime:0.000178s ]
+SQL: 			ALTER TABLE `yt_attendance`
+CHANGE COLUMN `car_id` `car_licence`  varchar(50) UNSIGNED NOT NULL  COMMENT '车辆牌照' ; [ RunTime:0.000156s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'UNSIGNED NOT NULL  COMMENT '车辆牌照'' at line 2
+ [ SQL语句 ] : 			ALTER TABLE `yt_attendance`
+CHANGE COLUMN `car_id` `car_licence`  varchar(50) UNSIGNED NOT NULL  COMMENT '车辆牌照' ;
+
+[ 2018-12-12T11:07:39+08:00 ] 127.0.0.1 /yitu/index.php?s=/admin/attribute/update.html
+INFO: [ app_begin ] --START--
+INFO: Run Think\Behavior\ReadHtmlCache [ RunTime:0.000080s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000397s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000032s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead E:\php\tool\wamp64\www\yitu\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `yt_addons` [ RunTime:0.000378s ]
+SQL: SELECT `title`,`name` FROM `yt_addons` WHERE ( status=1 AND has_adminlist=1 )  [ RunTime:0.000228s ]
+SQL: SHOW COLUMNS FROM `yt_attribute` [ RunTime:0.000441s ]
+SQL: SELECT * FROM `yt_attribute` WHERE ( `name` = 'car_licence' ) AND ( `model_id` = 20 ) AND ( `id` <> '192' ) LIMIT 1   [ RunTime:0.000270s ]
+SQL: SHOW COLUMNS FROM `yt_model` [ RunTime:0.000338s ]
+SQL: SELECT `name`,`extend` FROM `yt_model` WHERE ( `id` = 20 ) LIMIT 1   [ RunTime:0.000155s ]
+SQL: 				SHOW TABLES LIKE 'yt_attendance'; [ RunTime:0.000382s ]
+SQL: SELECT `name` FROM `yt_attribute` WHERE ( `id` = 192 ) LIMIT 1   [ RunTime:0.000141s ]
+SQL: 			ALTER TABLE `yt_attendance`
+CHANGE COLUMN `car_id` `car_licence`  varchar(50) NOT NULL  COMMENT '车辆牌照' ; [ RunTime:0.019997s ]
+SQL: UPDATE `yt_attribute` SET `name`='car_licence',`title`='车辆牌照',`type`='string',`field`='varchar(50) NOT NULL',`extra`='',`value`='',`remark`='',`is_show`=1,`is_must`=1,`model_id`=20,`update_time`=1544584059 WHERE ( `id` = 192 ) [ RunTime:0.000187s ]
+SQL: SHOW COLUMNS FROM `yt_action` [ RunTime:0.000309s ]
+SQL: SELECT * FROM `yt_action` WHERE ( `name` = 'update_attribute' ) LIMIT 1   [ RunTime:0.000121s ]
+SQL: SHOW COLUMNS FROM `yt_action_log` [ RunTime:0.000227s ]
+SQL: INSERT INTO `yt_action_log` (`action_id`,`user_id`,`action_ip`,`model`,`record_id`,`create_time`,`remark`) VALUES (8,1,2130706433,'attribute',192,1544584059,'操作url：/yitu/index.php?s=/admin/attribute/update.html') [ RunTime:0.000108s ]
+
+[ 2018-12-12T11:08:35+08:00 ] 127.0.0.1 /yitu/index.php?s=/admin/attribute/update.html
+INFO: [ app_begin ] --START--
+INFO: Run Think\Behavior\ReadHtmlCache [ RunTime:0.000080s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000350s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000032s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead E:\php\tool\wamp64\www\yitu\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `yt_addons` [ RunTime:0.000371s ]
+SQL: SELECT `title`,`name` FROM `yt_addons` WHERE ( status=1 AND has_adminlist=1 )  [ RunTime:0.000171s ]
+SQL: SHOW COLUMNS FROM `yt_attribute` [ RunTime:0.000374s ]
+SQL: SELECT * FROM `yt_attribute` WHERE ( `name` = 'car_title' ) AND ( `model_id` = 20 ) LIMIT 1   [ RunTime:0.000259s ]
+SQL: INSERT INTO `yt_attribute` (`name`,`title`,`type`,`field`,`extra`,`value`,`remark`,`is_show`,`is_must`,`id`,`model_id`,`status`,`create_time`,`update_time`) VALUES ('car_title','车辆名字','string','varchar(255) NOT NULL','','','',1,0,0,20,1,1544584115,1544584115) [ RunTime:0.000196s ]
+SQL: SHOW COLUMNS FROM `yt_model` [ RunTime:0.000388s ]
+SQL: SELECT `name`,`extend` FROM `yt_model` WHERE ( `id` = 20 ) LIMIT 1   [ RunTime:0.000188s ]
+SQL: 				SHOW TABLES LIKE 'yt_attendance'; [ RunTime:0.000403s ]
+SQL: 				ALTER TABLE `yt_attendance`
+ADD COLUMN `car_title`  varchar(255) NOT NULL  COMMENT '车辆名字'; [ RunTime:0.019944s ]
+SQL: SHOW COLUMNS FROM `yt_action` [ RunTime:0.000509s ]
+SQL: SELECT * FROM `yt_action` WHERE ( `name` = 'update_attribute' ) LIMIT 1   [ RunTime:0.000139s ]
+SQL: SHOW COLUMNS FROM `yt_action_log` [ RunTime:0.004342s ]
+SQL: INSERT INTO `yt_action_log` (`action_id`,`user_id`,`action_ip`,`model`,`record_id`,`create_time`,`remark`) VALUES (8,1,2130706433,'attribute',193,1544584115,'操作url：/yitu/index.php?s=/admin/attribute/update.html') [ RunTime:0.000169s ]
+
+[ 2018-12-12T11:08:56+08:00 ] 127.0.0.1 /yitu/index.php?s=/admin/attribute/update.html
+INFO: [ app_begin ] --START--
+INFO: Run Think\Behavior\ReadHtmlCache [ RunTime:0.000082s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000400s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000033s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead E:\php\tool\wamp64\www\yitu\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `yt_addons` [ RunTime:0.000418s ]
+SQL: SELECT `title`,`name` FROM `yt_addons` WHERE ( status=1 AND has_adminlist=1 )  [ RunTime:0.000213s ]
+SQL: SHOW COLUMNS FROM `yt_attribute` [ RunTime:0.000355s ]
+SQL: SELECT * FROM `yt_attribute` WHERE ( `name` = 'car_title' ) AND ( `model_id` = 19 ) AND ( `id` <> '188' ) LIMIT 1   [ RunTime:0.000274s ]
+SQL: SHOW COLUMNS FROM `yt_model` [ RunTime:0.000368s ]
+SQL: SELECT `name`,`extend` FROM `yt_model` WHERE ( `id` = 19 ) LIMIT 1   [ RunTime:0.000182s ]
+SQL: 				SHOW TABLES LIKE 'yt_car'; [ RunTime:0.003413s ]
+SQL: SELECT `name` FROM `yt_attribute` WHERE ( `id` = 188 ) LIMIT 1   [ RunTime:0.000194s ]
+SQL: 			ALTER TABLE `yt_car`
+CHANGE COLUMN `car_model` `car_title`  varchar(255) NOT NULL  COMMENT '车辆名字' ; [ RunTime:0.008922s ]
+SQL: UPDATE `yt_attribute` SET `name`='car_title',`title`='车辆名字',`type`='string',`field`='varchar(255) NOT NULL',`extra`='',`value`='',`remark`='',`is_show`=1,`is_must`=0,`model_id`=19,`update_time`=1544584136 WHERE ( `id` = 188 ) [ RunTime:0.000233s ]
+SQL: SHOW COLUMNS FROM `yt_action` [ RunTime:0.000362s ]
+SQL: SELECT * FROM `yt_action` WHERE ( `name` = 'update_attribute' ) LIMIT 1   [ RunTime:0.000193s ]
+SQL: SHOW COLUMNS FROM `yt_action_log` [ RunTime:0.000314s ]
+SQL: INSERT INTO `yt_action_log` (`action_id`,`user_id`,`action_ip`,`model`,`record_id`,`create_time`,`remark`) VALUES (8,1,2130706433,'attribute',188,1544584136,'操作url：/yitu/index.php?s=/admin/attribute/update.html') [ RunTime:0.000210s ]
+
+[ 2018-12-12T11:10:21+08:00 ] 127.0.0.1 /yitu/index.php?s=/admin/attribute/update.html
+INFO: [ app_begin ] --START--
+INFO: Run Think\Behavior\ReadHtmlCache [ RunTime:0.000081s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000353s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000034s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead E:\php\tool\wamp64\www\yitu\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `yt_addons` [ RunTime:0.000437s ]
+SQL: SELECT `title`,`name` FROM `yt_addons` WHERE ( status=1 AND has_adminlist=1 )  [ RunTime:0.000200s ]
+SQL: SHOW COLUMNS FROM `yt_attribute` [ RunTime:0.000371s ]
+SQL: SELECT * FROM `yt_attribute` WHERE ( `name` = 'renter' ) AND ( `model_id` = 20 ) LIMIT 1   [ RunTime:0.000229s ]
+SQL: INSERT INTO `yt_attribute` (`name`,`title`,`type`,`field`,`extra`,`value`,`remark`,`is_show`,`is_must`,`id`,`model_id`,`status`,`create_time`,`update_time`) VALUES ('renter','租车人','string','varchar(255) NOT NULL','','','',1,1,0,20,1,1544584221,1544584221) [ RunTime:0.000190s ]
+SQL: SHOW COLUMNS FROM `yt_model` [ RunTime:0.000335s ]
+SQL: SELECT `name`,`extend` FROM `yt_model` WHERE ( `id` = 20 ) LIMIT 1   [ RunTime:0.000144s ]
+SQL: 				SHOW TABLES LIKE 'yt_attendance'; [ RunTime:0.000360s ]
+SQL: 				ALTER TABLE `yt_attendance`
+ADD COLUMN `renter`  varchar(255) NOT NULL  COMMENT '租车人'; [ RunTime:0.020473s ]
+SQL: SHOW COLUMNS FROM `yt_action` [ RunTime:0.000396s ]
+SQL: SELECT * FROM `yt_action` WHERE ( `name` = 'update_attribute' ) LIMIT 1   [ RunTime:0.000202s ]
+SQL: SHOW COLUMNS FROM `yt_action_log` [ RunTime:0.000310s ]
+SQL: INSERT INTO `yt_action_log` (`action_id`,`user_id`,`action_ip`,`model`,`record_id`,`create_time`,`remark`) VALUES (8,1,2130706433,'attribute',194,1544584221,'操作url：/yitu/index.php?s=/admin/attribute/update.html') [ RunTime:0.000198s ]
+
+[ 2018-12-12T11:11:03+08:00 ] 127.0.0.1 /yitu/index.php?s=/admin/attribute/update.html
+INFO: [ app_begin ] --START--
+INFO: Run Think\Behavior\ReadHtmlCache [ RunTime:0.000082s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000349s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000033s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead E:\php\tool\wamp64\www\yitu\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `yt_addons` [ RunTime:0.000383s ]
+SQL: SELECT `title`,`name` FROM `yt_addons` WHERE ( status=1 AND has_adminlist=1 )  [ RunTime:0.000194s ]
+SQL: SHOW COLUMNS FROM `yt_attribute` [ RunTime:0.000396s ]
+SQL: SELECT * FROM `yt_attribute` WHERE ( `name` = 'telephone' ) AND ( `model_id` = 20 ) LIMIT 1   [ RunTime:0.000196s ]
+SQL: INSERT INTO `yt_attribute` (`name`,`title`,`type`,`field`,`extra`,`value`,`remark`,`is_show`,`is_must`,`id`,`model_id`,`status`,`create_time`,`update_time`) VALUES ('telephone','联系电话','string','varchar(20) NOT NULL','','','',1,1,0,20,1,1544584263,1544584263) [ RunTime:0.000183s ]
+SQL: SHOW COLUMNS FROM `yt_model` [ RunTime:0.000388s ]
+SQL: SELECT `name`,`extend` FROM `yt_model` WHERE ( `id` = 20 ) LIMIT 1   [ RunTime:0.000189s ]
+SQL: 				SHOW TABLES LIKE 'yt_attendance'; [ RunTime:0.000672s ]
+SQL: 				ALTER TABLE `yt_attendance`
+ADD COLUMN `telephone`  varchar(20) NOT NULL  COMMENT '联系电话'; [ RunTime:0.025701s ]
+SQL: SHOW COLUMNS FROM `yt_action` [ RunTime:0.000542s ]
+SQL: SELECT * FROM `yt_action` WHERE ( `name` = 'update_attribute' ) LIMIT 1   [ RunTime:0.000170s ]
+SQL: SHOW COLUMNS FROM `yt_action_log` [ RunTime:0.004367s ]
+SQL: INSERT INTO `yt_action_log` (`action_id`,`user_id`,`action_ip`,`model`,`record_id`,`create_time`,`remark`) VALUES (8,1,2130706433,'attribute',195,1544584263,'操作url：/yitu/index.php?s=/admin/attribute/update.html') [ RunTime:0.000170s ]
+
+[ 2018-12-12T11:33:04+08:00 ] 127.0.0.1 /yitu/index.php?s=/admin/attribute/update.html
+INFO: [ app_begin ] --START--
+INFO: Run Think\Behavior\ReadHtmlCache [ RunTime:0.000081s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000356s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000033s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead E:\php\tool\wamp64\www\yitu\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `yt_addons` [ RunTime:0.000408s ]
+SQL: SELECT `title`,`name` FROM `yt_addons` WHERE ( status=1 AND has_adminlist=1 )  [ RunTime:0.000211s ]
+SQL: SHOW COLUMNS FROM `yt_attribute` [ RunTime:0.000399s ]
+SQL: SELECT * FROM `yt_attribute` WHERE ( `name` = 'deposit' ) AND ( `model_id` = 20 ) LIMIT 1   [ RunTime:0.000246s ]
+SQL: INSERT INTO `yt_attribute` (`name`,`title`,`type`,`field`,`extra`,`value`,`remark`,`is_show`,`is_must`,`id`,`model_id`,`status`,`create_time`,`update_time`) VALUES ('deposit','押金','string','varchar(255) NOT NULL','','','',1,0,0,20,1,1544585584,1544585584) [ RunTime:0.000182s ]
+SQL: SHOW COLUMNS FROM `yt_model` [ RunTime:0.000441s ]
+SQL: SELECT `name`,`extend` FROM `yt_model` WHERE ( `id` = 20 ) LIMIT 1   [ RunTime:0.000131s ]
+SQL: 				SHOW TABLES LIKE 'yt_attendance'; [ RunTime:0.000649s ]
+SQL: 				ALTER TABLE `yt_attendance`
+ADD COLUMN `deposit`  varchar(255) NOT NULL  COMMENT '押金'; [ RunTime:0.023626s ]
+SQL: SHOW COLUMNS FROM `yt_action` [ RunTime:0.000394s ]
+SQL: SELECT * FROM `yt_action` WHERE ( `name` = 'update_attribute' ) LIMIT 1   [ RunTime:0.000198s ]
+SQL: SHOW COLUMNS FROM `yt_action_log` [ RunTime:0.000306s ]
+SQL: INSERT INTO `yt_action_log` (`action_id`,`user_id`,`action_ip`,`model`,`record_id`,`create_time`,`remark`) VALUES (8,1,2130706433,'attribute',196,1544585584,'操作url：/yitu/index.php?s=/admin/attribute/update.html') [ RunTime:0.000196s ]
+
+[ 2018-12-12T11:34:07+08:00 ] 127.0.0.1 /yitu/index.php?s=/admin/attribute/update.html
+INFO: [ app_begin ] --START--
+INFO: Run Think\Behavior\ReadHtmlCache [ RunTime:0.000087s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000417s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000033s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead E:\php\tool\wamp64\www\yitu\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `yt_addons` [ RunTime:0.000404s ]
+SQL: SELECT `title`,`name` FROM `yt_addons` WHERE ( status=1 AND has_adminlist=1 )  [ RunTime:0.000223s ]
+SQL: SHOW COLUMNS FROM `yt_attribute` [ RunTime:0.000397s ]
+SQL: SELECT * FROM `yt_attribute` WHERE ( `name` = 'deposit_type' ) AND ( `model_id` = 20 ) LIMIT 1   [ RunTime:0.000258s ]
+SQL: INSERT INTO `yt_attribute` (`name`,`title`,`type`,`field`,`extra`,`value`,`remark`,`is_show`,`is_must`,`id`,`model_id`,`status`,`create_time`,`update_time`) VALUES ('deposit_type','押金类型','radio','char(10) NOT NULL','','1','1:现金\r\n2:预授',1,0,0,20,1,1544585647,1544585647) [ RunTime:0.000179s ]
+SQL: SHOW COLUMNS FROM `yt_model` [ RunTime:0.000375s ]
+SQL: SELECT `name`,`extend` FROM `yt_model` WHERE ( `id` = 20 ) LIMIT 1   [ RunTime:0.000188s ]
+SQL: 				SHOW TABLES LIKE 'yt_attendance'; [ RunTime:0.000707s ]
+SQL: 				ALTER TABLE `yt_attendance`
+ADD COLUMN `deposit_type`  char(10) NOT NULL  DEFAULT 1 COMMENT '押金类型'; [ RunTime:0.020688s ]
+SQL: SHOW COLUMNS FROM `yt_action` [ RunTime:0.000406s ]
+SQL: SELECT * FROM `yt_action` WHERE ( `name` = 'update_attribute' ) LIMIT 1   [ RunTime:0.000207s ]
+SQL: SHOW COLUMNS FROM `yt_action_log` [ RunTime:0.000342s ]
+SQL: INSERT INTO `yt_action_log` (`action_id`,`user_id`,`action_ip`,`model`,`record_id`,`create_time`,`remark`) VALUES (8,1,2130706433,'attribute',197,1544585647,'操作url：/yitu/index.php?s=/admin/attribute/update.html') [ RunTime:0.000258s ]
+
+[ 2018-12-12T11:36:17+08:00 ] 127.0.0.1 /yitu/index.php?s=/admin/attribute/update.html
+INFO: [ app_begin ] --START--
+INFO: Run Think\Behavior\ReadHtmlCache [ RunTime:0.000082s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000359s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000033s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead E:\php\tool\wamp64\www\yitu\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `yt_addons` [ RunTime:0.000421s ]
+SQL: SELECT `title`,`name` FROM `yt_addons` WHERE ( status=1 AND has_adminlist=1 )  [ RunTime:0.000211s ]
+SQL: SHOW COLUMNS FROM `yt_attribute` [ RunTime:0.000362s ]
+SQL: SELECT * FROM `yt_attribute` WHERE ( `name` = 'want_car_time' ) AND ( `model_id` = 20 ) LIMIT 1   [ RunTime:0.000261s ]
+SQL: INSERT INTO `yt_attribute` (`name`,`title`,`type`,`field`,`extra`,`value`,`remark`,`is_show`,`is_must`,`id`,`model_id`,`status`,`create_time`,`update_time`) VALUES ('want_car_time','取车时间','datetime','int(10) NOT NULL','','','',1,1,0,20,1,1544585777,1544585777) [ RunTime:0.000190s ]
+SQL: SHOW COLUMNS FROM `yt_model` [ RunTime:0.000373s ]
+SQL: SELECT `name`,`extend` FROM `yt_model` WHERE ( `id` = 20 ) LIMIT 1   [ RunTime:0.000187s ]
+SQL: 				SHOW TABLES LIKE 'yt_attendance'; [ RunTime:0.000695s ]
+SQL: 				ALTER TABLE `yt_attendance`
+ADD COLUMN `want_car_time`  int(10) NOT NULL  COMMENT '取车时间'; [ RunTime:0.019865s ]
+SQL: SHOW COLUMNS FROM `yt_action` [ RunTime:0.000389s ]
+SQL: SELECT * FROM `yt_action` WHERE ( `name` = 'update_attribute' ) LIMIT 1   [ RunTime:0.000196s ]
+SQL: SHOW COLUMNS FROM `yt_action_log` [ RunTime:0.000308s ]
+SQL: INSERT INTO `yt_action_log` (`action_id`,`user_id`,`action_ip`,`model`,`record_id`,`create_time`,`remark`) VALUES (8,1,2130706433,'attribute',198,1544585777,'操作url：/yitu/index.php?s=/admin/attribute/update.html') [ RunTime:0.000180s ]
+
+[ 2018-12-12T11:37:00+08:00 ] 127.0.0.1 /yitu/index.php?s=/admin/attribute/update.html
+INFO: [ app_begin ] --START--
+INFO: Run Think\Behavior\ReadHtmlCache [ RunTime:0.000081s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000354s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000033s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead E:\php\tool\wamp64\www\yitu\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `yt_addons` [ RunTime:0.000430s ]
+SQL: SELECT `title`,`name` FROM `yt_addons` WHERE ( status=1 AND has_adminlist=1 )  [ RunTime:0.000186s ]
+SQL: SHOW COLUMNS FROM `yt_attribute` [ RunTime:0.000313s ]
+SQL: SELECT * FROM `yt_attribute` WHERE ( `name` = 'want_car_fuel' ) AND ( `model_id` = 20 ) LIMIT 1   [ RunTime:0.000207s ]
+SQL: INSERT INTO `yt_attribute` (`name`,`title`,`type`,`field`,`extra`,`value`,`remark`,`is_show`,`is_must`,`id`,`model_id`,`status`,`create_time`,`update_time`) VALUES ('want_car_fuel','取车油量','num','int(10) UNSIGNED NOT NULL','','','',1,0,0,20,1,1544585820,1544585820) [ RunTime:0.000178s ]
+SQL: SHOW COLUMNS FROM `yt_model` [ RunTime:0.000345s ]
+SQL: SELECT `name`,`extend` FROM `yt_model` WHERE ( `id` = 20 ) LIMIT 1   [ RunTime:0.000166s ]
+SQL: 				SHOW TABLES LIKE 'yt_attendance'; [ RunTime:0.004563s ]
+SQL: 				ALTER TABLE `yt_attendance`
+ADD COLUMN `want_car_fuel`  int(10) UNSIGNED NOT NULL  COMMENT '取车油量'; [ RunTime:0.020598s ]
+SQL: SHOW COLUMNS FROM `yt_action` [ RunTime:0.000764s ]
+SQL: SELECT * FROM `yt_action` WHERE ( `name` = 'update_attribute' ) LIMIT 1   [ RunTime:0.000172s ]
+SQL: SHOW COLUMNS FROM `yt_action_log` [ RunTime:0.000278s ]
+SQL: INSERT INTO `yt_action_log` (`action_id`,`user_id`,`action_ip`,`model`,`record_id`,`create_time`,`remark`) VALUES (8,1,2130706433,'attribute',199,1544585820,'操作url：/yitu/index.php?s=/admin/attribute/update.html') [ RunTime:0.000185s ]
+
+[ 2018-12-12T11:38:09+08:00 ] 127.0.0.1 /yitu/index.php?s=/admin/attribute/update.html
+INFO: [ app_begin ] --START--
+INFO: Run Think\Behavior\ReadHtmlCache [ RunTime:0.000079s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000344s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000033s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead E:\php\tool\wamp64\www\yitu\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `yt_addons` [ RunTime:0.000344s ]
+SQL: SELECT `title`,`name` FROM `yt_addons` WHERE ( status=1 AND has_adminlist=1 )  [ RunTime:0.000132s ]
+SQL: SHOW COLUMNS FROM `yt_attribute` [ RunTime:0.000294s ]
+SQL: SELECT * FROM `yt_attribute` WHERE ( `name` = 'want_car_mileage' ) AND ( `model_id` = 20 ) LIMIT 1   [ RunTime:0.000241s ]
+SQL: INSERT INTO `yt_attribute` (`name`,`title`,`type`,`field`,`extra`,`value`,`remark`,`is_show`,`is_must`,`id`,`model_id`,`status`,`create_time`,`update_time`) VALUES ('want_car_mileage','取车里程','num','int(10) UNSIGNED NOT NULL','','','',1,0,0,20,1,1544585889,1544585889) [ RunTime:0.000189s ]
+SQL: SHOW COLUMNS FROM `yt_model` [ RunTime:0.000361s ]
+SQL: SELECT `name`,`extend` FROM `yt_model` WHERE ( `id` = 20 ) LIMIT 1   [ RunTime:0.000169s ]
+SQL: 				SHOW TABLES LIKE 'yt_attendance'; [ RunTime:0.000745s ]
+SQL: 				ALTER TABLE `yt_attendance`
+ADD COLUMN `want_car_mileage`  int(10) UNSIGNED NOT NULL  COMMENT '取车里程'; [ RunTime:0.022167s ]
+SQL: SHOW COLUMNS FROM `yt_action` [ RunTime:0.000516s ]
+SQL: SELECT * FROM `yt_action` WHERE ( `name` = 'update_attribute' ) LIMIT 1   [ RunTime:0.000244s ]
+SQL: SHOW COLUMNS FROM `yt_action_log` [ RunTime:0.000370s ]
+SQL: INSERT INTO `yt_action_log` (`action_id`,`user_id`,`action_ip`,`model`,`record_id`,`create_time`,`remark`) VALUES (8,1,2130706433,'attribute',200,1544585889,'操作url：/yitu/index.php?s=/admin/attribute/update.html') [ RunTime:0.000197s ]
+
+[ 2018-12-12T11:38:20+08:00 ] 127.0.0.1 /yitu/index.php?s=/admin/attribute/update.html
+INFO: [ app_begin ] --START--
+INFO: Run Think\Behavior\ReadHtmlCache [ RunTime:0.000081s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000397s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000033s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead E:\php\tool\wamp64\www\yitu\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `yt_addons` [ RunTime:0.000447s ]
+SQL: SELECT `title`,`name` FROM `yt_addons` WHERE ( status=1 AND has_adminlist=1 )  [ RunTime:0.000217s ]
+SQL: SHOW COLUMNS FROM `yt_attribute` [ RunTime:0.000378s ]
+SQL: SELECT * FROM `yt_attribute` WHERE ( `name` = 'want_car_mileage' ) AND ( `model_id` = 20 ) AND ( `id` <> '200' ) LIMIT 1   [ RunTime:0.000261s ]
+SQL: SHOW COLUMNS FROM `yt_model` [ RunTime:0.000392s ]
+SQL: SELECT `name`,`extend` FROM `yt_model` WHERE ( `id` = 20 ) LIMIT 1   [ RunTime:0.000198s ]
+SQL: 				SHOW TABLES LIKE 'yt_attendance'; [ RunTime:0.004690s ]
+SQL: SELECT `name` FROM `yt_attribute` WHERE ( `id` = 200 ) LIMIT 1   [ RunTime:0.000196s ]
+SQL: 			ALTER TABLE `yt_attendance`
+CHANGE COLUMN `want_car_mileage` `want_car_mileage`  int(10) UNSIGNED NOT NULL  COMMENT '取车里程' ; [ RunTime:0.009305s ]
+SQL: UPDATE `yt_attribute` SET `name`='want_car_mileage',`title`='取车里程',`type`='num',`field`='int(10) UNSIGNED NOT NULL',`extra`='',`value`='',`remark`='',`is_show`=1,`is_must`=1,`model_id`=20,`update_time`=1544585900 WHERE ( `id` = 200 ) [ RunTime:0.000254s ]
+SQL: SHOW COLUMNS FROM `yt_action` [ RunTime:0.000391s ]
+SQL: SELECT * FROM `yt_action` WHERE ( `name` = 'update_attribute' ) LIMIT 1   [ RunTime:0.000183s ]
+SQL: SHOW COLUMNS FROM `yt_action_log` [ RunTime:0.000319s ]
+SQL: INSERT INTO `yt_action_log` (`action_id`,`user_id`,`action_ip`,`model`,`record_id`,`create_time`,`remark`) VALUES (8,1,2130706433,'attribute',200,1544585900,'操作url：/yitu/index.php?s=/admin/attribute/update.html') [ RunTime:0.000215s ]
+
+[ 2018-12-12T11:40:08+08:00 ] 127.0.0.1 /yitu/index.php?s=/admin/attribute/update.html
+INFO: [ app_begin ] --START--
+INFO: Run Think\Behavior\ReadHtmlCache [ RunTime:0.000082s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000357s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000033s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead E:\php\tool\wamp64\www\yitu\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `yt_addons` [ RunTime:0.000407s ]
+SQL: SELECT `title`,`name` FROM `yt_addons` WHERE ( status=1 AND has_adminlist=1 )  [ RunTime:0.000173s ]
+SQL: SHOW COLUMNS FROM `yt_attribute` [ RunTime:0.000350s ]
+SQL: SELECT * FROM `yt_attribute` WHERE ( `name` = 'return_car_time' ) AND ( `model_id` = 20 ) LIMIT 1   [ RunTime:0.000259s ]
+SQL: INSERT INTO `yt_attribute` (`name`,`title`,`type`,`field`,`extra`,`value`,`remark`,`is_show`,`is_must`,`id`,`model_id`,`status`,`create_time`,`update_time`) VALUES ('return_car_time','还车时间','datetime','int(10) NOT NULL','','','',1,1,0,20,1,1544586008,1544586008) [ RunTime:0.000223s ]
+SQL: SHOW COLUMNS FROM `yt_model` [ RunTime:0.000396s ]
+SQL: SELECT `name`,`extend` FROM `yt_model` WHERE ( `id` = 20 ) LIMIT 1   [ RunTime:0.000163s ]
+SQL: 				SHOW TABLES LIKE 'yt_attendance'; [ RunTime:0.011443s ]
+SQL: 				ALTER TABLE `yt_attendance`
+ADD COLUMN `return_car_time`  int(10) NOT NULL  COMMENT '还车时间'; [ RunTime:0.021877s ]
+SQL: SHOW COLUMNS FROM `yt_action` [ RunTime:0.000391s ]
+SQL: SELECT * FROM `yt_action` WHERE ( `name` = 'update_attribute' ) LIMIT 1   [ RunTime:0.000181s ]
+SQL: SHOW COLUMNS FROM `yt_action_log` [ RunTime:0.000322s ]
+SQL: INSERT INTO `yt_action_log` (`action_id`,`user_id`,`action_ip`,`model`,`record_id`,`create_time`,`remark`) VALUES (8,1,2130706433,'attribute',201,1544586008,'操作url：/yitu/index.php?s=/admin/attribute/update.html') [ RunTime:0.000167s ]
+
+[ 2018-12-12T11:40:45+08:00 ] 127.0.0.1 /yitu/index.php?s=/admin/attribute/update.html
+INFO: [ app_begin ] --START--
+INFO: Run Think\Behavior\ReadHtmlCache [ RunTime:0.000080s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000398s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000038s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead E:\php\tool\wamp64\www\yitu\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `yt_addons` [ RunTime:0.000399s ]
+SQL: SELECT `title`,`name` FROM `yt_addons` WHERE ( status=1 AND has_adminlist=1 )  [ RunTime:0.000199s ]
+SQL: SHOW COLUMNS FROM `yt_attribute` [ RunTime:0.000338s ]
+SQL: SELECT * FROM `yt_attribute` WHERE ( `name` = 'return_car_fuel' ) AND ( `model_id` = 20 ) LIMIT 1   [ RunTime:0.000242s ]
+SQL: INSERT INTO `yt_attribute` (`name`,`title`,`type`,`field`,`extra`,`value`,`remark`,`is_show`,`is_must`,`id`,`model_id`,`status`,`create_time`,`update_time`) VALUES ('return_car_fuel','还车油量','num','int(10) UNSIGNED NOT NULL','','','',1,0,0,20,1,1544586044,1544586044) [ RunTime:0.000188s ]
+SQL: SHOW COLUMNS FROM `yt_model` [ RunTime:0.000387s ]
+SQL: SELECT `name`,`extend` FROM `yt_model` WHERE ( `id` = 20 ) LIMIT 1   [ RunTime:0.000186s ]
+SQL: 				SHOW TABLES LIKE 'yt_attendance'; [ RunTime:0.000745s ]
+SQL: 				ALTER TABLE `yt_attendance`
+ADD COLUMN `return_car_fuel`  int(10) UNSIGNED NOT NULL  COMMENT '还车油量'; [ RunTime:0.029297s ]
+SQL: SHOW COLUMNS FROM `yt_action` [ RunTime:0.000372s ]
+SQL: SELECT * FROM `yt_action` WHERE ( `name` = 'update_attribute' ) LIMIT 1   [ RunTime:0.000199s ]
+SQL: SHOW COLUMNS FROM `yt_action_log` [ RunTime:0.000274s ]
+SQL: INSERT INTO `yt_action_log` (`action_id`,`user_id`,`action_ip`,`model`,`record_id`,`create_time`,`remark`) VALUES (8,1,2130706433,'attribute',202,1544586044,'操作url：/yitu/index.php?s=/admin/attribute/update.html') [ RunTime:0.000178s ]
+
+[ 2018-12-12T11:41:31+08:00 ] 127.0.0.1 /yitu/index.php?s=/admin/attribute/update.html
+INFO: [ app_begin ] --START--
+INFO: Run Think\Behavior\ReadHtmlCache [ RunTime:0.000083s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000432s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000042s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead E:\php\tool\wamp64\www\yitu\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `yt_addons` [ RunTime:0.000388s ]
+SQL: SELECT `title`,`name` FROM `yt_addons` WHERE ( status=1 AND has_adminlist=1 )  [ RunTime:0.000209s ]
+SQL: SHOW COLUMNS FROM `yt_attribute` [ RunTime:0.000362s ]
+SQL: SELECT * FROM `yt_attribute` WHERE ( `name` = 'return_car_mileage' ) AND ( `model_id` = 20 ) LIMIT 1   [ RunTime:0.000256s ]
+SQL: INSERT INTO `yt_attribute` (`name`,`title`,`type`,`field`,`extra`,`value`,`remark`,`is_show`,`is_must`,`id`,`model_id`,`status`,`create_time`,`update_time`) VALUES ('return_car_mileage','还车里程','num','int(10) UNSIGNED NOT NULL','','','',1,1,0,20,1,1544586091,1544586091) [ RunTime:0.000199s ]
+SQL: SHOW COLUMNS FROM `yt_model` [ RunTime:0.000388s ]
+SQL: SELECT `name`,`extend` FROM `yt_model` WHERE ( `id` = 20 ) LIMIT 1   [ RunTime:0.000200s ]
+SQL: 				SHOW TABLES LIKE 'yt_attendance'; [ RunTime:0.000640s ]
+SQL: 				ALTER TABLE `yt_attendance`
+ADD COLUMN `return_car_mileage`  int(10) UNSIGNED NOT NULL  COMMENT '还车里程'; [ RunTime:0.021456s ]
+SQL: SHOW COLUMNS FROM `yt_action` [ RunTime:0.000346s ]
+SQL: SELECT * FROM `yt_action` WHERE ( `name` = 'update_attribute' ) LIMIT 1   [ RunTime:0.000135s ]
+SQL: SHOW COLUMNS FROM `yt_action_log` [ RunTime:0.000233s ]
+SQL: INSERT INTO `yt_action_log` (`action_id`,`user_id`,`action_ip`,`model`,`record_id`,`create_time`,`remark`) VALUES (8,1,2130706433,'attribute',203,1544586090,'操作url：/yitu/index.php?s=/admin/attribute/update.html') [ RunTime:0.000114s ]
+
+[ 2018-12-12T11:42:51+08:00 ] 127.0.0.1 /yitu/index.php?s=/admin/attribute/update.html
+INFO: [ app_begin ] --START--
+INFO: Run Think\Behavior\ReadHtmlCache [ RunTime:0.000083s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000352s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000034s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead E:\php\tool\wamp64\www\yitu\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `yt_addons` [ RunTime:0.000405s ]
+SQL: SELECT `title`,`name` FROM `yt_addons` WHERE ( status=1 AND has_adminlist=1 )  [ RunTime:0.000202s ]
+SQL: SHOW COLUMNS FROM `yt_attribute` [ RunTime:0.000348s ]
+SQL: SELECT * FROM `yt_attribute` WHERE ( `name` = 'unit_price' ) AND ( `model_id` = 20 ) LIMIT 1   [ RunTime:0.000252s ]
+SQL: INSERT INTO `yt_attribute` (`name`,`title`,`type`,`field`,`extra`,`value`,`remark`,`is_show`,`is_must`,`id`,`model_id`,`status`,`create_time`,`update_time`) VALUES ('unit_price','单价','num','int(10) UNSIGNED NOT NULL','','','',1,1,0,20,1,1544586171,1544586171) [ RunTime:0.000183s ]
+SQL: SHOW COLUMNS FROM `yt_model` [ RunTime:0.000367s ]
+SQL: SELECT `name`,`extend` FROM `yt_model` WHERE ( `id` = 20 ) LIMIT 1   [ RunTime:0.000180s ]
+SQL: 				SHOW TABLES LIKE 'yt_attendance'; [ RunTime:0.001551s ]
+SQL: 				ALTER TABLE `yt_attendance`
+ADD COLUMN `unit_price`  int(10) UNSIGNED NOT NULL  COMMENT '单价'; [ RunTime:0.019632s ]
+SQL: SHOW COLUMNS FROM `yt_action` [ RunTime:0.000361s ]
+SQL: SELECT * FROM `yt_action` WHERE ( `name` = 'update_attribute' ) LIMIT 1   [ RunTime:0.000167s ]
+SQL: SHOW COLUMNS FROM `yt_action_log` [ RunTime:0.000274s ]
+SQL: INSERT INTO `yt_action_log` (`action_id`,`user_id`,`action_ip`,`model`,`record_id`,`create_time`,`remark`) VALUES (8,1,2130706433,'attribute',204,1544586171,'操作url：/yitu/index.php?s=/admin/attribute/update.html') [ RunTime:0.000149s ]
+
+[ 2018-12-12T11:44:49+08:00 ] 127.0.0.1 /yitu/index.php?s=/admin/attribute/update.html
+INFO: [ app_begin ] --START--
+INFO: Run Think\Behavior\ReadHtmlCache [ RunTime:0.000092s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000407s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000032s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead E:\php\tool\wamp64\www\yitu\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `yt_addons` [ RunTime:0.000430s ]
+SQL: SELECT `title`,`name` FROM `yt_addons` WHERE ( status=1 AND has_adminlist=1 )  [ RunTime:0.000195s ]
+SQL: SHOW COLUMNS FROM `yt_attribute` [ RunTime:0.000330s ]
+SQL: SELECT * FROM `yt_attribute` WHERE ( `name` = 'used_days' ) AND ( `model_id` = 20 ) LIMIT 1   [ RunTime:0.000224s ]
+SQL: INSERT INTO `yt_attribute` (`name`,`title`,`type`,`field`,`extra`,`value`,`remark`,`is_show`,`is_must`,`id`,`model_id`,`status`,`create_time`,`update_time`) VALUES ('used_days','使用天数','string','varchar(20) NOT NULL','','','',1,0,0,20,1,1544586289,1544586289) [ RunTime:0.000345s ]
+SQL: SHOW COLUMNS FROM `yt_model` [ RunTime:0.000490s ]
+SQL: SELECT `name`,`extend` FROM `yt_model` WHERE ( `id` = 20 ) LIMIT 1   [ RunTime:0.000221s ]
+SQL: 				SHOW TABLES LIKE 'yt_attendance'; [ RunTime:0.003800s ]
+SQL: 				ALTER TABLE `yt_attendance`
+ADD COLUMN `used_days`  varchar(20) NOT NULL  COMMENT '使用天数'; [ RunTime:0.023091s ]
+SQL: SHOW COLUMNS FROM `yt_action` [ RunTime:0.000422s ]
+SQL: SELECT * FROM `yt_action` WHERE ( `name` = 'update_attribute' ) LIMIT 1   [ RunTime:0.000201s ]
+SQL: SHOW COLUMNS FROM `yt_action_log` [ RunTime:0.000313s ]
+SQL: INSERT INTO `yt_action_log` (`action_id`,`user_id`,`action_ip`,`model`,`record_id`,`create_time`,`remark`) VALUES (8,1,2130706433,'attribute',205,1544586289,'操作url：/yitu/index.php?s=/admin/attribute/update.html') [ RunTime:0.000180s ]
+
+[ 2018-12-12T11:45:52+08:00 ] 127.0.0.1 /yitu/index.php?s=/admin/attribute/update.html
+INFO: [ app_begin ] --START--
+INFO: Run Think\Behavior\ReadHtmlCache [ RunTime:0.000084s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000380s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000033s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead E:\php\tool\wamp64\www\yitu\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `yt_addons` [ RunTime:0.000373s ]
+SQL: SELECT `title`,`name` FROM `yt_addons` WHERE ( status=1 AND has_adminlist=1 )  [ RunTime:0.000168s ]
+SQL: SHOW COLUMNS FROM `yt_attribute` [ RunTime:0.000363s ]
+SQL: SELECT * FROM `yt_attribute` WHERE ( `name` = 'total_price' ) AND ( `model_id` = 20 ) LIMIT 1   [ RunTime:0.000262s ]
+SQL: INSERT INTO `yt_attribute` (`name`,`title`,`type`,`field`,`extra`,`value`,`remark`,`is_show`,`is_must`,`id`,`model_id`,`status`,`create_time`,`update_time`) VALUES ('total_price','总价','string','varchar(50) NOT NULL','','','',1,0,0,20,1,1544586352,1544586352) [ RunTime:0.000193s ]
+SQL: SHOW COLUMNS FROM `yt_model` [ RunTime:0.000371s ]
+SQL: SELECT `name`,`extend` FROM `yt_model` WHERE ( `id` = 20 ) LIMIT 1   [ RunTime:0.000186s ]
+SQL: 				SHOW TABLES LIKE 'yt_attendance'; [ RunTime:0.000710s ]
+SQL: 				ALTER TABLE `yt_attendance`
+ADD COLUMN `total_price`  varchar(50) NOT NULL  COMMENT '总价'; [ RunTime:0.030092s ]
+SQL: SHOW COLUMNS FROM `yt_action` [ RunTime:0.000644s ]
+SQL: SELECT * FROM `yt_action` WHERE ( `name` = 'update_attribute' ) LIMIT 1   [ RunTime:0.000169s ]
+SQL: SHOW COLUMNS FROM `yt_action_log` [ RunTime:0.000275s ]
+SQL: INSERT INTO `yt_action_log` (`action_id`,`user_id`,`action_ip`,`model`,`record_id`,`create_time`,`remark`) VALUES (8,1,2130706433,'attribute',206,1544586352,'操作url：/yitu/index.php?s=/admin/attribute/update.html') [ RunTime:0.000150s ]
+
+[ 2018-12-12T11:48:04+08:00 ] 127.0.0.1 /yitu/index.php?s=/admin/attribute/update.html
+INFO: [ app_begin ] --START--
+INFO: Run Think\Behavior\ReadHtmlCache [ RunTime:0.000080s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000398s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000032s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead E:\php\tool\wamp64\www\yitu\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `yt_addons` [ RunTime:0.000398s ]
+SQL: SELECT `title`,`name` FROM `yt_addons` WHERE ( status=1 AND has_adminlist=1 )  [ RunTime:0.000185s ]
+SQL: SHOW COLUMNS FROM `yt_attribute` [ RunTime:0.000329s ]
+SQL: SELECT * FROM `yt_attribute` WHERE ( `name` = 'return_deposit' ) AND ( `model_id` = 20 ) LIMIT 1   [ RunTime:0.000245s ]
+SQL: INSERT INTO `yt_attribute` (`name`,`title`,`type`,`field`,`extra`,`value`,`remark`,`is_show`,`is_must`,`id`,`model_id`,`status`,`create_time`,`update_time`) VALUES ('return_deposit','已退押金','num','int(10) UNSIGNED NOT NULL','','','',1,0,0,20,1,1544586484,1544586484) [ RunTime:0.000178s ]
+SQL: SHOW COLUMNS FROM `yt_model` [ RunTime:0.000370s ]
+SQL: SELECT `name`,`extend` FROM `yt_model` WHERE ( `id` = 20 ) LIMIT 1   [ RunTime:0.000191s ]
+SQL: 				SHOW TABLES LIKE 'yt_attendance'; [ RunTime:0.000712s ]
+SQL: 				ALTER TABLE `yt_attendance`
+ADD COLUMN `return_deposit`  int(10) UNSIGNED NOT NULL  COMMENT '已退押金'; [ RunTime:0.019727s ]
+SQL: SHOW COLUMNS FROM `yt_action` [ RunTime:0.000382s ]
+SQL: SELECT * FROM `yt_action` WHERE ( `name` = 'update_attribute' ) LIMIT 1   [ RunTime:0.000189s ]
+SQL: SHOW COLUMNS FROM `yt_action_log` [ RunTime:0.000318s ]
+SQL: INSERT INTO `yt_action_log` (`action_id`,`user_id`,`action_ip`,`model`,`record_id`,`create_time`,`remark`) VALUES (8,1,2130706433,'attribute',207,1544586484,'操作url：/yitu/index.php?s=/admin/attribute/update.html') [ RunTime:0.000179s ]
+
+[ 2018-12-12T11:48:49+08:00 ] 127.0.0.1 /yitu/index.php?s=/admin/attribute/update.html
+INFO: [ app_begin ] --START--
+INFO: Run Think\Behavior\ReadHtmlCache [ RunTime:0.000082s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000358s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000032s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead E:\php\tool\wamp64\www\yitu\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `yt_addons` [ RunTime:0.000395s ]
+SQL: SELECT `title`,`name` FROM `yt_addons` WHERE ( status=1 AND has_adminlist=1 )  [ RunTime:0.000160s ]
+SQL: SHOW COLUMNS FROM `yt_attribute` [ RunTime:0.000369s ]
+SQL: SELECT * FROM `yt_attribute` WHERE ( `name` = 'total_price' ) AND ( `model_id` = 20 ) AND ( `id` <> '206' ) LIMIT 1   [ RunTime:0.000765s ]
+SQL: SHOW COLUMNS FROM `yt_model` [ RunTime:0.000365s ]
+SQL: SELECT `name`,`extend` FROM `yt_model` WHERE ( `id` = 20 ) LIMIT 1   [ RunTime:0.000156s ]
+SQL: 				SHOW TABLES LIKE 'yt_attendance'; [ RunTime:0.000437s ]
+SQL: SELECT `name` FROM `yt_attribute` WHERE ( `id` = 206 ) LIMIT 1   [ RunTime:0.000192s ]
+SQL: 			ALTER TABLE `yt_attendance`
+CHANGE COLUMN `total_price` `total_price`  int(10) NOT NULL  COMMENT '总价' ; [ RunTime:0.026552s ]
+SQL: UPDATE `yt_attribute` SET `name`='total_price',`title`='总价',`type`='num',`field`='int(10) NOT NULL',`extra`='',`value`='',`remark`='',`is_show`=1,`is_must`=0,`model_id`=20,`update_time`=1544586529 WHERE ( `id` = 206 ) [ RunTime:0.000187s ]
+SQL: SHOW COLUMNS FROM `yt_action` [ RunTime:0.000312s ]
+SQL: SELECT * FROM `yt_action` WHERE ( `name` = 'update_attribute' ) LIMIT 1   [ RunTime:0.000122s ]
+SQL: SHOW COLUMNS FROM `yt_action_log` [ RunTime:0.000227s ]
+SQL: INSERT INTO `yt_action_log` (`action_id`,`user_id`,`action_ip`,`model`,`record_id`,`create_time`,`remark`) VALUES (8,1,2130706433,'attribute',206,1544586528,'操作url：/yitu/index.php?s=/admin/attribute/update.html') [ RunTime:0.000109s ]
+
+[ 2018-12-12T11:49:01+08:00 ] 127.0.0.1 /yitu/index.php?s=/admin/attribute/update.html
+INFO: [ app_begin ] --START--
+INFO: Run Think\Behavior\ReadHtmlCache [ RunTime:0.000104s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000377s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000034s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead E:\php\tool\wamp64\www\yitu\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `yt_addons` [ RunTime:0.000374s ]
+SQL: SELECT `title`,`name` FROM `yt_addons` WHERE ( status=1 AND has_adminlist=1 )  [ RunTime:0.000143s ]
+SQL: SHOW COLUMNS FROM `yt_attribute` [ RunTime:0.000557s ]
+SQL: SELECT * FROM `yt_attribute` WHERE ( `name` = 'used_days' ) AND ( `model_id` = 20 ) AND ( `id` <> '205' ) LIMIT 1   [ RunTime:0.001017s ]
+SQL: SHOW COLUMNS FROM `yt_model` [ RunTime:0.000438s ]
+SQL: SELECT `name`,`extend` FROM `yt_model` WHERE ( `id` = 20 ) LIMIT 1   [ RunTime:0.000160s ]
+SQL: 				SHOW TABLES LIKE 'yt_attendance'; [ RunTime:0.000705s ]
+SQL: SELECT `name` FROM `yt_attribute` WHERE ( `id` = 205 ) LIMIT 1   [ RunTime:0.000140s ]
+SQL: 			ALTER TABLE `yt_attendance`
+CHANGE COLUMN `used_days` `used_days`  int(10) NOT NULL  COMMENT '使用天数' ; [ RunTime:0.020838s ]
+SQL: UPDATE `yt_attribute` SET `name`='used_days',`title`='使用天数',`type`='num',`field`='int(10) NOT NULL',`extra`='',`value`='',`remark`='',`is_show`=1,`is_must`=0,`model_id`=20,`update_time`=1544586541 WHERE ( `id` = 205 ) [ RunTime:0.000223s ]
+SQL: SHOW COLUMNS FROM `yt_action` [ RunTime:0.000338s ]
+SQL: SELECT * FROM `yt_action` WHERE ( `name` = 'update_attribute' ) LIMIT 1   [ RunTime:0.000144s ]
+SQL: SHOW COLUMNS FROM `yt_action_log` [ RunTime:0.000272s ]
+SQL: INSERT INTO `yt_action_log` (`action_id`,`user_id`,`action_ip`,`model`,`record_id`,`create_time`,`remark`) VALUES (8,1,2130706433,'attribute',205,1544586541,'操作url：/yitu/index.php?s=/admin/attribute/update.html') [ RunTime:0.000182s ]
+
+[ 2018-12-12T11:50:12+08:00 ] 127.0.0.1 /yitu/index.php?s=/admin/attribute/update.html
+INFO: [ app_begin ] --START--
+INFO: Run Think\Behavior\ReadHtmlCache [ RunTime:0.000081s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000400s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000038s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead E:\php\tool\wamp64\www\yitu\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `yt_addons` [ RunTime:0.000466s ]
+SQL: SELECT `title`,`name` FROM `yt_addons` WHERE ( status=1 AND has_adminlist=1 )  [ RunTime:0.000197s ]
+SQL: SHOW COLUMNS FROM `yt_attribute` [ RunTime:0.000423s ]
+SQL: SELECT * FROM `yt_attribute` WHERE ( `name` = 'outstanding_deposit' ) AND ( `model_id` = 20 ) LIMIT 1   [ RunTime:0.000238s ]
+SQL: INSERT INTO `yt_attribute` (`name`,`title`,`type`,`field`,`extra`,`value`,`remark`,`is_show`,`is_must`,`id`,`model_id`,`status`,`create_time`,`update_time`) VALUES ('outstanding_deposit','未退押金','num','int(10) UNSIGNED NOT NULL','','','',1,0,0,20,1,1544586612,1544586612) [ RunTime:0.000161s ]
+SQL: SHOW COLUMNS FROM `yt_model` [ RunTime:0.000353s ]
+SQL: SELECT `name`,`extend` FROM `yt_model` WHERE ( `id` = 20 ) LIMIT 1   [ RunTime:0.000172s ]
+SQL: 				SHOW TABLES LIKE 'yt_attendance'; [ RunTime:0.000664s ]
+SQL: 				ALTER TABLE `yt_attendance`
+ADD COLUMN `outstanding_deposit`  int(10) UNSIGNED NOT NULL  COMMENT '未退押金'; [ RunTime:0.022919s ]
+SQL: SHOW COLUMNS FROM `yt_action` [ RunTime:0.000387s ]
+SQL: SELECT * FROM `yt_action` WHERE ( `name` = 'update_attribute' ) LIMIT 1   [ RunTime:0.000202s ]
+SQL: SHOW COLUMNS FROM `yt_action_log` [ RunTime:0.000313s ]
+SQL: INSERT INTO `yt_action_log` (`action_id`,`user_id`,`action_ip`,`model`,`record_id`,`create_time`,`remark`) VALUES (8,1,2130706433,'attribute',208,1544586612,'操作url：/yitu/index.php?s=/admin/attribute/update.html') [ RunTime:0.000176s ]
+
+[ 2018-12-12T11:50:27+08:00 ] 127.0.0.1 /yitu/index.php?s=/admin/attribute/update.html
+INFO: [ app_begin ] --START--
+INFO: Run Think\Behavior\ReadHtmlCache [ RunTime:0.000080s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000403s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000033s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead E:\php\tool\wamp64\www\yitu\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `yt_addons` [ RunTime:0.000527s ]
+SQL: SELECT `title`,`name` FROM `yt_addons` WHERE ( status=1 AND has_adminlist=1 )  [ RunTime:0.000309s ]
+SQL: SHOW COLUMNS FROM `yt_attribute` [ RunTime:0.000420s ]
+SQL: SELECT * FROM `yt_attribute` WHERE ( `name` = 'total_price' ) AND ( `model_id` = 20 ) AND ( `id` <> '206' ) LIMIT 1   [ RunTime:0.000788s ]
+SQL: SHOW COLUMNS FROM `yt_model` [ RunTime:0.000390s ]
+SQL: SELECT `name`,`extend` FROM `yt_model` WHERE ( `id` = 20 ) LIMIT 1   [ RunTime:0.000193s ]
+SQL: 				SHOW TABLES LIKE 'yt_attendance'; [ RunTime:0.000677s ]
+SQL: SELECT `name` FROM `yt_attribute` WHERE ( `id` = 206 ) LIMIT 1   [ RunTime:0.000204s ]
+SQL: 			ALTER TABLE `yt_attendance`
+CHANGE COLUMN `total_price` `total_price`  int(10) UNSIGNED NOT NULL  COMMENT '总价' ; [ RunTime:0.022663s ]
+SQL: UPDATE `yt_attribute` SET `name`='total_price',`title`='总价',`type`='num',`field`='int(10) UNSIGNED NOT NULL',`extra`='',`value`='',`remark`='',`is_show`=1,`is_must`=0,`model_id`=20,`update_time`=1544586627 WHERE ( `id` = 206 ) [ RunTime:0.000255s ]
+SQL: SHOW COLUMNS FROM `yt_action` [ RunTime:0.000383s ]
+SQL: SELECT * FROM `yt_action` WHERE ( `name` = 'update_attribute' ) LIMIT 1   [ RunTime:0.000306s ]
+SQL: SHOW COLUMNS FROM `yt_action_log` [ RunTime:0.000408s ]
+SQL: INSERT INTO `yt_action_log` (`action_id`,`user_id`,`action_ip`,`model`,`record_id`,`create_time`,`remark`) VALUES (8,1,2130706433,'attribute',206,1544586627,'操作url：/yitu/index.php?s=/admin/attribute/update.html') [ RunTime:0.000201s ]
+
+[ 2018-12-12T11:50:41+08:00 ] 127.0.0.1 /yitu/index.php?s=/admin/attribute/update.html
+INFO: [ app_begin ] --START--
+INFO: Run Think\Behavior\ReadHtmlCache [ RunTime:0.000081s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000349s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000033s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead E:\php\tool\wamp64\www\yitu\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `yt_addons` [ RunTime:0.000327s ]
+SQL: SELECT `title`,`name` FROM `yt_addons` WHERE ( status=1 AND has_adminlist=1 )  [ RunTime:0.000132s ]
+SQL: SHOW COLUMNS FROM `yt_attribute` [ RunTime:0.000353s ]
+SQL: SELECT * FROM `yt_attribute` WHERE ( `name` = 'used_days' ) AND ( `model_id` = 20 ) AND ( `id` <> '205' ) LIMIT 1   [ RunTime:0.000806s ]
+SQL: SHOW COLUMNS FROM `yt_model` [ RunTime:0.000495s ]
+SQL: SELECT `name`,`extend` FROM `yt_model` WHERE ( `id` = 20 ) LIMIT 1   [ RunTime:0.000213s ]
+SQL: 				SHOW TABLES LIKE 'yt_attendance'; [ RunTime:0.000697s ]
+SQL: SELECT `name` FROM `yt_attribute` WHERE ( `id` = 205 ) LIMIT 1   [ RunTime:0.000179s ]
+SQL: 			ALTER TABLE `yt_attendance`
+CHANGE COLUMN `used_days` `used_days`  int(10) UNSIGNED NOT NULL  COMMENT '使用天数' ; [ RunTime:0.020730s ]
+SQL: UPDATE `yt_attribute` SET `name`='used_days',`title`='使用天数',`type`='num',`field`='int(10) UNSIGNED NOT NULL',`extra`='',`value`='',`remark`='',`is_show`=1,`is_must`=0,`model_id`=20,`update_time`=1544586641 WHERE ( `id` = 205 ) [ RunTime:0.000221s ]
+SQL: SHOW COLUMNS FROM `yt_action` [ RunTime:0.000339s ]
+SQL: SELECT * FROM `yt_action` WHERE ( `name` = 'update_attribute' ) LIMIT 1   [ RunTime:0.000155s ]
+SQL: SHOW COLUMNS FROM `yt_action_log` [ RunTime:0.000275s ]
+SQL: INSERT INTO `yt_action_log` (`action_id`,`user_id`,`action_ip`,`model`,`record_id`,`create_time`,`remark`) VALUES (8,1,2130706433,'attribute',205,1544586641,'操作url：/yitu/index.php?s=/admin/attribute/update.html') [ RunTime:0.000145s ]
+
+[ 2018-12-12T12:53:55+08:00 ] 127.0.0.1 /yitu/index.php?s=/admin/attribute/update.html
+INFO: [ app_begin ] --START--
+INFO: Run Think\Behavior\ReadHtmlCache [ RunTime:0.000089s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.010044s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000043s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead E:\php\tool\wamp64\www\yitu\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `yt_addons` [ RunTime:0.000388s ]
+SQL: SELECT `title`,`name` FROM `yt_addons` WHERE ( status=1 AND has_adminlist=1 )  [ RunTime:0.000178s ]
+SQL: SHOW COLUMNS FROM `yt_attribute` [ RunTime:0.000461s ]
+SQL: SELECT * FROM `yt_attribute` WHERE ( `name` = 'car_status' ) AND ( `model_id` = 20 ) LIMIT 1   [ RunTime:0.000263s ]
+SQL: INSERT INTO `yt_attribute` (`name`,`title`,`type`,`field`,`extra`,`value`,`remark`,`is_show`,`is_must`,`id`,`model_id`,`status`,`create_time`,`update_time`) VALUES ('car_status','出行状态','radio','char(10) NOT NULL','','1','1:待收车\r\n2:待查章\r\n3:已完成',1,0,0,20,1,1544590435,1544590435) [ RunTime:0.000196s ]
+SQL: SHOW COLUMNS FROM `yt_model` [ RunTime:0.000381s ]
+SQL: SELECT `name`,`extend` FROM `yt_model` WHERE ( `id` = 20 ) LIMIT 1   [ RunTime:0.000190s ]
+SQL: 				SHOW TABLES LIKE 'yt_attendance'; [ RunTime:0.000648s ]
+SQL: 				ALTER TABLE `yt_attendance`
+ADD COLUMN `car_status`  char(10) NOT NULL  DEFAULT 1 COMMENT '出行状态'; [ RunTime:0.039327s ]
+SQL: SHOW COLUMNS FROM `yt_action` [ RunTime:0.000390s ]
+SQL: SELECT * FROM `yt_action` WHERE ( `name` = 'update_attribute' ) LIMIT 1   [ RunTime:0.000190s ]
+SQL: SHOW COLUMNS FROM `yt_action_log` [ RunTime:0.000307s ]
+SQL: INSERT INTO `yt_action_log` (`action_id`,`user_id`,`action_ip`,`model`,`record_id`,`create_time`,`remark`) VALUES (8,1,2130706433,'attribute',209,1544590434,'操作url：/yitu/index.php?s=/admin/attribute/update.html') [ RunTime:0.000229s ]
+
+[ 2018-12-12T12:54:50+08:00 ] 127.0.0.1 /yitu/index.php?s=/admin/model/update.html
+INFO: [ app_begin ] --START--
+INFO: Run Think\Behavior\ReadHtmlCache [ RunTime:0.000085s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000408s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000033s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead E:\php\tool\wamp64\www\yitu\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `yt_model` [ RunTime:0.000405s ]
+SQL: SELECT * FROM `yt_model` WHERE ( `name` = 'cost' ) LIMIT 1   [ RunTime:0.000187s ]
+NOTIC: [2] Missing argument 1 for Admin\Model\ModelModel::getFields() E:\php\tool\wamp64\www\yitu\Application\Admin\Model\ModelModel.class.php 第 77 行.
+SQL: INSERT INTO `yt_model` (`name`,`title`,`extend`,`need_pk`,`id`,`create_time`,`update_time`,`status`,`field_sort`) VALUES ('cost','车辆费用',0,1,0,1544590490,1544590490,1,'') [ RunTime:0.000214s ]
+NOTIC: [2] unlink(./Runtime/Temp/8badceef8761e1f2fa41d8bf7e2cdf39.php): No such file or directory E:\php\tool\wamp64\www\yitu\ThinkPHP\Library\Think\Cache\Driver\File.class.php 第 157 行.
+SQL: SHOW COLUMNS FROM `yt_action` [ RunTime:0.000310s ]
+SQL: SELECT * FROM `yt_action` WHERE ( `name` = 'update_model' ) LIMIT 1   [ RunTime:0.000181s ]
+SQL: SHOW COLUMNS FROM `yt_action_log` [ RunTime:0.000303s ]
+SQL: INSERT INTO `yt_action_log` (`action_id`,`user_id`,`action_ip`,`model`,`record_id`,`create_time`,`remark`) VALUES (7,1,2130706433,'model',21,1544590490,'操作url：/yitu/index.php?s=/admin/model/update.html') [ RunTime:0.000163s ]
+
+[ 2018-12-12T12:55:34+08:00 ] 127.0.0.1 /yitu/index.php?s=/admin/attribute/update.html
+INFO: [ app_begin ] --START--
+INFO: Run Think\Behavior\ReadHtmlCache [ RunTime:0.000084s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000413s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000032s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead E:\php\tool\wamp64\www\yitu\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `yt_addons` [ RunTime:0.000425s ]
+SQL: SELECT `title`,`name` FROM `yt_addons` WHERE ( status=1 AND has_adminlist=1 )  [ RunTime:0.000206s ]
+SQL: SHOW COLUMNS FROM `yt_attribute` [ RunTime:0.000352s ]
+SQL: SELECT * FROM `yt_attribute` WHERE ( `name` = 'car_id' ) AND ( `model_id` = 21 ) LIMIT 1   [ RunTime:0.000256s ]
+SQL: INSERT INTO `yt_attribute` (`name`,`title`,`type`,`field`,`extra`,`value`,`remark`,`is_show`,`is_must`,`id`,`model_id`,`status`,`create_time`,`update_time`) VALUES ('car_id','车辆id','num','int(20) UNSIGNED NOT NULL','','','',1,1,0,21,1,1544590534,1544590534) [ RunTime:0.000184s ]
+SQL: SHOW COLUMNS FROM `yt_model` [ RunTime:0.000368s ]
+SQL: SELECT `name`,`extend` FROM `yt_model` WHERE ( `id` = 21 ) LIMIT 1   [ RunTime:0.000178s ]
+SQL: 				SHOW TABLES LIKE 'yt_cost'; [ RunTime:0.000676s ]
+SQL: SELECT `need_pk` FROM `yt_model` WHERE ( `id` = 21 ) LIMIT 1   [ RunTime:0.000206s ]
+SQL: 				CREATE TABLE IF NOT EXISTS `yt_cost` (
+				`id`  int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT '主键' ,
+				`car_id`  int(20) UNSIGNED NOT NULL  COMMENT '车辆id' ,
+				PRIMARY KEY (`id`)
+				)
+				ENGINE=MyISAM
+				DEFAULT CHARACTER SET=utf8 COLLATE=utf8_general_ci
+				CHECKSUM=0
+				ROW_FORMAT=DYNAMIC
+				DELAY_KEY_WRITE=0
+				; [ RunTime:0.012264s ]
+SQL: SHOW COLUMNS FROM `yt_action` [ RunTime:0.000406s ]
+SQL: SELECT * FROM `yt_action` WHERE ( `name` = 'update_attribute' ) LIMIT 1   [ RunTime:0.000218s ]
+SQL: SHOW COLUMNS FROM `yt_action_log` [ RunTime:0.000322s ]
+SQL: INSERT INTO `yt_action_log` (`action_id`,`user_id`,`action_ip`,`model`,`record_id`,`create_time`,`remark`) VALUES (8,1,2130706433,'attribute',210,1544590534,'操作url：/yitu/index.php?s=/admin/attribute/update.html') [ RunTime:0.000225s ]
+
+[ 2018-12-12T12:56:43+08:00 ] 127.0.0.1 /yitu/index.php?s=/admin/attribute/update.html
+INFO: [ app_begin ] --START--
+INFO: Run Think\Behavior\ReadHtmlCache [ RunTime:0.000081s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000408s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000036s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead E:\php\tool\wamp64\www\yitu\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `yt_addons` [ RunTime:0.000407s ]
+SQL: SELECT `title`,`name` FROM `yt_addons` WHERE ( status=1 AND has_adminlist=1 )  [ RunTime:0.000221s ]
+SQL: SHOW COLUMNS FROM `yt_attribute` [ RunTime:0.000359s ]
+SQL: SELECT * FROM `yt_attribute` WHERE ( `name` = 'car_repairs' ) AND ( `model_id` = 21 ) LIMIT 1   [ RunTime:0.000261s ]
+SQL: INSERT INTO `yt_attribute` (`name`,`title`,`type`,`field`,`extra`,`value`,`remark`,`is_show`,`is_must`,`id`,`model_id`,`status`,`create_time`,`update_time`) VALUES ('car_repairs','维修费','num','int(10) UNSIGNED NOT NULL','','','',1,0,0,21,1,1544590603,1544590603) [ RunTime:0.000191s ]
+SQL: SHOW COLUMNS FROM `yt_model` [ RunTime:0.000372s ]
+SQL: SELECT `name`,`extend` FROM `yt_model` WHERE ( `id` = 21 ) LIMIT 1   [ RunTime:0.000184s ]
+SQL: 				SHOW TABLES LIKE 'yt_cost'; [ RunTime:0.000708s ]
+SQL: 				ALTER TABLE `yt_cost`
+ADD COLUMN `car_repairs`  int(10) UNSIGNED NOT NULL  COMMENT '维修费'; [ RunTime:0.022782s ]
+SQL: SHOW COLUMNS FROM `yt_action` [ RunTime:0.000407s ]
+SQL: SELECT * FROM `yt_action` WHERE ( `name` = 'update_attribute' ) LIMIT 1   [ RunTime:0.000204s ]
+SQL: SHOW COLUMNS FROM `yt_action_log` [ RunTime:0.000289s ]
+SQL: INSERT INTO `yt_action_log` (`action_id`,`user_id`,`action_ip`,`model`,`record_id`,`create_time`,`remark`) VALUES (8,1,2130706433,'attribute',211,1544590603,'操作url：/yitu/index.php?s=/admin/attribute/update.html') [ RunTime:0.000169s ]
+
+[ 2018-12-12T12:58:12+08:00 ] 127.0.0.1 /yitu/index.php?s=/admin/attribute/update.html
+INFO: [ app_begin ] --START--
+INFO: Run Think\Behavior\ReadHtmlCache [ RunTime:0.000080s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000397s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000032s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead E:\php\tool\wamp64\www\yitu\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `yt_addons` [ RunTime:0.000401s ]
+SQL: SELECT `title`,`name` FROM `yt_addons` WHERE ( status=1 AND has_adminlist=1 )  [ RunTime:0.000205s ]
+SQL: SHOW COLUMNS FROM `yt_attribute` [ RunTime:0.000384s ]
+SQL: SELECT * FROM `yt_attribute` WHERE ( `name` = 'car_wash' ) AND ( `model_id` = 21 ) LIMIT 1   [ RunTime:0.000258s ]
+SQL: INSERT INTO `yt_attribute` (`name`,`title`,`type`,`field`,`extra`,`value`,`remark`,`is_show`,`is_must`,`id`,`model_id`,`status`,`create_time`,`update_time`) VALUES ('car_wash','洗车费','num','int(10) UNSIGNED NOT NULL','','','',1,0,0,21,1,1544590692,1544590692) [ RunTime:0.000194s ]
+SQL: SHOW COLUMNS FROM `yt_model` [ RunTime:0.000376s ]
+SQL: SELECT `name`,`extend` FROM `yt_model` WHERE ( `id` = 21 ) LIMIT 1   [ RunTime:0.000179s ]
+SQL: 				SHOW TABLES LIKE 'yt_cost'; [ RunTime:0.000711s ]
+SQL: 				ALTER TABLE `yt_cost`
+ADD COLUMN `car_wash`  int(10) UNSIGNED NOT NULL  COMMENT '洗车费'; [ RunTime:0.021203s ]
+SQL: SHOW COLUMNS FROM `yt_action` [ RunTime:0.000554s ]
+SQL: SELECT * FROM `yt_action` WHERE ( `name` = 'update_attribute' ) LIMIT 1   [ RunTime:0.000170s ]
+SQL: SHOW COLUMNS FROM `yt_action_log` [ RunTime:0.004566s ]
+SQL: INSERT INTO `yt_action_log` (`action_id`,`user_id`,`action_ip`,`model`,`record_id`,`create_time`,`remark`) VALUES (8,1,2130706433,'attribute',212,1544590692,'操作url：/yitu/index.php?s=/admin/attribute/update.html') [ RunTime:0.000172s ]
+
+[ 2018-12-12T12:59:17+08:00 ] 127.0.0.1 /yitu/index.php?s=/admin/attribute/update.html
+INFO: [ app_begin ] --START--
+INFO: Run Think\Behavior\ReadHtmlCache [ RunTime:0.000079s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000392s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000033s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead E:\php\tool\wamp64\www\yitu\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `yt_addons` [ RunTime:0.000350s ]
+SQL: SELECT `title`,`name` FROM `yt_addons` WHERE ( status=1 AND has_adminlist=1 )  [ RunTime:0.000153s ]
+SQL: SHOW COLUMNS FROM `yt_attribute` [ RunTime:0.000288s ]
+SQL: SELECT * FROM `yt_attribute` WHERE ( `name` = 'car_insurance' ) AND ( `model_id` = 21 ) LIMIT 1   [ RunTime:0.000238s ]
+SQL: INSERT INTO `yt_attribute` (`name`,`title`,`type`,`field`,`extra`,`value`,`remark`,`is_show`,`is_must`,`id`,`model_id`,`status`,`create_time`,`update_time`) VALUES ('car_insurance','保险费','num','int(10) UNSIGNED NOT NULL','','','',1,0,0,21,1,1544590757,1544590757) [ RunTime:0.000151s ]
+SQL: SHOW COLUMNS FROM `yt_model` [ RunTime:0.000355s ]
+SQL: SELECT `name`,`extend` FROM `yt_model` WHERE ( `id` = 21 ) LIMIT 1   [ RunTime:0.000155s ]
+SQL: 				SHOW TABLES LIKE 'yt_cost'; [ RunTime:0.000681s ]
+SQL: 				ALTER TABLE `yt_cost`
+ADD COLUMN `car_insurance`  int(10) UNSIGNED NOT NULL  COMMENT '保险费'; [ RunTime:0.019904s ]
+SQL: SHOW COLUMNS FROM `yt_action` [ RunTime:0.000400s ]
+SQL: SELECT * FROM `yt_action` WHERE ( `name` = 'update_attribute' ) LIMIT 1   [ RunTime:0.000195s ]
+SQL: SHOW COLUMNS FROM `yt_action_log` [ RunTime:0.000290s ]
+SQL: INSERT INTO `yt_action_log` (`action_id`,`user_id`,`action_ip`,`model`,`record_id`,`create_time`,`remark`) VALUES (8,1,2130706433,'attribute',213,1544590757,'操作url：/yitu/index.php?s=/admin/attribute/update.html') [ RunTime:0.000180s ]
+
+[ 2018-12-12T12:59:57+08:00 ] 127.0.0.1 /yitu/index.php?s=/admin/attribute/update.html
+INFO: [ app_begin ] --START--
+INFO: Run Think\Behavior\ReadHtmlCache [ RunTime:0.000081s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000397s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000037s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead E:\php\tool\wamp64\www\yitu\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `yt_addons` [ RunTime:0.000426s ]
+SQL: SELECT `title`,`name` FROM `yt_addons` WHERE ( status=1 AND has_adminlist=1 )  [ RunTime:0.000211s ]
+SQL: SHOW COLUMNS FROM `yt_attribute` [ RunTime:0.000360s ]
+SQL: SELECT * FROM `yt_attribute` WHERE ( `name` = 'car_other' ) AND ( `model_id` = 21 ) LIMIT 1   [ RunTime:0.000270s ]
+SQL: INSERT INTO `yt_attribute` (`name`,`title`,`type`,`field`,`extra`,`value`,`remark`,`is_show`,`is_must`,`id`,`model_id`,`status`,`create_time`,`update_time`) VALUES ('car_other','其他费用','num','int(10) UNSIGNED NOT NULL','','','',1,0,0,21,1,1544590797,1544590797) [ RunTime:0.000208s ]
+SQL: SHOW COLUMNS FROM `yt_model` [ RunTime:0.000412s ]
+SQL: SELECT `name`,`extend` FROM `yt_model` WHERE ( `id` = 21 ) LIMIT 1   [ RunTime:0.000196s ]
+SQL: 				SHOW TABLES LIKE 'yt_cost'; [ RunTime:0.000749s ]
+SQL: 				ALTER TABLE `yt_cost`
+ADD COLUMN `car_other`  int(10) UNSIGNED NOT NULL  COMMENT '其他费用'; [ RunTime:0.018787s ]
+SQL: SHOW COLUMNS FROM `yt_action` [ RunTime:0.000357s ]
+SQL: SELECT * FROM `yt_action` WHERE ( `name` = 'update_attribute' ) LIMIT 1   [ RunTime:0.000137s ]
+SQL: SHOW COLUMNS FROM `yt_action_log` [ RunTime:0.000228s ]
+SQL: INSERT INTO `yt_action_log` (`action_id`,`user_id`,`action_ip`,`model`,`record_id`,`create_time`,`remark`) VALUES (8,1,2130706433,'attribute',214,1544590797,'操作url：/yitu/index.php?s=/admin/attribute/update.html') [ RunTime:0.000116s ]
+
+[ 2018-12-12T13:00:32+08:00 ] 127.0.0.1 /yitu/index.php?s=/admin/attribute/update.html
+INFO: [ app_begin ] --START--
+INFO: Run Think\Behavior\ReadHtmlCache [ RunTime:0.000106s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000389s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000033s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead E:\php\tool\wamp64\www\yitu\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `yt_addons` [ RunTime:0.000394s ]
+SQL: SELECT `title`,`name` FROM `yt_addons` WHERE ( status=1 AND has_adminlist=1 )  [ RunTime:0.000155s ]
+SQL: SHOW COLUMNS FROM `yt_attribute` [ RunTime:0.000342s ]
+SQL: SELECT * FROM `yt_attribute` WHERE ( `name` = 'created_time' ) AND ( `model_id` = 21 ) LIMIT 1   [ RunTime:0.000256s ]
+SQL: INSERT INTO `yt_attribute` (`name`,`title`,`type`,`field`,`extra`,`value`,`remark`,`is_show`,`is_must`,`id`,`model_id`,`status`,`create_time`,`update_time`) VALUES ('created_time','创建时间','datetime','int(10) NOT NULL','','','',1,0,0,21,1,1544590832,1544590832) [ RunTime:0.000175s ]
+SQL: SHOW COLUMNS FROM `yt_model` [ RunTime:0.000352s ]
+SQL: SELECT `name`,`extend` FROM `yt_model` WHERE ( `id` = 21 ) LIMIT 1   [ RunTime:0.000147s ]
+SQL: 				SHOW TABLES LIKE 'yt_cost'; [ RunTime:0.000703s ]
+SQL: 				ALTER TABLE `yt_cost`
+ADD COLUMN `created_time`  int(10) NOT NULL  COMMENT '创建时间'; [ RunTime:0.021499s ]
+SQL: SHOW COLUMNS FROM `yt_action` [ RunTime:0.000391s ]
+SQL: SELECT * FROM `yt_action` WHERE ( `name` = 'update_attribute' ) LIMIT 1   [ RunTime:0.000151s ]
+SQL: SHOW COLUMNS FROM `yt_action_log` [ RunTime:0.000289s ]
+SQL: INSERT INTO `yt_action_log` (`action_id`,`user_id`,`action_ip`,`model`,`record_id`,`create_time`,`remark`) VALUES (8,1,2130706433,'attribute',215,1544590832,'操作url：/yitu/index.php?s=/admin/attribute/update.html') [ RunTime:0.000151s ]
+
+[ 2018-12-12T13:01:08+08:00 ] 127.0.0.1 /yitu/index.php?s=/admin/attribute/update.html
+INFO: [ app_begin ] --START--
+INFO: Run Think\Behavior\ReadHtmlCache [ RunTime:0.000082s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000403s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000033s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead E:\php\tool\wamp64\www\yitu\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `yt_addons` [ RunTime:0.000374s ]
+SQL: SELECT `title`,`name` FROM `yt_addons` WHERE ( status=1 AND has_adminlist=1 )  [ RunTime:0.000175s ]
+SQL: SHOW COLUMNS FROM `yt_attribute` [ RunTime:0.000303s ]
+SQL: SELECT * FROM `yt_attribute` WHERE ( `name` = 'created_time' ) AND ( `model_id` = 20 ) LIMIT 1   [ RunTime:0.000264s ]
+SQL: INSERT INTO `yt_attribute` (`name`,`title`,`type`,`field`,`extra`,`value`,`remark`,`is_show`,`is_must`,`id`,`model_id`,`status`,`create_time`,`update_time`) VALUES ('created_time','创建时间','datetime','int(10) NOT NULL','','','',1,0,0,20,1,1544590868,1544590868) [ RunTime:0.000195s ]
+SQL: SHOW COLUMNS FROM `yt_model` [ RunTime:0.000374s ]
+SQL: SELECT `name`,`extend` FROM `yt_model` WHERE ( `id` = 20 ) LIMIT 1   [ RunTime:0.000187s ]
+SQL: 				SHOW TABLES LIKE 'yt_attendance'; [ RunTime:0.000746s ]
+SQL: 				ALTER TABLE `yt_attendance`
+ADD COLUMN `created_time`  int(10) NOT NULL  COMMENT '创建时间'; [ RunTime:0.030452s ]
+SQL: SHOW COLUMNS FROM `yt_action` [ RunTime:0.000627s ]
+SQL: SELECT * FROM `yt_action` WHERE ( `name` = 'update_attribute' ) LIMIT 1   [ RunTime:0.000198s ]
+SQL: SHOW COLUMNS FROM `yt_action_log` [ RunTime:0.000309s ]
+SQL: INSERT INTO `yt_action_log` (`action_id`,`user_id`,`action_ip`,`model`,`record_id`,`create_time`,`remark`) VALUES (8,1,2130706433,'attribute',216,1544590868,'操作url：/yitu/index.php?s=/admin/attribute/update.html') [ RunTime:0.000179s ]
+
+[ 2018-12-12T13:08:31+08:00 ] 127.0.0.1 /yitu/index.php?s=/admin/car/index.html
+ERR: 无法加载控制器:Car
+
+[ 2018-12-12T13:09:28+08:00 ] 127.0.0.1 /yitu/index.php?s=/admin/car/index.html
+ERR: 无法加载控制器:Car
+
+[ 2018-12-12T13:10:52+08:00 ] 127.0.0.1 /yitu/index.php?s=/admin/car/index.html
+ERR: 模板不存在:./Application/Admin/View/Car/index.html
+
+[ 2018-12-12T13:10:53+08:00 ] 127.0.0.1 /yitu/index.php?s=/admin/car/index.html
+ERR: 模板不存在:./Application/Admin/View/Car/index.html
+
+[ 2018-12-12T13:11:41+08:00 ] 127.0.0.1 /yitu/index.php?s=/admin/car/index.html
+ERR: 非法操作:index
+
+[ 2018-12-12T13:22:11+08:00 ] 127.0.0.1 /yitu/index.php?s=/admin/attendance/index.html
+ERR: 无法加载控制器:Attendance
+
+[ 2018-12-12T13:29:22+08:00 ] 127.0.0.1 /yitu/index.php?s=/admin/article/autosave.html
+INFO: [ app_begin ] --START--
+INFO: Run Think\Behavior\ReadHtmlCache [ RunTime:0.000081s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000380s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000033s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead E:\php\tool\wamp64\www\yitu\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `yt_document` [ RunTime:0.000478s ]
+
+[ 2018-12-12T13:31:37+08:00 ] 127.0.0.1 /yitu/index.php?s=/admin/article/autosave.html
+INFO: [ app_begin ] --START--
+INFO: Run Think\Behavior\ReadHtmlCache [ RunTime:0.000082s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000380s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000033s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead E:\php\tool\wamp64\www\yitu\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `yt_document` [ RunTime:0.000675s ]
+
+[ 2018-12-12T13:32:38+08:00 ] 127.0.0.1 /yitu/index.php?s=/admin/article/autosave.html
+INFO: [ app_begin ] --START--
+INFO: Run Think\Behavior\ReadHtmlCache [ RunTime:0.000083s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000353s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000038s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead E:\php\tool\wamp64\www\yitu\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `yt_document` [ RunTime:0.000705s ]
+
+[ 2018-12-12T13:33:52+08:00 ] 127.0.0.1 /yitu/index.php?s=/admin/article/autosave.html
+INFO: [ app_begin ] --START--
+INFO: Run Think\Behavior\ReadHtmlCache [ RunTime:0.000079s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000319s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000035s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead E:\php\tool\wamp64\www\yitu\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `yt_document` [ RunTime:0.000476s ]
+
+[ 2018-12-12T13:34:52+08:00 ] 127.0.0.1 /yitu/index.php?s=/admin/article/autosave.html
+INFO: [ app_begin ] --START--
+INFO: Run Think\Behavior\ReadHtmlCache [ RunTime:0.000079s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000346s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000033s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead E:\php\tool\wamp64\www\yitu\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `yt_document` [ RunTime:0.000418s ]
+
+[ 2018-12-12T13:35:53+08:00 ] 127.0.0.1 /yitu/index.php?s=/admin/article/autosave.html
+INFO: [ app_begin ] --START--
+INFO: Run Think\Behavior\ReadHtmlCache [ RunTime:0.000077s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000315s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000032s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead E:\php\tool\wamp64\www\yitu\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `yt_document` [ RunTime:0.000474s ]
+
+[ 2018-12-12T13:36:54+08:00 ] 127.0.0.1 /yitu/index.php?s=/admin/article/autosave.html
+INFO: [ app_begin ] --START--
+INFO: Run Think\Behavior\ReadHtmlCache [ RunTime:0.000094s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000371s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000031s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead E:\php\tool\wamp64\www\yitu\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `yt_document` [ RunTime:0.000523s ]
+
+[ 2018-12-12T13:41:40+08:00 ] 127.0.0.1 /yitu/index.php?s=/admin/article/autosave.html
+INFO: [ app_begin ] --START--
+INFO: Run Think\Behavior\ReadHtmlCache [ RunTime:0.000084s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000407s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000034s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead E:\php\tool\wamp64\www\yitu\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `yt_document` [ RunTime:0.000461s ]
+
+[ 2018-12-12T13:42:40+08:00 ] 127.0.0.1 /yitu/index.php?s=/admin/article/autosave.html
+INFO: [ app_begin ] --START--
+INFO: Run Think\Behavior\ReadHtmlCache [ RunTime:0.000082s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000377s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000035s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead E:\php\tool\wamp64\www\yitu\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `yt_document` [ RunTime:0.000778s ]
+
+[ 2018-12-12T13:43:40+08:00 ] 127.0.0.1 /yitu/index.php?s=/admin/article/autosave.html
+INFO: [ app_begin ] --START--
+INFO: Run Think\Behavior\ReadHtmlCache [ RunTime:0.000081s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000373s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000033s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead E:\php\tool\wamp64\www\yitu\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `yt_document` [ RunTime:0.000417s ]
+
+[ 2018-12-12T13:44:40+08:00 ] 127.0.0.1 /yitu/index.php?s=/admin/article/autosave.html
+INFO: [ app_begin ] --START--
+INFO: Run Think\Behavior\ReadHtmlCache [ RunTime:0.000082s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000418s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000033s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead E:\php\tool\wamp64\www\yitu\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `yt_document` [ RunTime:0.000467s ]
+
+[ 2018-12-12T13:45:41+08:00 ] 127.0.0.1 /yitu/index.php?s=/admin/article/autosave.html
+INFO: [ app_begin ] --START--
+INFO: Run Think\Behavior\ReadHtmlCache [ RunTime:0.000100s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.009061s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000034s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead E:\php\tool\wamp64\www\yitu\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `yt_document` [ RunTime:0.000471s ]
+
+[ 2018-12-12T13:47:30+08:00 ] 127.0.0.1 /yitu/index.php?s=/admin/article/autosave.html
+INFO: [ app_begin ] --START--
+INFO: Run Think\Behavior\ReadHtmlCache [ RunTime:0.000078s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000365s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000033s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead E:\php\tool\wamp64\www\yitu\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `yt_document` [ RunTime:0.000462s ]
+
+[ 2018-12-12T13:48:30+08:00 ] 127.0.0.1 /yitu/index.php?s=/admin/article/autosave.html
+INFO: [ app_begin ] --START--
+INFO: Run Think\Behavior\ReadHtmlCache [ RunTime:0.000082s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000379s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000033s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead E:\php\tool\wamp64\www\yitu\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `yt_document` [ RunTime:0.000461s ]
+
+[ 2018-12-12T13:50:26+08:00 ] 127.0.0.1 /yitu/index.php?s=/admin/article/autosave.html
+INFO: [ app_begin ] --START--
+INFO: Run Think\Behavior\ReadHtmlCache [ RunTime:0.000085s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000363s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000033s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead E:\php\tool\wamp64\www\yitu\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `yt_document` [ RunTime:0.000463s ]
+
+[ 2018-12-12T13:53:39+08:00 ] 127.0.0.1 /yitu/index.php?s=/admin/menu/edit/id/118.html
+INFO: [ app_begin ] --START--
+INFO: Run Think\Behavior\ReadHtmlCache [ RunTime:0.000080s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000324s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000033s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead E:\php\tool\wamp64\www\yitu\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `yt_menu` [ RunTime:0.000414s ]
+SQL: UPDATE `yt_menu` SET `title`='车辆',`sort`=0,`url`='Car/index',`pid`=0,`group`='车辆管理',`hide`=0,`is_dev`=0,`tip`='' WHERE ( `id` = 118 ) [ RunTime:0.000869s ]
+SQL: SHOW COLUMNS FROM `yt_action` [ RunTime:0.000347s ]
+SQL: SELECT * FROM `yt_action` WHERE ( `name` = 'update_menu' ) LIMIT 1   [ RunTime:0.000653s ]
+SQL: SHOW COLUMNS FROM `yt_action_log` [ RunTime:0.000368s ]
+SQL: INSERT INTO `yt_action_log` (`action_id`,`user_id`,`action_ip`,`model`,`record_id`,`create_time`,`remark`) VALUES (10,1,2130706433,'Menu',118,1544594019,'操作url：/yitu/index.php?s=/admin/menu/edit/id/118.html') [ RunTime:0.000218s ]
+
+[ 2018-12-12T13:54:34+08:00 ] 127.0.0.1 /yitu/index.php?s=/admin/menu/edit/id/118.html
+INFO: [ app_begin ] --START--
+INFO: Run Think\Behavior\ReadHtmlCache [ RunTime:0.000080s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000319s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000033s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead E:\php\tool\wamp64\www\yitu\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `yt_menu` [ RunTime:0.000415s ]
+SQL: UPDATE `yt_menu` SET `title`='车辆',`sort`=0,`url`='Car/index',`pid`=0,`group`='',`hide`=0,`is_dev`=0,`tip`='' WHERE ( `id` = 118 ) [ RunTime:0.000212s ]
+SQL: SHOW COLUMNS FROM `yt_action` [ RunTime:0.000304s ]
+SQL: SELECT * FROM `yt_action` WHERE ( `name` = 'update_menu' ) LIMIT 1   [ RunTime:0.000185s ]
+SQL: SHOW COLUMNS FROM `yt_action_log` [ RunTime:0.000284s ]
+SQL: INSERT INTO `yt_action_log` (`action_id`,`user_id`,`action_ip`,`model`,`record_id`,`create_time`,`remark`) VALUES (10,1,2130706433,'Menu',118,1544594074,'操作url：/yitu/index.php?s=/admin/menu/edit/id/118.html') [ RunTime:0.000172s ]
+
+[ 2018-12-12T13:55:14+08:00 ] 127.0.0.1 /yitu/index.php?s=/admin/menu/add/pid/118.html
+INFO: [ app_begin ] --START--
+INFO: Run Think\Behavior\ReadHtmlCache [ RunTime:0.000080s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000348s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000033s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead E:\php\tool\wamp64\www\yitu\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `yt_menu` [ RunTime:0.000366s ]
+
+[ 2018-12-12T13:55:26+08:00 ] 127.0.0.1 /yitu/index.php?s=/admin/menu/add/pid/118.html
+INFO: [ app_begin ] --START--
+INFO: Run Think\Behavior\ReadHtmlCache [ RunTime:0.000081s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000361s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000033s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead E:\php\tool\wamp64\www\yitu\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `yt_menu` [ RunTime:0.000379s ]
+SQL: INSERT INTO `yt_menu` (`title`,`sort`,`url`,`pid`,`group`,`hide`,`is_dev`,`tip`,`id`) VALUES ('车辆管理',0,'Car/index',118,'车辆管理',0,0,'',0) [ RunTime:0.000508s ]
+SQL: SHOW COLUMNS FROM `yt_action` [ RunTime:0.000308s ]
+SQL: SELECT * FROM `yt_action` WHERE ( `name` = 'update_menu' ) LIMIT 1   [ RunTime:0.000205s ]
+SQL: SHOW COLUMNS FROM `yt_action_log` [ RunTime:0.000299s ]
+SQL: INSERT INTO `yt_action_log` (`action_id`,`user_id`,`action_ip`,`model`,`record_id`,`create_time`,`remark`) VALUES (10,1,2130706433,'Menu',121,1544594126,'操作url：/yitu/index.php?s=/admin/menu/add/pid/118.html') [ RunTime:0.000180s ]
+
+[ 2018-12-12T13:56:30+08:00 ] 127.0.0.1 /yitu/index.php?s=/admin/menu/edit/id/121.html
+INFO: [ app_begin ] --START--
+INFO: Run Think\Behavior\ReadHtmlCache [ RunTime:0.000084s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000379s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000036s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead E:\php\tool\wamp64\www\yitu\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `yt_menu` [ RunTime:0.000414s ]
+SQL: UPDATE `yt_menu` SET `title`='车辆信息',`sort`=0,`url`='Car/index',`pid`=118,`group`='车辆管理',`hide`=0,`is_dev`=0,`tip`='' WHERE ( `id` = 121 ) [ RunTime:0.000236s ]
+SQL: SHOW COLUMNS FROM `yt_action` [ RunTime:0.000313s ]
+SQL: SELECT * FROM `yt_action` WHERE ( `name` = 'update_menu' ) LIMIT 1   [ RunTime:0.000191s ]
+SQL: SHOW COLUMNS FROM `yt_action_log` [ RunTime:0.000363s ]
+SQL: INSERT INTO `yt_action_log` (`action_id`,`user_id`,`action_ip`,`model`,`record_id`,`create_time`,`remark`) VALUES (10,1,2130706433,'Menu',121,1544594190,'操作url：/yitu/index.php?s=/admin/menu/edit/id/121.html') [ RunTime:0.000171s ]
+
+[ 2018-12-12T13:57:27+08:00 ] 127.0.0.1 /yitu/index.php?s=/admin/menu/add/pid/121.html
+INFO: [ app_begin ] --START--
+INFO: Run Think\Behavior\ReadHtmlCache [ RunTime:0.000081s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000347s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000033s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead E:\php\tool\wamp64\www\yitu\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `yt_menu` [ RunTime:0.000405s ]
+SQL: INSERT INTO `yt_menu` (`title`,`sort`,`url`,`pid`,`group`,`hide`,`is_dev`,`tip`,`id`) VALUES ('新增车辆',0,'Car/add',121,'',1,0,'',0) [ RunTime:0.000211s ]
+SQL: SHOW COLUMNS FROM `yt_action` [ RunTime:0.000333s ]
+SQL: SELECT * FROM `yt_action` WHERE ( `name` = 'update_menu' ) LIMIT 1   [ RunTime:0.000208s ]
+SQL: SHOW COLUMNS FROM `yt_action_log` [ RunTime:0.000326s ]
+SQL: INSERT INTO `yt_action_log` (`action_id`,`user_id`,`action_ip`,`model`,`record_id`,`create_time`,`remark`) VALUES (10,1,2130706433,'Menu',122,1544594247,'操作url：/yitu/index.php?s=/admin/menu/add/pid/121.html') [ RunTime:0.000220s ]
+
+[ 2018-12-12T14:00:07+08:00 ] 127.0.0.1 /yitu/index.php?s=/admin/menu/edit/id/122.html
+INFO: [ app_begin ] --START--
+INFO: Run Think\Behavior\ReadHtmlCache [ RunTime:0.000095s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000359s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000034s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead E:\php\tool\wamp64\www\yitu\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `yt_menu` [ RunTime:0.000383s ]
+SQL: UPDATE `yt_menu` SET `title`='新增车辆',`sort`=0,`url`='Car/add',`pid`=121,`group`='',`hide`=0,`is_dev`=0,`tip`='' WHERE ( `id` = 122 ) [ RunTime:0.000197s ]
+SQL: SHOW COLUMNS FROM `yt_action` [ RunTime:0.000264s ]
+SQL: SELECT * FROM `yt_action` WHERE ( `name` = 'update_menu' ) LIMIT 1   [ RunTime:0.000146s ]
+SQL: SHOW COLUMNS FROM `yt_action_log` [ RunTime:0.000251s ]
+SQL: INSERT INTO `yt_action_log` (`action_id`,`user_id`,`action_ip`,`model`,`record_id`,`create_time`,`remark`) VALUES (10,1,2130706433,'Menu',122,1544594407,'操作url：/yitu/index.php?s=/admin/menu/edit/id/122.html') [ RunTime:0.000125s ]
+
+[ 2018-12-12T14:01:00+08:00 ] 127.0.0.1 /yitu/index.php?s=/admin/menu/edit/id/122.html
+INFO: [ app_begin ] --START--
+INFO: Run Think\Behavior\ReadHtmlCache [ RunTime:0.000093s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000411s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000039s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead E:\php\tool\wamp64\www\yitu\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `yt_menu` [ RunTime:0.000420s ]
+SQL: UPDATE `yt_menu` SET `title`='新增车辆',`sort`=0,`url`='Car/add',`pid`=121,`group`='',`hide`=0,`is_dev`=0,`tip`='新增车辆' WHERE ( `id` = 122 ) [ RunTime:0.000806s ]
+SQL: SHOW COLUMNS FROM `yt_action` [ RunTime:0.000327s ]
+SQL: SELECT * FROM `yt_action` WHERE ( `name` = 'update_menu' ) LIMIT 1   [ RunTime:0.000206s ]
+SQL: SHOW COLUMNS FROM `yt_action_log` [ RunTime:0.000335s ]
+SQL: INSERT INTO `yt_action_log` (`action_id`,`user_id`,`action_ip`,`model`,`record_id`,`create_time`,`remark`) VALUES (10,1,2130706433,'Menu',122,1544594460,'操作url：/yitu/index.php?s=/admin/menu/edit/id/122.html') [ RunTime:0.000212s ]
+
+[ 2018-12-12T14:04:41+08:00 ] 127.0.0.1 /yitu/index.php?s=/admin/car/update.html
+INFO: [ app_begin ] --START--
+INFO: Run Think\Behavior\ReadHtmlCache [ RunTime:0.000081s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000361s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000033s ]
+ERR: 非法操作:update
+
+[ 2018-12-12T14:05:03+08:00 ] 127.0.0.1 /yitu/index.php?s=/admin/car/add.html
+INFO: [ app_begin ] --START--
+INFO: Run Think\Behavior\ReadHtmlCache [ RunTime:0.000079s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000350s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000037s ]
+
+[ 2018-12-12T14:10:45+08:00 ] 127.0.0.1 /yitu/index.php?s=/admin/car/add.html
+INFO: [ app_begin ] --START--
+INFO: Run Think\Behavior\ReadHtmlCache [ RunTime:0.000082s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000360s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000033s ]
+
+[ 2018-12-12T14:53:25+08:00 ] 127.0.0.1 /yitu/index.php?s=/admin/car/add.html
+INFO: [ app_begin ] --START--
+INFO: Run Think\Behavior\ReadHtmlCache [ RunTime:0.000082s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000468s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000039s ]
+
+[ 2018-12-12T14:53:42+08:00 ] 127.0.0.1 /yitu/index.php?s=/admin/car/add.html
+INFO: [ app_begin ] --START--
+INFO: Run Think\Behavior\ReadHtmlCache [ RunTime:0.000080s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000403s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000035s ]
+
+[ 2018-12-12T15:07:30+08:00 ] 127.0.0.1 /yitu/index.php?s=/admin/car/add.html
+INFO: [ app_begin ] --START--
+INFO: Run Think\Behavior\ReadHtmlCache [ RunTime:0.000086s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000386s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000032s ]
+
+[ 2018-12-12T15:14:28+08:00 ] 127.0.0.1 /yitu/index.php?s=/admin/car/add.html
+INFO: [ app_begin ] --START--
+INFO: Run Think\Behavior\ReadHtmlCache [ RunTime:0.000086s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000382s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000033s ]
+
+[ 2018-12-12T15:14:34+08:00 ] 127.0.0.1 /yitu/index.php?s=/admin/car/add.html
+INFO: [ app_begin ] --START--
+INFO: Run Think\Behavior\ReadHtmlCache [ RunTime:0.000086s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000384s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000036s ]
+
+[ 2018-12-12T15:15:05+08:00 ] 127.0.0.1 /yitu/index.php?s=/admin/car/add.html
+INFO: [ app_begin ] --START--
+INFO: Run Think\Behavior\ReadHtmlCache [ RunTime:0.000086s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000390s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000036s ]
+
+[ 2018-12-12T15:43:30+08:00 ] 127.0.0.1 /yitu/index.php?s=/admin/car/add.html
+INFO: [ app_begin ] --START--
+INFO: Run Think\Behavior\ReadHtmlCache [ RunTime:0.000095s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000405s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000041s ]
+
+[ 2018-12-12T15:47:06+08:00 ] 127.0.0.1 /yitu/index.php?s=/admin/car/add.html
+INFO: [ app_begin ] --START--
+INFO: Run Think\Behavior\ReadHtmlCache [ RunTime:0.000082s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000398s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000033s ]
+
+[ 2018-12-12T15:47:14+08:00 ] 127.0.0.1 /yitu/index.php?s=/admin/car/add.html
+INFO: [ app_begin ] --START--
+INFO: Run Think\Behavior\ReadHtmlCache [ RunTime:0.000082s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000376s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000033s ]
+
+[ 2018-12-12T15:49:16+08:00 ] 127.0.0.1 /yitu/index.php?s=/admin/car/add.html
+INFO: [ app_begin ] --START--
+INFO: Run Think\Behavior\ReadHtmlCache [ RunTime:0.000082s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000387s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000032s ]
+
+[ 2018-12-12T15:49:35+08:00 ] 127.0.0.1 /yitu/index.php?s=/admin/car/add.html
+INFO: [ app_begin ] --START--
+INFO: Run Think\Behavior\ReadHtmlCache [ RunTime:0.000098s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000381s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000033s ]
+
+[ 2018-12-12T15:50:03+08:00 ] 127.0.0.1 /yitu/index.php?s=/admin/car/add.html
+INFO: [ app_begin ] --START--
+INFO: Run Think\Behavior\ReadHtmlCache [ RunTime:0.000117s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.019281s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000038s ]
+
+[ 2018-12-12T15:50:14+08:00 ] 127.0.0.1 /yitu/index.php?s=/admin/car/add.html
+INFO: [ app_begin ] --START--
+INFO: Run Think\Behavior\ReadHtmlCache [ RunTime:0.000089s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000372s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000032s ]
+
+[ 2018-12-12T15:51:01+08:00 ] 127.0.0.1 /yitu/index.php?s=/admin/car/add.html
+INFO: [ app_begin ] --START--
+INFO: Run Think\Behavior\ReadHtmlCache [ RunTime:0.000079s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000349s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000032s ]
+
+[ 2018-12-12T15:54:54+08:00 ] 127.0.0.1 /yitu/index.php?s=/admin/car/add.html
+INFO: [ app_begin ] --START--
+INFO: Run Think\Behavior\ReadHtmlCache [ RunTime:0.000081s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000355s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000033s ]
+
+[ 2018-12-12T15:56:28+08:00 ] 127.0.0.1 /yitu/index.php?s=/admin/car/add.html
+INFO: [ app_begin ] --START--
+INFO: Run Think\Behavior\ReadHtmlCache [ RunTime:0.000080s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000348s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000033s ]
+
+[ 2018-12-12T16:12:31+08:00 ] 127.0.0.1 /yitu/index.php?s=/admin/car/add.html
+INFO: [ app_begin ] --START--
+INFO: Run Think\Behavior\ReadHtmlCache [ RunTime:0.000087s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000368s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000034s ]
+
+[ 2018-12-12T16:12:34+08:00 ] 127.0.0.1 /yitu/index.php?s=/admin/car/add.html
+INFO: [ app_begin ] --START--
+INFO: Run Think\Behavior\ReadHtmlCache [ RunTime:0.000087s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000362s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000041s ]
+
+[ 2018-12-12T16:20:07+08:00 ] 127.0.0.1 /yitu/index.php?s=/admin/car/add.html
+INFO: [ app_begin ] --START--
+INFO: Run Think\Behavior\ReadHtmlCache [ RunTime:0.000082s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000364s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000037s ]
+
+[ 2018-12-12T16:20:36+08:00 ] 127.0.0.1 /yitu/index.php?s=/admin/car/add.html
+INFO: [ app_begin ] --START--
+INFO: Run Think\Behavior\ReadHtmlCache [ RunTime:0.000080s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000360s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000049s ]
+
+[ 2018-12-12T16:28:28+08:00 ] 127.0.0.1 /yitu/index.php?s=/admin/car/add.html
+INFO: [ app_begin ] --START--
+INFO: Run Think\Behavior\ReadHtmlCache [ RunTime:0.000080s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000351s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000036s ]
+
+[ 2018-12-12T16:30:58+08:00 ] 127.0.0.1 /yitu/index.php?s=/admin/car/add.html
+INFO: [ app_begin ] --START--
+INFO: Run Think\Behavior\ReadHtmlCache [ RunTime:0.000080s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000349s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000037s ]
+
+[ 2018-12-12T16:31:13+08:00 ] 127.0.0.1 /yitu/index.php?s=/admin/car/add.html
+INFO: [ app_begin ] --START--
+INFO: Run Think\Behavior\ReadHtmlCache [ RunTime:0.000081s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000350s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000031s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead E:\php\tool\wamp64\www\yitu\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `yt_picture` [ RunTime:0.002414s ]
+
+[ 2018-12-12T16:33:24+08:00 ] 127.0.0.1 /yitu/index.php?s=/admin/car/add.html
+INFO: [ app_begin ] --START--
+INFO: Run Think\Behavior\ReadHtmlCache [ RunTime:0.000088s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005712s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000035s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead E:\php\tool\wamp64\www\yitu\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `yt_picture` [ RunTime:0.000703s ]
+
+[ 2018-12-12T16:34:15+08:00 ] 127.0.0.1 /yitu/index.php?s=/admin/car/add.html
+INFO: [ app_begin ] --START--
+INFO: Run Think\Behavior\ReadHtmlCache [ RunTime:0.000082s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000372s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000032s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead E:\php\tool\wamp64\www\yitu\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `yt_picture` [ RunTime:0.001147s ]
+
+[ 2018-12-12T16:34:36+08:00 ] 127.0.0.1 /yitu/index.php?s=/admin/car/add.html
+INFO: [ app_begin ] --START--
+INFO: Run Think\Behavior\ReadHtmlCache [ RunTime:0.000084s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000427s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000042s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead E:\php\tool\wamp64\www\yitu\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `yt_picture` [ RunTime:0.000747s ]
+
+[ 2018-12-12T16:35:14+08:00 ] 127.0.0.1 /yitu/index.php?s=/admin/car/add.html
+INFO: [ app_begin ] --START--
+INFO: Run Think\Behavior\ReadHtmlCache [ RunTime:0.000081s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000392s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000032s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead E:\php\tool\wamp64\www\yitu\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `yt_picture` [ RunTime:0.000662s ]
+
+[ 2018-12-12T16:37:49+08:00 ] 127.0.0.1 /yitu/index.php?s=/admin/car/add.html
+INFO: [ app_begin ] --START--
+INFO: Run Think\Behavior\ReadHtmlCache [ RunTime:0.000080s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000359s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000032s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead E:\php\tool\wamp64\www\yitu\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `yt_picture` [ RunTime:0.000814s ]
+
+[ 2018-12-12T16:38:31+08:00 ] 127.0.0.1 /yitu/index.php?s=/admin/car/add.html
+INFO: [ app_begin ] --START--
+INFO: Run Think\Behavior\ReadHtmlCache [ RunTime:0.000086s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000358s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000031s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead E:\php\tool\wamp64\www\yitu\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `yt_picture` [ RunTime:0.000933s ]
+
+[ 2018-12-12T16:38:55+08:00 ] 127.0.0.1 /yitu/index.php?s=/admin/car/add.html
+INFO: [ app_begin ] --START--
+INFO: Run Think\Behavior\ReadHtmlCache [ RunTime:0.000081s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000358s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000031s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead E:\php\tool\wamp64\www\yitu\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `yt_picture` [ RunTime:0.000638s ]
+
+[ 2018-12-12T16:40:48+08:00 ] 127.0.0.1 /yitu/index.php?s=/admin/car/add.html
+INFO: [ app_begin ] --START--
+INFO: Run Think\Behavior\ReadHtmlCache [ RunTime:0.000083s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000354s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000031s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead E:\php\tool\wamp64\www\yitu\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `yt_picture` [ RunTime:0.000786s ]
+
+[ 2018-12-12T16:41:23+08:00 ] 127.0.0.1 /yitu/index.php?s=/admin/car/add.html
+INFO: [ app_begin ] --START--
+INFO: Run Think\Behavior\ReadHtmlCache [ RunTime:0.000082s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000362s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000036s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead E:\php\tool\wamp64\www\yitu\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `yt_picture` [ RunTime:0.000596s ]
+
+[ 2018-12-12T16:42:07+08:00 ] 127.0.0.1 /yitu/index.php?s=/admin/car/add.html
+INFO: [ app_begin ] --START--
+INFO: Run Think\Behavior\ReadHtmlCache [ RunTime:0.000081s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000352s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000031s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead E:\php\tool\wamp64\www\yitu\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `yt_picture` [ RunTime:0.000648s ]
+
+[ 2018-12-12T16:43:49+08:00 ] 127.0.0.1 /yitu/index.php?s=/admin/car/add.html
+INFO: [ app_begin ] --START--
+INFO: Run Think\Behavior\ReadHtmlCache [ RunTime:0.000097s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000376s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000039s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead E:\php\tool\wamp64\www\yitu\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `yt_picture` [ RunTime:0.000911s ]
+
+[ 2018-12-12T16:44:25+08:00 ] 127.0.0.1 /yitu/index.php?s=/admin/car/add.html
+INFO: [ app_begin ] --START--
+INFO: Run Think\Behavior\ReadHtmlCache [ RunTime:0.000117s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000480s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000038s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead E:\php\tool\wamp64\www\yitu\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `yt_picture` [ RunTime:0.000612s ]
+
+[ 2018-12-12T16:44:50+08:00 ] 127.0.0.1 /yitu/index.php?s=/admin/car/add.html
+INFO: [ app_begin ] --START--
+INFO: Run Think\Behavior\ReadHtmlCache [ RunTime:0.000081s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004411s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000036s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead E:\php\tool\wamp64\www\yitu\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `yt_picture` [ RunTime:0.000646s ]
+
+[ 2018-12-12T16:46:54+08:00 ] 127.0.0.1 /yitu/index.php?s=/admin/car/add.html
+INFO: [ app_begin ] --START--
+INFO: Run Think\Behavior\ReadHtmlCache [ RunTime:0.000149s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000623s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000033s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead E:\php\tool\wamp64\www\yitu\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `yt_picture` [ RunTime:0.000638s ]
+
+[ 2018-12-12T16:47:52+08:00 ] 127.0.0.1 /yitu/index.php?s=/admin/car/add.html
+INFO: [ app_begin ] --START--
+INFO: Run Think\Behavior\ReadHtmlCache [ RunTime:0.000083s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000379s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000035s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead E:\php\tool\wamp64\www\yitu\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `yt_picture` [ RunTime:0.000653s ]
+SQL: SELECT `id`,`path`,`url`,`md5`,`sha1`,`status`,`create_time` FROM `yt_picture` WHERE ( `md5` = '8b00965d14bf1e21401884b0fb2f7e56' ) AND ( `sha1` = 'f85b3ee6d65f4b7c11ae5abc4bb14159e7ddbb5d' ) LIMIT 1   [ RunTime:0.000241s ]
+NOTIC: [2] Missing argument 2 for COM\Upload\Driver\Local::save(), called in E:\php\tool\wamp64\www\yitu\ThinkPHP\Library\COM\Upload.class.php on line 182 and defined E:\php\tool\wamp64\www\yitu\ThinkPHP\Library\COM\Upload\Driver\Local.class.php 第 72 行.
+NOTIC: [8] Undefined variable: replace E:\php\tool\wamp64\www\yitu\ThinkPHP\Library\COM\Upload\Driver\Local.class.php 第 76 行.
+SQL: INSERT INTO `yt_picture` (`md5`,`sha1`,`path`,`status`,`create_time`) VALUES ('8b00965d14bf1e21401884b0fb2f7e56','f85b3ee6d65f4b7c11ae5abc4bb14159e7ddbb5d','/Uploads/Picture/2018-12-12/5c10cb3811cce.png',1,1544604472) [ RunTime:0.000594s ]
+
+[ 2018-12-12T16:50:56+08:00 ] 127.0.0.1 /yitu/index.php?s=/admin/car/add.html
+INFO: [ app_begin ] --START--
+INFO: Run Think\Behavior\ReadHtmlCache [ RunTime:0.000083s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000388s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000033s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead E:\php\tool\wamp64\www\yitu\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `yt_picture` [ RunTime:0.000376s ]
+
+[ 2018-12-12T16:51:19+08:00 ] 127.0.0.1 /yitu/index.php?s=/admin/car/add.html
+INFO: [ app_begin ] --START--
+INFO: Run Think\Behavior\ReadHtmlCache [ RunTime:0.000083s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000439s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000092s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead E:\php\tool\wamp64\www\yitu\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `yt_picture` [ RunTime:0.000362s ]
+
+[ 2018-12-12T16:52:23+08:00 ] 127.0.0.1 /yitu/index.php?s=/admin/car/add.html
+INFO: [ app_begin ] --START--
+INFO: Run Think\Behavior\ReadHtmlCache [ RunTime:0.000082s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000371s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000038s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead E:\php\tool\wamp64\www\yitu\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `yt_picture` [ RunTime:0.000364s ]
+
+[ 2018-12-12T16:53:23+08:00 ] 127.0.0.1 /yitu/index.php?s=/admin/car/add.html
+INFO: [ app_begin ] --START--
+INFO: Run Think\Behavior\ReadHtmlCache [ RunTime:0.000084s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000361s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000035s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead E:\php\tool\wamp64\www\yitu\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `yt_picture` [ RunTime:0.000353s ]
+
+[ 2018-12-12T16:54:52+08:00 ] 127.0.0.1 /yitu/index.php?s=/admin/car/add.html
+INFO: [ app_begin ] --START--
+INFO: Run Think\Behavior\ReadHtmlCache [ RunTime:0.000084s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000352s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000032s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead E:\php\tool\wamp64\www\yitu\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `yt_picture` [ RunTime:0.000386s ]
+
+[ 2018-12-12T16:55:14+08:00 ] 127.0.0.1 /yitu/index.php?s=/admin/car/add.html
+INFO: [ app_begin ] --START--
+INFO: Run Think\Behavior\ReadHtmlCache [ RunTime:0.000084s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000363s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000033s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead E:\php\tool\wamp64\www\yitu\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `yt_picture` [ RunTime:0.000411s ]
+SQL: SELECT `id`,`path`,`url`,`md5`,`sha1`,`status`,`create_time` FROM `yt_picture` WHERE ( `md5` = '8b00965d14bf1e21401884b0fb2f7e56' ) AND ( `sha1` = 'f85b3ee6d65f4b7c11ae5abc4bb14159e7ddbb5d' ) LIMIT 1   [ RunTime:0.000227s ]
+
+[ 2018-12-12T16:55:35+08:00 ] 127.0.0.1 /yitu/index.php?s=/admin/car/add.html
+INFO: [ app_begin ] --START--
+INFO: Run Think\Behavior\ReadHtmlCache [ RunTime:0.000082s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000368s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000035s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead E:\php\tool\wamp64\www\yitu\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `yt_picture` [ RunTime:0.000420s ]
+
+[ 2018-12-12T16:56:16+08:00 ] 127.0.0.1 /yitu/index.php?s=/admin/car/add.html
+INFO: [ app_begin ] --START--
+INFO: Run Think\Behavior\ReadHtmlCache [ RunTime:0.000083s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000353s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000032s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead E:\php\tool\wamp64\www\yitu\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `yt_picture` [ RunTime:0.000439s ]
+
+[ 2018-12-12T16:56:37+08:00 ] 127.0.0.1 /yitu/index.php?s=/admin/car/add.html
+INFO: [ app_begin ] --START--
+INFO: Run Think\Behavior\ReadHtmlCache [ RunTime:0.000129s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000454s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000049s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead E:\php\tool\wamp64\www\yitu\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `yt_picture` [ RunTime:0.000504s ]
+
+[ 2018-12-12T16:57:09+08:00 ] 127.0.0.1 /yitu/index.php?s=/admin/car/add.html
+INFO: [ app_begin ] --START--
+INFO: Run Think\Behavior\ReadHtmlCache [ RunTime:0.000082s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000423s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000039s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead E:\php\tool\wamp64\www\yitu\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `yt_picture` [ RunTime:0.000414s ]
+
+[ 2018-12-12T16:57:17+08:00 ] 127.0.0.1 /yitu/index.php?s=/admin/car/add.html
+INFO: [ app_begin ] --START--
+INFO: Run Think\Behavior\ReadHtmlCache [ RunTime:0.000082s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000365s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000032s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead E:\php\tool\wamp64\www\yitu\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `yt_picture` [ RunTime:0.000355s ]
+
+[ 2018-12-12T16:57:55+08:00 ] 127.0.0.1 /yitu/index.php?s=/admin/car/add.html
+INFO: [ app_begin ] --START--
+INFO: Run Think\Behavior\ReadHtmlCache [ RunTime:0.000090s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000366s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000032s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead E:\php\tool\wamp64\www\yitu\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `yt_picture` [ RunTime:0.000365s ]
+
+[ 2018-12-12T16:58:45+08:00 ] 127.0.0.1 /yitu/index.php?s=/admin/car/add.html
+INFO: [ app_begin ] --START--
+INFO: Run Think\Behavior\ReadHtmlCache [ RunTime:0.000090s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000667s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000043s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead E:\php\tool\wamp64\www\yitu\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `yt_picture` [ RunTime:0.000399s ]
+SQL: SELECT `id`,`path`,`url`,`md5`,`sha1`,`status`,`create_time` FROM `yt_picture` WHERE ( `md5` = '8b00965d14bf1e21401884b0fb2f7e56' ) AND ( `sha1` = 'f85b3ee6d65f4b7c11ae5abc4bb14159e7ddbb5d' ) LIMIT 1   [ RunTime:0.000322s ]
+
+[ 2018-12-12T17:01:46+08:00 ] 127.0.0.1 /yitu/index.php?s=/admin/car/add.html
+INFO: [ app_begin ] --START--
+INFO: Run Think\Behavior\ReadHtmlCache [ RunTime:0.000082s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000352s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000032s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead E:\php\tool\wamp64\www\yitu\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `yt_picture` [ RunTime:0.000373s ]
+SQL: SELECT `id`,`path`,`url`,`md5`,`sha1`,`status`,`create_time` FROM `yt_picture` WHERE ( `md5` = '8b00965d14bf1e21401884b0fb2f7e56' ) AND ( `sha1` = 'f85b3ee6d65f4b7c11ae5abc4bb14159e7ddbb5d' ) LIMIT 1   [ RunTime:0.000284s ]
+SQL: SHOW COLUMNS FROM `yt_car` [ RunTime:0.002037s ]
+SQL: INSERT INTO `yt_car` (`car_title`,`car_licence`,`car_ownership`,`car_photo`) VALUES ('卡罗拉','川A66666',1,'30') [ RunTime:0.000632s ]
+
+[ 2018-12-12T17:02:49+08:00 ] 127.0.0.1 /yitu/index.php?s=/admin/attribute/update.html
+INFO: [ app_begin ] --START--
+INFO: Run Think\Behavior\ReadHtmlCache [ RunTime:0.000082s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000355s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000047s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead E:\php\tool\wamp64\www\yitu\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `yt_addons` [ RunTime:0.000410s ]
+SQL: SELECT `title`,`name` FROM `yt_addons` WHERE ( status=1 AND has_adminlist=1 )  [ RunTime:0.000207s ]
+SQL: SHOW COLUMNS FROM `yt_attribute` [ RunTime:0.000480s ]
+SQL: SELECT * FROM `yt_attribute` WHERE ( `name` = 'car_status' ) AND ( `model_id` = 19 ) AND ( `id` <> '191' ) LIMIT 1   [ RunTime:0.000299s ]
+SQL: SHOW COLUMNS FROM `yt_model` [ RunTime:0.000409s ]
+SQL: SELECT `name`,`extend` FROM `yt_model` WHERE ( `id` = 19 ) LIMIT 1   [ RunTime:0.000205s ]
+SQL: 				SHOW TABLES LIKE 'yt_car'; [ RunTime:0.001547s ]
+SQL: SELECT `name` FROM `yt_attribute` WHERE ( `id` = 191 ) LIMIT 1   [ RunTime:0.000195s ]
+SQL: 			ALTER TABLE `yt_car`
+CHANGE COLUMN `car_status` `car_status`  char(10) NOT NULL  DEFAULT 1 COMMENT '车辆状态' ; [ RunTime:0.022493s ]
+SQL: UPDATE `yt_attribute` SET `name`='car_status',`title`='车辆状态',`type`='radio',`field`='char(10) NOT NULL',`extra`='',`value`='1',`remark`='1:未出车\r\n2:已出车',`is_show`=1,`is_must`=0,`model_id`=19,`update_time`=1544605369 WHERE ( `id` = 191 ) [ RunTime:0.000792s ]
+SQL: SHOW COLUMNS FROM `yt_action` [ RunTime:0.000333s ]
+SQL: SELECT * FROM `yt_action` WHERE ( `name` = 'update_attribute' ) LIMIT 1   [ RunTime:0.000385s ]
+SQL: SHOW COLUMNS FROM `yt_action_log` [ RunTime:0.000259s ]
+SQL: INSERT INTO `yt_action_log` (`action_id`,`user_id`,`action_ip`,`model`,`record_id`,`create_time`,`remark`) VALUES (8,1,2130706433,'attribute',191,1544605369,'操作url：/yitu/index.php?s=/admin/attribute/update.html') [ RunTime:0.000719s ]
+
+[ 2018-12-12T17:09:48+08:00 ] 127.0.0.1 /yitu/index.php?s=/admin/car/add.html
+INFO: [ app_begin ] --START--
+INFO: Run Think\Behavior\ReadHtmlCache [ RunTime:0.000081s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000400s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000033s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead E:\php\tool\wamp64\www\yitu\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `yt_car` [ RunTime:0.000630s ]
+SQL: SELECT `car_licence` FROM `yt_car` WHERE ( car_licence = '川B666666' ) LIMIT 1   [ RunTime:0.000245s ]
+SQL: SHOW COLUMNS FROM `yt_picture` [ RunTime:0.000352s ]
+SQL: SELECT `id`,`path`,`url`,`md5`,`sha1`,`status`,`create_time` FROM `yt_picture` WHERE ( `md5` = '51e3386affddbc4348fbddcd247c46d8' ) AND ( `sha1` = 'bff1018b8550a9b4024f984d325c6f5158bd21ba' ) LIMIT 1   [ RunTime:0.000263s ]
+NOTIC: [2] Missing argument 2 for COM\Upload\Driver\Local::save(), called in E:\php\tool\wamp64\www\yitu\ThinkPHP\Library\COM\Upload.class.php on line 182 and defined E:\php\tool\wamp64\www\yitu\ThinkPHP\Library\COM\Upload\Driver\Local.class.php 第 73 行.
+NOTIC: [8] Undefined variable: replace E:\php\tool\wamp64\www\yitu\ThinkPHP\Library\COM\Upload\Driver\Local.class.php 第 77 行.
+SQL: INSERT INTO `yt_picture` (`md5`,`sha1`,`path`,`status`,`create_time`) VALUES ('51e3386affddbc4348fbddcd247c46d8','bff1018b8550a9b4024f984d325c6f5158bd21ba','/Uploads/Car/2018-12-12/5c10d05cb0b05.png',1,1544605788) [ RunTime:0.000269s ]
+SQL: INSERT INTO `yt_car` (`car_title`,`car_licence`,`car_ownership`,`car_photo`) VALUES ('汉兰达','川B666666',1,31) [ RunTime:0.000203s ]
+
+[ 2018-12-12T17:10:29+08:00 ] 127.0.0.1 /yitu/index.php?s=/admin/car/add.html
+INFO: [ app_begin ] --START--
+INFO: Run Think\Behavior\ReadHtmlCache [ RunTime:0.000080s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000383s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000031s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead E:\php\tool\wamp64\www\yitu\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `yt_car` [ RunTime:0.004208s ]
+SQL: SELECT `car_licence` FROM `yt_car` WHERE ( car_licence = '川B66666' ) LIMIT 1   [ RunTime:0.000185s ]
+SQL: INSERT INTO `yt_car` (`car_title`,`car_licence`,`car_ownership`) VALUES ('铁牛牛','川B66666',1) [ RunTime:0.000148s ]
+
+[ 2018-12-12T17:10:59+08:00 ] 127.0.0.1 /yitu/index.php?s=/admin/car/add.html
+INFO: [ app_begin ] --START--
+INFO: Run Think\Behavior\ReadHtmlCache [ RunTime:0.000082s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000402s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000032s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead E:\php\tool\wamp64\www\yitu\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `yt_car` [ RunTime:0.004433s ]
+SQL: SELECT `car_licence` FROM `yt_car` WHERE ( car_licence = '川B666666' ) LIMIT 1   [ RunTime:0.000215s ]
+
+[ 2018-12-12T17:27:47+08:00 ] 127.0.0.1 /yitu/index.php?s=/admin/car/index.html&nickname=%E9%93%81
+ERR: Think\Model:fetchSql您所请求的方法不存在！
+
+[ 2018-12-12T17:28:24+08:00 ] 127.0.0.1 /yitu/index.php?s=/admin/car/index.html&nickname=%E9%93%81
+ERR: Think\Model:fetchSql您所请求的方法不存在！
+
