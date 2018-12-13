@@ -21,12 +21,29 @@ class CarController extends AdminController {
 
         $nickname = I('nickname');
         if(isset($nickname)){
-            $map['car_title']  = array('like', '%'.(string)$nickname.'%');
-            $map['car_licence']  = array('like', '%'.(string)$nickname.'%');
+            $where  = " car_title like '%$nickname%' or car_licence  like '%$nickname%' ";
+        }else{
+            $where = " id > 0 ";
         }
-        $list   = $this->lists('Car', $map);
-print_r($list);
-        int_to_string($list);
+
+        $total = M('Car')->where($where)->count();
+        $REQUEST    =   (array)I('request.');
+        if( isset($REQUEST['r']) ){
+            $listRows = (int)$REQUEST['r'];
+        }else{
+            $listRows = C('LIST_ROWS') > 0 ? C('LIST_ROWS') : 10;
+        }
+        $page = new \COM\Page($total, $listRows, $REQUEST);
+
+        if($total>$listRows){
+            $page->setConfig('theme','%FIRST% %UP_PAGE% %LINK_PAGE% %DOWN_PAGE% %END% %HEADER%');
+        }
+        $p =$page->show();
+        $this->assign('_page', $p? $p: '');
+        $this->assign('_total',$total);
+
+        $list = M('Car')->where($where)->select();
+
         $this->assign('_list', $list);
 
         $this->meta_title = '车辆管理';
@@ -53,7 +70,7 @@ print_r($list);
                 $Picture = D('Picture');
                 $pic_driver = C('PICTURE_UPLOAD_DRIVER');
                 $car_driver = C('PICTURE_UPLOAD');
-                $car_driver['rootPath'] = './Uploads/Car/';
+                $car_driver['rootPath'] = 'Uploads/Car/';
 
                 $info = $Picture->upload(
                     $_FILES,
@@ -78,4 +95,71 @@ print_r($list);
         }
     }
 
+
+    public function edit($id){
+        $row = M('Car')->where(" id = {$id} ")->find();
+        if(IS_POST){
+
+            if(empty($_POST['car_title']) || empty($_POST['car_licence']) ){
+                $this->error('车名/车牌为必填');
+            }
+            $car_id = M('Car')->where("car_licence = '{$_POST['car_licence']}' and id != {$id}")->getField('id');
+
+            if($car_id > 0 ){
+                $this->error('该牌照车辆已录入');
+            }
+
+            if(!empty($_FILES['file'])){
+                if(empty($_FILES['file']['tmp_name'])){
+                    $this->error('图片太大');
+                }
+                /* 调用文件上传组件上传文件 */
+                $Picture = D('Picture');
+                $pic_driver = C('PICTURE_UPLOAD_DRIVER');
+                $car_driver = C('PICTURE_UPLOAD');
+                $car_driver['rootPath'] = './Uploads/Car/';
+
+                $info = $Picture->upload(
+                    $_FILES,
+                    $car_driver,
+                    C('PICTURE_UPLOAD_DRIVER'),
+                    C("UPLOAD_{$pic_driver}_CONFIG")
+                ); //TODO:上传到远程服务器
+                if($info){
+                    $_POST['car_photo'] = $info['file']['id'];
+                }
+            }
+
+            if(!M('Car')->save($_POST)){
+                $this->error('车辆编辑失败！');
+            }else{
+                $this->success('车辆编辑成功！',U('index'));
+            }
+        }else{
+
+            $this->meta_title = '车辆编辑';
+            $this->assign('row',$row);
+            $this->display('add');
+        }
+    }
+
+    public function remove(){
+        $data = I('id');
+
+        if(empty($data)){
+            $this->error('请选择要删除的数据');
+        }
+
+        if(is_array($data)){
+            $id = arr2str($data);
+        }else{
+            $id = $data;
+        }
+
+        if(!M('Car')->where(" id in({$id}) ")->delete()){
+            $this->error('车辆删除失败！');
+        }else{
+            $this->success('车辆删除成功！',U('index'));
+        }
+    }
 }

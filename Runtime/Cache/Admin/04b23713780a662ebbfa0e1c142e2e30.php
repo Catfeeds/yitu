@@ -3,17 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <title><?php echo ($meta_title); ?>|OneThink管理平台</title>
-    <link href="/yitu/Public/favicon.ico" type="image/x-icon" rel="shortcut icon">
-    <link rel="stylesheet" type="text/css" href="/yitu/Public/Admin/css/base.css" media="all">
-    <link rel="stylesheet" type="text/css" href="/yitu/Public/Admin/css/common.css" media="all">
-    <link rel="stylesheet" type="text/css" href="/yitu/Public/Admin/css/module.css">
-    <link rel="stylesheet" type="text/css" href="/yitu/Public/Admin/css/style.css" media="all">
-	<link rel="stylesheet" type="text/css" href="/yitu/Public/Admin/css/<?php echo (C("COLOR_STYLE")); ?>.css" media="all">
+    <link href="/yt/Public/favicon.ico" type="image/x-icon" rel="shortcut icon">
+    <link rel="stylesheet" type="text/css" href="/yt/Public/Admin/css/base.css" media="all">
+    <link rel="stylesheet" type="text/css" href="/yt/Public/Admin/css/common.css" media="all">
+    <link rel="stylesheet" type="text/css" href="/yt/Public/Admin/css/module.css">
+    <link rel="stylesheet" type="text/css" href="/yt/Public/Admin/css/style.css" media="all">
+	<link rel="stylesheet" type="text/css" href="/yt/Public/Admin/css/<?php echo (C("COLOR_STYLE")); ?>.css" media="all">
      <!--[if lt IE 9]>
-    <script type="text/javascript" src="/yitu/Public/static/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="/yt/Public/static/jquery-1.10.2.min.js"></script>
     <![endif]--><!--[if gte IE 9]><!-->
-    <script type="text/javascript" src="/yitu/Public/static/jquery-2.0.3.min.js"></script>
-    <script type="text/javascript" src="/yitu/Public/Admin/js/jquery.mousewheel.js"></script>
+    <script type="text/javascript" src="/yt/Public/static/jquery-2.0.3.min.js"></script>
+    <script type="text/javascript" src="/yt/Public/Admin/js/jquery.mousewheel.js"></script>
     <!--<![endif]-->
     
 </head>
@@ -93,7 +93,7 @@
 	<div class="cf">
 		<div class="fl">
             <a class="btn" href="<?php echo U('Car/add');?>">新 增</a>
-            <button class="btn ajax-post confirm" url="<?php echo U('Car/changeStatus',array('method'=>'deleteUser'));?>" target-form="ids">删 除</button>
+            <button class="btn ajax-post confirm" url="<?php echo U('Car/remove');?>" target-form="ids">删 除</button>
         </div>
 
         <!-- 高级搜索 -->
@@ -121,6 +121,10 @@
     <tbody>
 		<?php if(is_array($_list)): $i = 0; $__LIST__ = $_list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><tr>
             <td><input class="ids" type="checkbox" name="id[]" value="<?php echo ($vo["id"]); ?>" /></td>
+			<td>
+				<?php if(empty($vo["car_photo"])): else: ?> 	
+				<img src="/yitu/<?php echo (get_cover($vo["car_photo"],'path')); ?>" style="width: 15%"><?php endif; ?> 
+			</td>
 			<td><?php echo ($vo["car_title"]); ?></td>
 			<td><?php echo ($vo["car_licence"]); ?></td>
 			<td>
@@ -154,17 +158,17 @@
     <script type="text/javascript">
     (function(){
         var ThinkPHP = window.Think = {
-            "ROOT"   : "/yitu", //当前网站地址
-            "APP"    : "/yitu/index.php?s=", //当前项目地址
-            "PUBLIC" : "/yitu/Public", //项目公共目录地址
+            "ROOT"   : "/yt", //当前网站地址
+            "APP"    : "/yt/index.php?s=", //当前项目地址
+            "PUBLIC" : "/yt/Public", //项目公共目录地址
             "DEEP"   : "<?php echo C('URL_PATHINFO_DEPR');?>", //PATHINFO分割符
             "MODEL"  : ["<?php echo C('URL_MODEL');?>", "<?php echo C('URL_CASE_INSENSITIVE');?>", "<?php echo C('URL_HTML_SUFFIX');?>"],
             "VAR"    : ["<?php echo C('VAR_MODULE');?>", "<?php echo C('VAR_CONTROLLER');?>", "<?php echo C('VAR_ACTION');?>"]
         }
     })();
     </script>
-    <script type="text/javascript" src="/yitu/Public/static/think.js"></script>
-    <script type="text/javascript" src="/yitu/Public/Admin/js/common.js"></script>
+    <script type="text/javascript" src="/yt/Public/static/think.js"></script>
+    <script type="text/javascript" src="/yt/Public/Admin/js/common.js"></script>
     <script type="text/javascript">
         +function(){
             var $window = $(window), $subnav = $("#subnav"), url;
@@ -236,7 +240,7 @@
         }();
     </script>
     
-	<script src="/yitu/Public/static/thinkbox/jquery.thinkbox.js"></script>
+	<script src="/yt/Public/static/thinkbox/jquery.thinkbox.js"></script>
 
 	<script type="text/javascript">
 	//搜索功能

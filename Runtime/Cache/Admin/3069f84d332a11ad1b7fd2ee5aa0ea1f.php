@@ -3,17 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <title><?php echo ($meta_title); ?>|OneThink管理平台</title>
-    <link href="/yitu/Public/favicon.ico" type="image/x-icon" rel="shortcut icon">
-    <link rel="stylesheet" type="text/css" href="/yitu/Public/Admin/css/base.css" media="all">
-    <link rel="stylesheet" type="text/css" href="/yitu/Public/Admin/css/common.css" media="all">
-    <link rel="stylesheet" type="text/css" href="/yitu/Public/Admin/css/module.css">
-    <link rel="stylesheet" type="text/css" href="/yitu/Public/Admin/css/style.css" media="all">
-	<link rel="stylesheet" type="text/css" href="/yitu/Public/Admin/css/<?php echo (C("COLOR_STYLE")); ?>.css" media="all">
+    <link href="/yt/Public/favicon.ico" type="image/x-icon" rel="shortcut icon">
+    <link rel="stylesheet" type="text/css" href="/yt/Public/Admin/css/base.css" media="all">
+    <link rel="stylesheet" type="text/css" href="/yt/Public/Admin/css/common.css" media="all">
+    <link rel="stylesheet" type="text/css" href="/yt/Public/Admin/css/module.css">
+    <link rel="stylesheet" type="text/css" href="/yt/Public/Admin/css/style.css" media="all">
+	<link rel="stylesheet" type="text/css" href="/yt/Public/Admin/css/<?php echo (C("COLOR_STYLE")); ?>.css" media="all">
      <!--[if lt IE 9]>
-    <script type="text/javascript" src="/yitu/Public/static/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="/yt/Public/static/jquery-1.10.2.min.js"></script>
     <![endif]--><!--[if gte IE 9]><!-->
-    <script type="text/javascript" src="/yitu/Public/static/jquery-2.0.3.min.js"></script>
-    <script type="text/javascript" src="/yitu/Public/Admin/js/jquery.mousewheel.js"></script>
+    <script type="text/javascript" src="/yt/Public/static/jquery-2.0.3.min.js"></script>
+    <script type="text/javascript" src="/yt/Public/Admin/js/jquery.mousewheel.js"></script>
     <!--<![endif]-->
     
 </head>
@@ -75,7 +75,7 @@
             
 
             
-	<script type="text/javascript" src="/yitu/Public/static/uploadify/jquery.uploadify.min.js"></script>
+	<script type="text/javascript" src="/yt/Public/static/uploadify/jquery.uploadify.min.js"></script>
 	<div class="main-title cf">
         <h2><?php if(ACTION_NAME == 'add'): ?>新增车辆<?php else: ?>编辑车辆<?php endif; ?></h2>
 	</div>
@@ -83,43 +83,45 @@
 <div class="tab-wrap">
 	<div class="tab-content">
 	<!-- 表单 -->
-	<form id="form" action="<?php echo U('add');?>" method="post" class="form-horizontal">
+	<form id="form" action="<?php if(ACTION_NAME == 'add'): echo U('add'); else: echo U('edit'); endif; ?>" method="post" class="form-horizontal">
 		<!-- 基础文档模型 -->
         <div class="form-item cf">
             <label class="item-label">车辆图片</label>
             <div class="controls">
                 <input type="file" id="upload_picture_cover_id">
-                <input type="hidden" name="car_photo" id="cover_id_cover_id"/>
                 <div class="upload-img-box">
-                    <?php if(!empty($data[$field['name']])): ?><div class="upload-pre-item"><img src="<?php echo (get_cover($data[$field['name']],'path')); ?>"/></div><?php endif; ?>
+                    <?php if(!empty($row["car_photo"])): ?><div class="upload-pre-item">
+                            <input type="hidden" name="car_photo" value="<?php echo ($row["car_photo"]); ?>" />
+                            <img src="<?php echo (get_cover($row["car_photo"],'path')); ?>"/>
+                            </div><?php endif; ?>
                 </div>
             </div>
         </div>
         <div class="form-item">
             <label class="item-label">车名<span class="check-tips">（卡罗拉）</span></label>
             <div class="controls">
-                <input type="text" class="text input-large" name="car_title" value="">
+                <input type="text" class="text input-large" name="car_title" value="<?php echo ($row['car_title']); ?>">
             </div>
         </div>
         <div class="form-item">
             <label class="item-label">车牌<span class="check-tips">（川A99999）</span></label>
             <div class="controls">
-                <input type="text" class="text input-large" name="car_licence" value="">
+                <input type="text" class="text input-large" name="car_licence" value="<?php echo ($row['car_licence']); ?>">
             </div>
         </div>
         <div class="form-item">
             <label class="item-label">归属</label>
             <div class="controls">
                 <label class="radio">
-                    <input type="radio" value="1" checked name="car_ownership">公司
+                    <input type="radio" value="1" <?php if(($row['car_ownership'] == 1) or ($row['car_ownership'] == '')): ?>checked<?php endif; ?> name="car_ownership">公司
                 </label>
                 <label class="radio">
-                    <input type="radio" value="2" name="car_ownership">外调
+                    <input type="radio" value="2" <?php if(($row['car_ownership'] == 2)): ?>checked<?php endif; ?> name="car_ownership">外调
                 </label>
             </div>
         </div>
         <div class="form-item">
-            <input type="hidden" name="id" value="<?php echo ((isset($info["id"]) && ($info["id"] !== ""))?($info["id"]):''); ?>">
+            <input type="hidden" name="id" value="<?php echo ((isset($row["id"]) && ($row["id"] !== ""))?($row["id"]):''); ?>">
             <button class="btn submit-btn" data-type="form-submit" id="submit" type="submit" target-form="form-horizontal">确 定</button>
             <button class="btn btn-return" onclick="javascript:history.back(-1);return false;">返 回</button>
         </div>
@@ -139,17 +141,17 @@
     <script type="text/javascript">
     (function(){
         var ThinkPHP = window.Think = {
-            "ROOT"   : "/yitu", //当前网站地址
-            "APP"    : "/yitu/index.php?s=", //当前项目地址
-            "PUBLIC" : "/yitu/Public", //项目公共目录地址
+            "ROOT"   : "/yt", //当前网站地址
+            "APP"    : "/yt/index.php?s=", //当前项目地址
+            "PUBLIC" : "/yt/Public", //项目公共目录地址
             "DEEP"   : "<?php echo C('URL_PATHINFO_DEPR');?>", //PATHINFO分割符
             "MODEL"  : ["<?php echo C('URL_MODEL');?>", "<?php echo C('URL_CASE_INSENSITIVE');?>", "<?php echo C('URL_HTML_SUFFIX');?>"],
             "VAR"    : ["<?php echo C('VAR_MODULE');?>", "<?php echo C('VAR_CONTROLLER');?>", "<?php echo C('VAR_ACTION');?>"]
         }
     })();
     </script>
-    <script type="text/javascript" src="/yitu/Public/static/think.js"></script>
-    <script type="text/javascript" src="/yitu/Public/Admin/js/common.js"></script>
+    <script type="text/javascript" src="/yt/Public/static/think.js"></script>
+    <script type="text/javascript" src="/yt/Public/Admin/js/common.js"></script>
     <script type="text/javascript">
         +function(){
             var $window = $(window), $subnav = $("#subnav"), url;
@@ -236,6 +238,8 @@
             var reader = new FileReader();
             //读取File对象的数据
             reader.onload = function(evt){
+
+                $('.upload-img-box').remove();
                 //data:img base64 编码数据显示
                 var dom='<div class="post-img no-dash" style="position: relative;width: 15%">'
                     +'<div class="img-zoo img-box">'
@@ -258,6 +262,7 @@
             fd.append('car_title',$("input[name='car_title']").val());
             fd.append('car_licence',$("input[name='car_licence']").val());
             fd.append('car_ownership',$("input[name='car_ownership']").val());
+            fd.append('id',$("input[name='id']").val());
             $.ajax({
                 url: $('#form').attr('action'),
                 aysnc: true ,
@@ -281,7 +286,7 @@
                                 location.href=res.url;
                             }else if( $(that).hasClass('no-refresh')){
                                 $('#top-alert').find('button').click();
-                                $(that).removeClass('disabled').prop('disabled',false);
+                                //$(that).removeClass('disabled').prop('disabled',false);
                             }else{
                                 location.reload();
                             }
@@ -293,7 +298,7 @@
                                 location.href=res.url;
                             }else{
                                 $('#top-alert').find('button').click();
-                                $(that).removeClass('disabled').prop('disabled',false);
+                                //$(that).removeClass('disabled').prop('disabled',false);
                             }
                         },1500);
                     }
