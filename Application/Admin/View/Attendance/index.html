@@ -1,0 +1,205 @@
+<extend name="Public/base" />
+
+<!-- 子导航 -->
+<block name="sidebar">
+    <include file="sidemenu" />
+</block>
+
+<block name="body">
+    <script type="text/javascript" src="__STATIC__/uploadify/jquery.uploadify.min.js"></script>
+    <div class="main-title cf">
+        <h2><if condition="ACTION_NAME eq 'add'">新增出勤<else/>编辑出勤</if></h2>
+        <style type="text/css">
+            .form-item>.item-label{
+                padding-bottom: 25px;
+            }
+            .form-item>.item-label>.item-title{
+                display: inline-block;
+                width: 120px;
+            }
+        </style>
+    </div>
+    <!-- 标签页导航 -->
+    <div class="tab-wrap">
+        <div class="tab-content">
+            <!-- 表单 -->
+            <form id="form" action="" method="post" class="form-horizontal">
+            <!-- 基础文档模型 -->
+            <div class="form-item">
+                <label class="item-label" for="car_licence">
+                    <span class="item-title">车牌</span>
+                    <input type="text" class="text input-large" id="car_licence" name="car_title" value="">
+                </label>
+                <label class="item-label" for="car_title">
+                    <span class="item-title">车辆名字</span>
+                    <input type="text" class="text input-large" id="car_title" name="car_title" value="">
+                </label>
+                <label class="item-label" for="renter">
+                    <span class="item-title">租车人</span>
+                    <input type="text" class="text input-large" id="renter" name="car_title" value="">
+                </label>
+                <label class="item-label" for="telephone">
+                    <span class="item-title">联系电话</span>
+                    <input type="text" class="text input-large" id="telephone" name="car_title" value="">
+                </label>
+                <label class="item-label" for="deposit">
+                    <span class="item-title">押金</span>
+                    <input type="text" class="text input-large" id="deposit" name="car_title" value="">
+                </label>
+                <label class="item-label" for="deposit_type">
+                    <span class="item-title">押金类型</span>
+                    <input type="text" class="text input-large" id="deposit_type" name="car_title" value="">
+                </label>
+                <label class="item-label" for="want_car_time">
+                    <span class="item-title">取车时间</span>
+                    <input type="text" class="text input-large" id="want_car_time" name="car_title" value="">
+                </label>
+                <label class="item-label" for="want_car_fuel">
+                    <span class="item-title">取车油量</span>
+                    <input type="text" class="text input-large" id="want_car_fuel" name="car_title" value="">
+                </label>
+                <label class="item-label" for="want_car_mileage">
+                    <span class="item-title">取车里程</span>
+                    <input type="text" class="text input-large" id="want_car_mileage" name="car_title" value="">
+                </label>
+                <label class="item-label" for="return_car_time">
+                    <span class="item-title">还车时间</span>
+                    <input type="text" class="text input-large" id="return_car_time" name="car_title" value="">
+                </label>
+                <label class="item-label" for="return_car_fuel">
+                    <span class="item-title">还车油量</span>
+                    <input type="text" class="text input-large" id="return_car_fuel" name="car_title" value="">
+                </label>
+                <label class="item-label" for="return_car_mileage">
+                    <span class="item-title">还车里程</span>
+                    <input type="text" class="text input-large" id="return_car_mileage" name="car_title" value="">
+                </label>
+                <label class="item-label" for="unit_price">
+                    <span class="item-title">单价</span>
+                    <input type="text" class="text input-large" id="unit_price" name="car_title" value="">
+                </label>
+                <label class="item-label" for="used_days">
+                    <span class="item-title">使用天数</span>
+                    <input type="text" class="text input-large" id="used_days" name="car_title" value="">
+                </label>
+                <label class="item-label" for="total_price">
+                    <span class="item-title">总价</span>
+                    <input type="text" class="text input-large" id="total_price" name="car_title" value="">
+                </label>
+                <label class="item-label" for="return_deposit">
+                    <span class="item-title">已退押金</span>
+                    <input type="text" class="text input-large" id="return_deposit" name="car_title" value="">
+                </label>
+                <label class="item-label" for="outstanding_deposit">
+                    <span class="item-title">未退押金</span>
+                    <input type="text" class="text input-large" id="outstanding_deposit" name="car_title" value="">
+                </label>
+                <label class="item-label" for="car_status">
+                    <span class="item-title">出行状态</span>
+                    <input type="text" class="text input-large" id="car_status" name="car_title" value="">
+                </label>
+
+
+
+            </div>
+
+            <div class="form-item">
+                <input type="hidden" name="id" value="{$row.id|default=''}">
+                <button class="btn submit-btn" data-type="form-submit" id="submit" type="submit" target-form="form-horizontal">确 定</button>
+                <button class="btn btn-return" onclick="javascript:history.back(-1);return false;">返 回</button>
+            </div>
+            </form>
+        </div>
+    </div>
+</block>
+<block name="script">
+    <script type="text/javascript">
+        //导航高亮
+        $('.side-sub-menu').find('a[href="{:U('Car/index')}"]').closest('li').addClass('current');
+
+        var file=""
+        $('#upload_picture_cover_id').change(function (e) {
+            if(typeof (file)!='string'){
+                $('.post-img').remove()
+            }
+            file=e.target.files[0];
+            console.log(file)
+            var _this = $(this);
+            var reader = new FileReader();
+            //读取File对象的数据
+            reader.onload = function(evt){
+
+                $('.upload-img-box').remove();
+                //data:img base64 编码数据显示
+                var dom='<div class="post-img no-dash" style="position: relative;width: 15%">'
+                    +'<div class="img-zoo img-box">'
+                    +'<img src="'+evt.target.result+'"/>'
+                    +'</div>'
+                    +'<div class="del" style="color: red;width: 20px;position: absolute;top: 0;right: 0">'
+                    +'✖'
+                    +'</div>'
+                    +'</div>'
+                $('#upload_picture_cover_id').after(dom)
+
+
+            }
+            reader.readAsDataURL(file);
+        })
+
+        $('#submit').click(function () {
+            var fd = new FormData();
+            fd.append('file',file);
+            fd.append('car_title',$("input[name='car_title']").val());
+            fd.append('car_licence',$("input[name='car_licence']").val());
+            fd.append('car_ownership',$("input[name='car_ownership']").val());
+            fd.append('id',$("input[name='id']").val());
+            $.ajax({
+                url: $('#form').attr('action'),
+                aysnc: true ,
+                type: "POST" , // 默认使用POST方式
+                dataType:'json',
+                timeout:4000,
+                data: fd,
+                contentType : false,
+                processData : false,
+                cache : false,
+                success: function(res, textStatus, jqXHR){
+
+                    if (res.status==1) {
+                        if (res.url) {
+                            updateAlert(res.info + ' 页面即将自动跳转~','alert-success');
+                        }else{
+                            updateAlert(res.info ,'alert-success');
+                        }
+                        setTimeout(function(){
+                            if (res.url) {
+                                location.href=res.url;
+                            }else if( $(that).hasClass('no-refresh')){
+                                $('#top-alert').find('button').click();
+                                //$(that).removeClass('disabled').prop('disabled',false);
+                            }else{
+                                location.reload();
+                            }
+                        },1500);
+                    }else{
+                        updateAlert(res.info);
+                        setTimeout(function(){
+                            if (res.url) {
+                                location.href=res.url;
+                            }else{
+                                $('#top-alert').find('button').click();
+                                //$(that).removeClass('disabled').prop('disabled',false);
+                            }
+                        },1500);
+                    }
+                }
+            })
+            return false;
+        })
+        $('body').on('click','.del',function(){
+            $('.post-img').remove()
+            $('#upload_picture_cover_id').val('');
+            file = '';
+        })
+    </script>
+</block>
