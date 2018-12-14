@@ -1,0 +1,173 @@
+<extend name="Public/base" />
+<block name="style">
+    <link rel="stylesheet" type="text/css" href="__JS__/select2/dist/css/select2.css" media="all">
+    <script type="text/javascript" src="__JS__/select2/dist/js/select2.js"></script>
+    <script type="text/javascript" src="__JS__/select2/dist/js/i18n/zh-CN.js"></script>
+</block>
+<!-- 子导航 -->
+<block name="sidebar">
+    <include file="sidemenu" />
+</block>
+
+<block name="body">
+    <script type="text/javascript" src="__STATIC__/uploadify/jquery.uploadify.min.js"></script>
+    <div class="main-title cf">
+        <h2><if condition="ACTION_NAME eq 'add'">新增出勤<else/>编辑出勤</if></h2>
+        <style type="text/css">
+            .form-item>.item-label{
+                padding-bottom: 25px;
+            }
+            .form-item>.item-label>.item-title{
+                display: inline-block;
+                width: 120px;
+            }
+        </style>
+    </div>
+    <!-- 标签页导航 -->
+    <div class="tab-wrap">
+        <div class="tab-content">
+            <!-- 表单 -->
+            <form id="form" action="" method="post" class="form-horizontal">
+            <!-- 基础文档模型 -->
+            <div class="form-item">
+                <label class="item-label" for="car_licence">
+                    <span class="item-title">车辆归属</span>
+                    <input class="car_ownership" type="radio" value="1" <if condition="($row['car_ownership'] neq 2)" >checked </if> name="car_ownership">公司&nbsp;&nbsp;
+                    <input class="car_ownership" type="radio" value="2" <if condition="($row['car_ownership'] eq 2)" >checked </if> name="car_ownership">外调
+                </label>
+                <label class="item-label" for="car_licence">
+                    <span class="item-title">车名/车牌</span>
+                    <span class="select_span">
+                        <select class="js-data-select-ajax text input-large" name="car_licence"></select>
+                    </span>
+                    <input type="text" class="text input-large" id="input_car_licence" name="car_licence" value="">
+                </label>
+                <label class="item-label" for="renter">
+                    <span class="item-title">租车人</span>
+                    <input type="text" class="text input-large" id="renter" name="renter" value="">
+                </label>
+                <label class="item-label" for="telephone">
+                    <span class="item-title">联系电话</span>
+                    <input type="text" class="text input-large" id="telephone" name="telephone" value="">
+                </label>
+                <label class="item-label" for="deposit">
+                    <span class="item-title">押金</span>
+                    <input type="text" class="text input-large" id="deposit" name="deposit" value="">
+                </label>
+                <label class="item-label" for="deposit_type">
+                    <span class="item-title">押金类型</span>
+                    <input type="radio" value="1" <if condition="($row['deposit_type'] neq 2)" >checked </if> name="deposit_type">现金&nbsp;&nbsp;
+                    <input type="radio" value="2" <if condition="($row['deposit_type'] eq 2)" >checked </if> name="deposit_type">预授
+                </label>
+                <label class="item-label" for="want_car_time">
+                    <span class="item-title">取车时间</span>
+                    <input type="text" name="want_car_time" class="text input-large time" value="" placeholder="取车时间" />
+                </label>
+                <label class="item-label" for="want_car_fuel">
+                    <span class="item-title">取车油量</span>
+                    <input type="text" class="text input-large" id="want_car_fuel" name="want_car_fuel" value="">
+                </label>
+                <label class="item-label" for="want_car_mileage">
+                    <span class="item-title">取车里程</span>
+                    <input type="text" class="text input-large" id="want_car_mileage" name="want_car_mileage" value="">
+                </label>
+                <if condition="ACTION_NAME eq 'edit'">
+                <label class="item-label" for="return_car_time">
+                    <span class="item-title">还车时间</span>
+                    <input type="text" name="return_car_time" class="text input-large time" value="" placeholder="还车时间" />
+                </label>
+                <label class="item-label" for="return_car_fuel">
+                    <span class="item-title">还车油量</span>
+                    <input type="text" class="text input-large" id="return_car_fuel" name="return_car_fuel" value="">
+                </label>
+                <label class="item-label" for="return_car_mileage">
+                    <span class="item-title">还车里程</span>
+                    <input type="text" class="text input-large" id="return_car_mileage" name="return_car_mileage" value="">
+                </label>
+                <label class="item-label" for="unit_price">
+                    <span class="item-title">单价</span>
+                    <input type="text" class="text input-large" id="unit_price" name="unit_price" value="">
+                </label>
+                <label class="item-label" for="used_days">
+                    <span class="item-title">使用天数</span>
+                    <input type="text" class="text input-large" id="used_days" name="used_days" value="">
+                </label>
+                <label class="item-label" for="total_price">
+                <span class="item-title">总价</span>
+                <input type="text" class="text input-large" id="total_price" name="total_price" value="">
+                </label>
+                <label class="item-label" for="return_deposit">
+                    <span class="item-title">已退押金</span>
+                    <input type="text" class="text input-large" id="return_deposit" name="return_deposit" value="">
+                </label>
+                <label class="item-label" for="outstanding_deposit">
+                    <span class="item-title">未退押金</span>
+                    <input type="text" class="text input-large" id="outstanding_deposit" name="outstanding_deposit" value="">
+                </label>
+                <label class="item-label" for="car_status">
+                    <span class="item-title">出行状态</span>
+                    <input type="radio" value="1" <if condition="($row['car_status'] eq 1 or $row['car_status'] eq '')" >checked </if> name="car_status">待收车&nbsp;
+                    <input type="radio" value="2" <if condition="($row['car_status'] eq 2)" >checked </if> name="car_status">待查章&nbsp;
+                    <input type="radio" value="3" <if condition="($row['car_status'] eq 2)" >checked </if> name="car_status">已完成&nbsp;
+                </label>
+                </if>
+            </div>
+
+                <div class="form-item">
+                    <input type="hidden" name="id" value="{$info.id|default=''}">
+                    <button class="btn submit-btn ajax-post" id="submit" type="submit" target-form="form-horizontal">确 定</button>
+                    <button class="btn btn-return" onclick="javascript:history.back(-1);return false;">返 回</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</block>
+<block name="script">
+    <link href="__STATIC__/datetimepicker/css/datetimepicker.css" rel="stylesheet" type="text/css">
+    <php>if(C('COLOR_STYLE')=='blue_color') echo '<link href="__STATIC__/datetimepicker/css/datetimepicker_blue.css" rel="stylesheet" type="text/css">';</php>
+    <link href="__STATIC__/datetimepicker/css/dropdown.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="__STATIC__/datetimepicker/js/bootstrap-datetimepicker.min.js"></script>
+    <script type="text/javascript" src="__STATIC__/datetimepicker/js/locales/bootstrap-datetimepicker.zh-CN.js" charset="UTF-8"></script>
+
+    <script type="text/javascript">
+        //导航高亮
+        $('.side-sub-menu').find('a[href="{:U('Car/index')}"]').closest('li').addClass('current');
+
+        $('input[name="car_licence"]').hide().attr('disabled','disabled');
+        $('.car_ownership').click(function () {
+            if($(this).val() == 1){
+                $('input[name="car_licence"]').hide().attr('disabled','disabled');
+                $('.select_span').show();
+            }else {
+                $('input[name="car_licence"]').show().removeAttr('disabled');
+                $('.select_span').hide();
+                $('select[name="car_licence"]').attr('disabled','disabled')
+            }
+        })
+
+        $('.js-data-select-ajax').select2({
+            placeholder : '输入车名/车牌',
+            maximumSelectionLength : 10,
+            ajax: {
+                url: '{:U("search")}',
+                dataType: 'json',
+                delay: 600, //wait 250 milliseconds before triggering the request
+                processResults: function (res) {
+                    // Tranforms the top-level key of the response object from 'items' to 'results'
+                    return {
+                        results: res
+                    };
+                }
+                // Additional AJAX parameters go here; see the end of this chapter for the full code of this example
+            }
+
+        });
+
+        $('.time').datetimepicker({
+            format: 'yyyy-mm-dd hh:ii',
+            language:"zh-CN",
+            minView:0,
+            autoclose:true
+        });
+    </script>
+</block>
