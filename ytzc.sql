@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50721
 File Encoding         : 65001
 
-Date: 2018-12-12 18:25:40
+Date: 2018-12-14 11:10:35
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -64,7 +64,7 @@ CREATE TABLE `yt_action_log` (
   KEY `action_id_ix` (`action_id`),
   KEY `user_id_ix` (`user_id`),
   KEY `action_ip_ix` (`action_ip`)
-) ENGINE=MyISAM AUTO_INCREMENT=57 DEFAULT CHARSET=utf8 ROW_FORMAT=FIXED COMMENT='行为日志表';
+) ENGINE=MyISAM AUTO_INCREMENT=65 DEFAULT CHARSET=utf8 ROW_FORMAT=FIXED COMMENT='行为日志表';
 
 -- ----------------------------
 -- Records of yt_action_log
@@ -124,6 +124,14 @@ INSERT INTO `yt_action_log` VALUES ('53', '10', '1', '2130706433', 'Menu', '122'
 INSERT INTO `yt_action_log` VALUES ('54', '10', '1', '2130706433', 'Menu', '122', '操作url：/yitu/index.php?s=/admin/menu/edit/id/122.html', '1', '1544594407');
 INSERT INTO `yt_action_log` VALUES ('55', '10', '1', '2130706433', 'Menu', '122', '操作url：/yitu/index.php?s=/admin/menu/edit/id/122.html', '1', '1544594460');
 INSERT INTO `yt_action_log` VALUES ('56', '8', '1', '2130706433', 'attribute', '191', '操作url：/yitu/index.php?s=/admin/attribute/update.html', '1', '1544605369');
+INSERT INTO `yt_action_log` VALUES ('57', '10', '1', '2130706433', 'Menu', '123', '操作url：/yt/index.php?s=/admin/menu/add/pid/121.html', '1', '1544680185');
+INSERT INTO `yt_action_log` VALUES ('58', '10', '1', '2130706433', 'Menu', '0', '操作url：/yt/index.php?s=/admin/menu/del/id/123.html', '1', '1544680282');
+INSERT INTO `yt_action_log` VALUES ('59', '10', '1', '2130706433', 'Menu', '124', '操作url：/yt/index.php?s=/admin/menu/add/pid/121.html', '1', '1544680444');
+INSERT INTO `yt_action_log` VALUES ('60', '10', '1', '2130706433', 'Menu', '122', '操作url：/yt/index.php?s=/admin/menu/edit/id/122.html', '1', '1544680546');
+INSERT INTO `yt_action_log` VALUES ('61', '10', '1', '2130706433', 'Menu', '119', '操作url：/yt/index.php?s=/admin/menu/edit/id/119.html', '1', '1544680610');
+INSERT INTO `yt_action_log` VALUES ('62', '10', '1', '2130706433', 'Menu', '125', '操作url：/yt/index.php?s=/admin/menu/add/pid/119.html', '1', '1544680664');
+INSERT INTO `yt_action_log` VALUES ('63', '8', '1', '2130706433', 'attribute', '192', '操作url：/yt/index.php?s=/admin/attribute/update.html', '1', '1544755945');
+INSERT INTO `yt_action_log` VALUES ('64', '8', '1', '2130706433', 'attribute', '193', '操作url：/yt/index.php?s=/admin/attribute/update.html', '1', '1544756045');
 
 -- ----------------------------
 -- Table structure for yt_addons
@@ -186,8 +194,8 @@ CREATE TABLE `yt_attachment` (
 DROP TABLE IF EXISTS `yt_attendance`;
 CREATE TABLE `yt_attendance` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT '主键',
-  `car_licence` varchar(50) NOT NULL COMMENT '车辆牌照',
-  `car_title` varchar(255) NOT NULL COMMENT '车辆名字',
+  `car_id` int(20) NOT NULL COMMENT '车辆id',
+  `car_licence` varchar(255) NOT NULL COMMENT '车辆牌照',
   `renter` varchar(255) NOT NULL COMMENT '租车人',
   `telephone` varchar(20) NOT NULL COMMENT '联系电话',
   `deposit` varchar(255) NOT NULL COMMENT '押金',
@@ -206,11 +214,13 @@ CREATE TABLE `yt_attendance` (
   `car_status` char(10) NOT NULL DEFAULT '1' COMMENT '出行状态',
   `created_time` int(10) NOT NULL COMMENT '创建时间',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC;
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC;
 
 -- ----------------------------
 -- Records of yt_attendance
 -- ----------------------------
+INSERT INTO `yt_attendance` VALUES ('1', '7', '7', 'leo', '15982345102', '1000', '1', '2018', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '1', '0');
+INSERT INTO `yt_attendance` VALUES ('2', '8', '8', '罗霄', '15982345102', '1000000', '2', '2018', '2345678', '345678', '0', '0', '0', '0', '0', '0', '0', '0', '1', '0');
 
 -- ----------------------------
 -- Table structure for yt_attribute
@@ -428,8 +438,8 @@ INSERT INTO `yt_attribute` VALUES ('188', 'car_title', '车辆名字', 'varchar(
 INSERT INTO `yt_attribute` VALUES ('189', 'car_licence', '车辆牌照', 'varchar(255) NOT NULL', 'string', '', '川A66666', '1', '', '19', '1', '1', '1544582890', '1544582875');
 INSERT INTO `yt_attribute` VALUES ('190', 'car_ownership', '车辆归属', 'tinyint(2) NOT NULL', 'num', '1', '1:公司\r\n2:调取', '1', '', '19', '0', '1', '1544583927', '1544583016');
 INSERT INTO `yt_attribute` VALUES ('191', 'car_status', '车辆状态', 'char(10) NOT NULL', 'radio', '1', '1:未出车\r\n2:已出车', '1', '', '19', '0', '1', '1544605369', '1544583313');
-INSERT INTO `yt_attribute` VALUES ('192', 'car_licence', '车辆牌照', 'varchar(50) NOT NULL', 'string', '', '', '1', '', '20', '1', '1', '1544584059', '1544583704');
-INSERT INTO `yt_attribute` VALUES ('193', 'car_title', '车辆名字', 'varchar(255) NOT NULL', 'string', '', '', '1', '', '20', '0', '1', '1544584115', '1544584115');
+INSERT INTO `yt_attribute` VALUES ('192', 'car_id', '车辆id', 'int(20) NOT NULL', 'num', '', '公司车辆id', '1', '', '20', '0', '1', '1544755945', '1544583704');
+INSERT INTO `yt_attribute` VALUES ('193', 'car_licence', '车辆牌照', 'varchar(255) NOT NULL', 'string', '', '结构为 卡罗拉-川A55555 或者 川B88888', '1', '', '20', '0', '1', '1544756045', '1544584115');
 INSERT INTO `yt_attribute` VALUES ('194', 'renter', '租车人', 'varchar(255) NOT NULL', 'string', '', '', '1', '', '20', '1', '1', '1544584221', '1544584221');
 INSERT INTO `yt_attribute` VALUES ('195', 'telephone', '联系电话', 'varchar(20) NOT NULL', 'string', '', '', '1', '', '20', '1', '1', '1544584263', '1544584263');
 INSERT INTO `yt_attribute` VALUES ('196', 'deposit', '押金', 'varchar(255) NOT NULL', 'string', '', '', '1', '', '20', '0', '1', '1544585584', '1544585584');
@@ -759,14 +769,15 @@ CREATE TABLE `yt_car` (
   `car_ownership` tinyint(2) NOT NULL DEFAULT '1' COMMENT '车辆归属',
   `car_status` char(10) NOT NULL DEFAULT '1' COMMENT '车辆状态',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC;
+) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC;
 
 -- ----------------------------
 -- Records of yt_car
 -- ----------------------------
-INSERT INTO `yt_car` VALUES ('1', '30', '卡罗拉', '川A66666', '1', '');
-INSERT INTO `yt_car` VALUES ('2', '31', '汉兰达', '川B666666', '1', '1');
-INSERT INTO `yt_car` VALUES ('3', '', '铁牛牛', '川B66666', '1', '1');
+INSERT INTO `yt_car` VALUES ('7', '', '别克', '川A88888', '1', '1');
+INSERT INTO `yt_car` VALUES ('5', '', 'eqw', 'eq', '1', '1');
+INSERT INTO `yt_car` VALUES ('6', '', '汉兰达', '川A66666', '1', '1');
+INSERT INTO `yt_car` VALUES ('8', '', '卡罗拉', '川A66555', '1', '1');
 
 -- ----------------------------
 -- Table structure for yt_category
@@ -1068,7 +1079,7 @@ CREATE TABLE `yt_menu` (
   `group` varchar(50) DEFAULT '' COMMENT '分组',
   `is_dev` tinyint(1) unsigned NOT NULL DEFAULT '0' COMMENT '是否仅开发者模式可见',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=123 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=126 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of yt_menu
@@ -1182,10 +1193,12 @@ INSERT INTO `yt_menu` VALUES ('115', '生成', '58', '0', 'Model/generate', '0',
 INSERT INTO `yt_menu` VALUES ('116', '新增钩子', '57', '0', 'Addons/addHook', '0', '', '', '0');
 INSERT INTO `yt_menu` VALUES ('117', '编辑钩子', '57', '0', 'Addons/edithook', '0', '', '', '0');
 INSERT INTO `yt_menu` VALUES ('118', '车辆', '0', '0', 'Car/index', '0', '', '', '0');
-INSERT INTO `yt_menu` VALUES ('119', '车辆出勤', '0', '0', 'Attendance/index', '0', '', '', '0');
+INSERT INTO `yt_menu` VALUES ('119', '出勤', '0', '0', 'Attendance/index', '0', '', '', '0');
 INSERT INTO `yt_menu` VALUES ('120', '车辆费用', '0', '0', 'Cost/index', '0', '', '', '0');
 INSERT INTO `yt_menu` VALUES ('121', '车辆信息', '118', '0', 'Car/index', '0', '', '车辆管理', '0');
-INSERT INTO `yt_menu` VALUES ('122', '新增车辆', '121', '0', 'Car/add', '0', '新增车辆', '', '0');
+INSERT INTO `yt_menu` VALUES ('122', '新增车辆', '121', '0', 'Car/add', '0', '新增车辆', '车辆信息', '0');
+INSERT INTO `yt_menu` VALUES ('124', '车辆编辑', '121', '0', 'Car/edit', '0', '', '车辆信息', '0');
+INSERT INTO `yt_menu` VALUES ('125', '出勤信息', '119', '0', 'Car/index', '0', '', '出勤管理', '0');
 
 -- ----------------------------
 -- Table structure for yt_model
