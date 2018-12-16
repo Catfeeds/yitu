@@ -3,16 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <title><?php echo ((isset($meta_title) && ($meta_title !== ""))?($meta_title):'OneThink后台管理'); ?></title>
-    <link href="/yt/Public/favicon.ico" type="image/x-icon" rel="shortcut icon">
-    <link rel="stylesheet" type="text/css" href="/yt/Public/Admin/css/base.css" media="all">
-    <link rel="stylesheet" type="text/css" href="/yt/Public/Admin/css/common.css" media="all">
-    <link rel="stylesheet" type="text/css" href="/yt/Public/Admin/css/module.css">
-    <link rel="stylesheet" type="text/css" href="/yt/Public/Admin/css/style.css" media="all">
-	<link rel="stylesheet" type="text/css" href="/yt/Public/Admin/css/<?php echo (C("COLOR_STYLE")); ?>.css" media="all">
+    <link href="/yitu/Public/favicon.ico" type="image/x-icon" rel="shortcut icon">
+    <link rel="stylesheet" type="text/css" href="/yitu/Public/Admin/css/base.css" media="all">
+    <link rel="stylesheet" type="text/css" href="/yitu/Public/Admin/css/common.css" media="all">
+    <link rel="stylesheet" type="text/css" href="/yitu/Public/Admin/css/module.css">
+    <link rel="stylesheet" type="text/css" href="/yitu/Public/Admin/css/style.css" media="all">
+	<link rel="stylesheet" type="text/css" href="/yitu/Public/Admin/css/<?php echo (C("COLOR_STYLE")); ?>.css" media="all">
      <!--[if lt IE 9]>
-    <script type="text/javascript" src="/yt/Public/static/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="/yitu/Public/static/jquery-1.10.2.min.js"></script>
     <![endif]--><!--[if gte IE 9]><!-->
-    <script type="text/javascript" src="/yt/Public/static/jquery-2.0.3.min.js"></script>
+    <script type="text/javascript" src="/yitu/Public/static/jquery-2.0.3.min.js"></script>
     <!--<![endif]-->
 </head>
 <body class="index-body">

@@ -42,7 +42,7 @@ class CarController extends AdminController {
         $this->assign('_page', $p? $p: '');
         $this->assign('_total',$total);
 
-        $list = M('Car')->where($where)->select();
+        $list = M('Car')->where($where)->order('id desc')->select();
 
         $this->assign('_list', $list);
 
