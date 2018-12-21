@@ -101,14 +101,16 @@
 	//搜索功能
 	$("#search").click(function(){
 		var url = $(this).attr('url');
-        var query  = $('.search-form').find('input').serialize();
-        query = query.replace(/(&|^)(\w*?\d*?\-*?_*?)*?=?((?=&)|(?=$))/g,'');
+        //var query  = $('.search-form').find('input').serialize();
+        var query  = $('.search-form').find('*[name]').serialize();
+		query = query.replace(/(&|^)(\w*?\d*?\-*?_*?)*?=?((?=&)|(?=$))/g,'');
         query = query.replace(/^&/g,'');
         if( url.indexOf('?')>0 ){
             url += '&' + query;
         }else{
             url += '?' + query;
         }
+        //alert(url);
 		window.location.href = url;
 	});
 	//回车搜索
