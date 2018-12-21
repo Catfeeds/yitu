@@ -1,6 +1,27 @@
 //dom加载完成后执行的js
 ;$(function(){
 
+    //导出功能
+    $(".ajax-export").click(function(){
+        var url = $(this).attr('url');
+        var query  = $('.search-form').find('*[name]').serialize();
+        var id_arr  = $('.data-table').find('*[name]').serialize();
+        if(id_arr){
+            query += '&'+id_arr;
+        }
+        //console.debug(query);return false;
+        query = query.replace(/(&|^)(\w*?\d*?\-*?_*?)*?=?((?=&)|(?=$))/g,'');
+        query = query.replace(/^&/g,'');
+        //alert(query);
+        if( url.indexOf('?')>0 ){
+            url += '&' + query;
+        }else{
+            url += '?' + query;
+        }
+        //alert(url);return false;
+        window.location.href = url;
+    });
+
 	//全选的实现
 	$(".check-all").click(function(){
 		$(".ids").prop("checked", this.checked);

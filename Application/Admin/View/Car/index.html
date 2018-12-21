@@ -9,12 +9,32 @@
 		<div class="fl">
             <a class="btn" href="{:U('Car/add')}">新 增</a>
             <button class="btn ajax-post confirm" url="{:U('Car/remove')}" target-form="ids">删 除</button>
+            <button class="btn ajax-export " url="{:U('Car/export?table=car')}">导 出</button>
         </div>
-
+		<div style="clear: both;"></div>
         <!-- 高级搜索 -->
-		<div class="search-form fr cf">
-			<div class="sleft">
-				<input type="text" name="nickname" class="search-input" value="{:I('car_title')}" placeholder="请输入车名/车牌">
+		<div class="search-form cf">
+			<div class="fl" style="height: 30px;width: 30%;line-height: 40px">
+				<input type="hidden" name="car_status" value="{:I('car_status')}" />
+				<a href="{:U('index')}">
+					全部
+					<span>({:$_all > 0 ? $_all : 0})</span>
+				</a>
+				<a href="{:U('index',array('car_status'=>1))}">
+					待收车
+					<span>({:$car_status[1] > 0 ? $car_status[1] : 0})</span>
+				</a>
+				<a href="{:U('index',array('car_status'=>2))}">
+					待查章
+					<span>({:$car_status[2] > 0 ? $car_status[2] : 0})</span>
+				</a>
+				<a href="{:U('index',array('car_status'=>3))}">
+					已完成
+					<span>({:$car_status[3] > 0 ? $car_status[3] : 0})</span>
+				</a>
+			</div>
+			<div class="sleft fr">
+				<input type="text" name="nickname" class="search-input" value="{:I('nickname')}" placeholder="请输入车名/车牌">
 				<a class="sch-btn" href="javascript:;" id="search" url="{:U('index')}"><i class="btn-search"></i></a>
 			</div>
 		</div>

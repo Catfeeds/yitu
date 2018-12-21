@@ -18,14 +18,14 @@ use User\Api\UserApi;
 class CarController extends AdminController {
 
     public function index(){
-
-        $nickname = I('nickname');
-        if(isset($nickname)){
-            $where  = " car_title like '%$nickname%' or car_licence  like '%$nickname%' ";
-        }else{
-            $where = " id > 0 ";
+        $where = " id > 0 ";
+        $data = I('get.');
+        if(isset($data['nickname'])){
+            $where  .= " and car_title like '%{$data['nickname']}%' or car_licence  like '%{$data['nickname']}%' ";
         }
-
+        if(isset($data['car_status'])){
+            $where  .= " and car_status={$data['car_status']} ";
+        }
         $total = M('Car')->where($where)->count();
         $REQUEST    =   (array)I('request.');
         if( isset($REQUEST['r']) ){
@@ -42,10 +42,18 @@ class CarController extends AdminController {
         $this->assign('_page', $p? $p: '');
         $this->assign('_total',$total);
 
-        $list = M('Car')->where($where)->order('id desc')->select();
+        $list = M('Car')->field('*,case car_status when 1 then "待收车" when 2 then "待查章" when 3 then "待出租" end as car_status')->where($where)->order('id desc')->select();
 
         $this->assign('_list', $list);
 
+        //获取各个出行状态车辆数量
+        $result = M('Car')->field('car_status , count(id) total')->group('car_status')->select();
+        if(!empty($result)){
+            $car_status = array_column($result, 'total','car_status');
+            $all = array_sum(array_values($car_status));
+        }
+        $this->assign('car_status',$car_status);
+        $this->assign('_all', $all);
         $this->meta_title = '车辆管理';
         $this->display();
     }
@@ -161,5 +169,14 @@ class CarController extends AdminController {
         }else{
             $this->success('车辆删除成功！',U('index'));
         }
+    }
+
+    /**
+     * 导出
+     */
+    public function export($table){
+
+        $excel = new \Think\Excel();
+        $excel->export($_GET,$table);
     }
 }

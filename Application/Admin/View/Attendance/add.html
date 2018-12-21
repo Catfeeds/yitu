@@ -32,14 +32,14 @@
             <div class="form-item">
                 <label class="item-label" for="car_licence">
                     <span class="item-title">车辆归属</span>
-                    <input class="car_ownership" type="radio" value="1" <if condition="($row['car_id'] gt 1)" >checked </if> name="car_ownership">公司&nbsp;&nbsp;
-                    <input class="car_ownership" type="radio" value="2" <if condition="($row['car_ownership'] lt 1)" >checked </if> name="car_ownership">外调
+                    <input class="car_ownership" type="radio" value="1" <if condition="($row['car_ownership'] eq 1) or ($row['car_ownership'] eq '')"> checked </if> name="car_ownership">公司&nbsp;&nbsp;
+                    <input class="car_ownership" type="radio" value="2" <if condition="($row['car_ownership'] eq 2)" >checked </if> name="car_ownership">外调
                 </label>
                 <label class="item-label" for="car_licence">
                     <span class="item-title">车名/车牌</span>
                     <span class="select_span">
                         <select class="js-data-select-ajax text input-large" name="car_licence">
-                            <option value="{$row['car_id']}">{$row['car_licence']}</option>
+                            <option value="{$row['car_id'] > 0 ? $row['car_id'] : $row['car_licence'] }">{$row['car_licence']}</option>
                         </select>
                     </span>
                     <input type="text" class="text input-large" id="input_car_licence" name="car_licence" value="">
@@ -63,15 +63,15 @@
                 </label>
                 <label class="item-label" for="want_car_time">
                     <span class="item-title">取车时间</span>
-                    <input type="text" name="want_car_time" class="text input-large time" value="{$row['want_car_time']}" placeholder="取车时间" />
+                    <input type="text" name="want_car_time" class="text input-large time" value="{$row['want_car_time'] == '0000-00-00 00:00:00' ? '':$row['want_car_time']}" placeholder="取车时间" />
                 </label>
                 <label class="item-label" for="want_car_fuel">
                     <span class="item-title">取车油量</span>
-                    <input type="text" class="text input-large" id="want_car_fuel" name="want_car_fuel" value="{$row['want_car_fuel']}">
+                    <input type="text" class="text input-large" id="want_car_fuel" name="want_car_fuel" value="{$row['want_car_fuel'] > 0 ? $row['want_car_fuel'] : ''}">
                 </label>
                 <label class="item-label" for="want_car_mileage">
                     <span class="item-title">取车里程</span>
-                    <input type="text" class="text input-large" id="want_car_mileage" name="want_car_mileage" value="{$row['want_car_mileage']}">
+                    <input type="text" class="text input-large" id="want_car_mileage" name="want_car_mileage" value="{$row['want_car_mileage'] > 0 ? $row['want_car_mileage'] : ''}">
                 </label>
                 <if condition="ACTION_NAME eq 'edit'">
                 <label class="item-label" for="return_car_time">
@@ -80,31 +80,32 @@
                 </label>
                 <label class="item-label" for="return_car_fuel">
                     <span class="item-title">还车油量</span>
-                    <input type="text" class="text input-large" id="return_car_fuel" name="return_car_fuel" value="{$row['return_car_fuel']}">
+                    <input type="text" class="text input-large" id="return_car_fuel" name="return_car_fuel" value="{$row['return_car_fuel'] > 0 ? $row['return_car_fuel'] : ''}">
                 </label>
                 <label class="item-label" for="return_car_mileage">
                     <span class="item-title">还车里程</span>
-                    <input type="text" class="text input-large" id="return_car_mileage" name="return_car_mileage" value="{$row['return_car_mileage']}">
+                    <input type="text" class="text input-large" id="return_car_mileage" name="return_car_mileage" value="{$row['return_car_mileage'] > 0 ? $row['return_car_mileage'] : ''}">
                 </label>
                 <label class="item-label" for="unit_price">
                     <span class="item-title">单价</span>
-                    <input type="text" class="text input-large" id="unit_price" name="unit_price" value="{$row['unit_price']}">
+                    <input type="text" class="text input-large" id="unit_price" name="unit_price" value="{$row['unit_price'] > 0 ? $row['unit_price'] : ''}">
                 </label>
                 <label class="item-label" for="used_days">
                     <span class="item-title">使用天数</span>
-                    <input type="text" class="text input-large" id="used_days" name="used_days" value="{$row['used_days']}">
+                    <input type="text" class="text input-large" id="used_days" name="used_days" value="{$row['used_days'] > 0 ? $row['used_days'] : ''}" >
+                    <span class="use_time" style="color: red"></span>
                 </label>
                 <label class="item-label" for="total_price">
                 <span class="item-title">总价</span>
-                <input type="text" class="text input-large" id="total_price" name="total_price" value="{$row['total_price']}">
+                <input type="text" class="text input-large" id="total_price" name="total_price" value="{$row['total_price'] > 0 ? $row['total_price'] : ''}">
                 </label>
                 <label class="item-label" for="return_deposit">
                     <span class="item-title">已退押金</span>
-                    <input type="text" class="text input-large" id="return_deposit" name="return_deposit" value="{$row['return_deposit']}">
+                    <input type="text" class="text input-large" id="return_deposit" name="return_deposit" value="{$row['return_deposit'] > 0 ? $row['return_deposit'] : ''}">
                 </label>
                 <label class="item-label" for="outstanding_deposit">
                     <span class="item-title">未退押金</span>
-                    <input type="text" class="text input-large" id="outstanding_deposit" name="outstanding_deposit" value="{$row['outstanding_deposit']}">
+                    <input type="text" class="text input-large" id="outstanding_deposit" name="outstanding_deposit" value="{$row['outstanding_deposit'] > 0 ? $row['outstanding_deposit'] : ''}">
                 </label>
                 <label class="item-label" for="car_status">
                     <span class="item-title">出行状态</span>
@@ -116,7 +117,7 @@
             </div>
 
                 <div class="form-item">
-                    <input type="hidden" name="id" value="{$info.id|default=''}">
+                    <input type="hidden" name="id" value="{$row.id|default=''}">
                     <button class="btn submit-btn ajax-post" id="submit" type="submit" target-form="form-horizontal">确 定</button>
                     <button class="btn btn-return" onclick="javascript:history.back(-1);return false;">返 回</button>
                 </div>
@@ -133,10 +134,56 @@
 
     <script type="text/javascript">
         //导航高亮
-        $('.side-sub-menu').find('a[href="{:U('Car/index')}"]').closest('li').addClass('current');
+        $('.side-sub-menu').find('a[href="{:U('Attendance/index')}"]').closest('li').addClass('current');
+        $('input[name="total_price"]').focus(function(){
+            var unit_price = $('input[name="unit_price"]').val();
+            var use_time = $('input[name="used_days"]').val();
+            //console.log(unit_price)
+            //console.log(use_time)
+            $(this).val(Math.round(unit_price*use_time))
+        })
 
-        $('input[name="return_car_time"]').blur(function(){
-            alert(222);
+        //计算使用天数
+        $('input[name="used_days"]').focus(function(){
+
+            if($(this).val() == 0 || $(this).val() == '' ){
+                // alert(222);
+                var want_car_time = $('input[name="want_car_time"]').val();
+                var return_car_time = $('input[name="return_car_time"]').val();
+                if(want_car_time == '' || return_car_time == ''){
+                    updateAlert('取车时间/还车时间不能为空');
+                    setTimeout(function(){
+                        $('#top-alert').find('button').click();
+                    },1500);
+                    return false;
+                }
+                var want_time = new Date(want_car_time).getTime();
+                var return_time = new Date(return_car_time);
+                var date = return_time - want_time;
+                if(date < 0){
+                    updateAlert('还车时间必须大于取车时间');
+                    setTimeout(function(){
+                        $('#top-alert').find('button').click();
+                    },1500);
+                    return false;
+                }
+                var days    = date / 1000 / 60 / 60 / 24;
+                var daysRound   = Math.floor(days);
+                var hours    = date/ 1000 / 60 / 60 - (24 * daysRound);
+                var hoursRound   = Math.floor(hours);
+                $('.use_time').text('('+daysRound+"天"+hoursRound +"时)");
+                <?php if($row['used_days'] == 0){ ?>
+                if(hoursRound > 8){
+                    hoursRound = 1;
+                }else {
+                    hoursRound = hoursRound/24;
+                }
+                var use_time = daysRound+hoursRound;
+                $(this).val(use_time.toFixed(1));
+                <?php } ?>
+
+                console.log("倒计时"+(daysRound+"天"+hoursRound +"时"));
+            }
         });
 
         $('input[name="car_licence"]').hide().attr('disabled','disabled');

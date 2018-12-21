@@ -10,13 +10,28 @@
             <a class="btn" href="{:U('add')}">新 增</a>
             <button class="btn ajax-post confirm" url="{:U('Attendance/remove')}" target-form="ids">删 除</button>
         </div>
-
+        <div style="clear: both;"></div>
         <!-- 高级搜索 -->
-		<div class="search-form fr cf">
-			<div class="sleft">
-				<input type="text" name="nickname" class="search-input" value="{:I('car_title')}" placeholder="请输入车名/车牌">
-				<a class="sch-btn" href="javascript:;" id="search" url="{:U('index')}"><i class="btn-search"></i></a>
-			</div>
+		<div class="search-form  cf">
+            <div class="fl" style="height: 30px;line-height: 40px">
+				状态:
+				<select name="car_status">
+					<option>全部</option>
+					<option value="1" <if condition="(I('car_status') eq 1)" >checked </if> >待收车</option>
+					<option value="2" <if condition="(I('car_status') eq 2)" >checked </if> >待查章</option>
+					<option value="3" <if condition="(I('car_status') eq 3)" >checked </if> >已完成</option>
+				</select>
+				&nbsp;&nbsp;
+				开始时间:
+				<input type="text" style="width: 100px" name="want_car_time" class="text input-large time" value="{:I('start_time')}" placeholder="开始时间" />
+				&nbsp;&nbsp;
+				结束时间:
+				<input type="text" style="width: 100px" name="want_car_time" class="text input-large time" value="{:I('end_time')}" placeholder="结束时间" />
+				&nbsp;&nbsp;
+				搜索:
+				<input type="text" name="nickname" class="text" value="{:I('nickname')}" placeholder="请输入车名/车牌">
+				<a class="sch-btn1" href="javascript:;" id="search" url="{:U('index')}"><i class="btn-search"></i></a>
+            </div>
 		</div>
     </div>
     <!-- 数据列表 -->
@@ -44,11 +59,11 @@
 		<tr>
             <td><input class="ids" type="checkbox" name="id[]" value="{$vo.id}" /></td>
 			<td>
-				<if condition="$vo['car_id'] gt 1">
-				公司
-				<else /> 	
-				外调
-				</if>
+				<neq name="vo.car_ownership" value="1">
+					外调
+				<else/>
+					公司
+				</neq>
 			</td>
 			<td>{$vo.car_licence}</td>
 			<td>{$vo.renter}</td>
@@ -75,6 +90,11 @@
 </block>
 
 <block name="script">
+	<link href="__STATIC__/datetimepicker/css/datetimepicker.css" rel="stylesheet" type="text/css">
+	<php>if(C('COLOR_STYLE')=='blue_color') echo '<link href="__STATIC__/datetimepicker/css/datetimepicker_blue.css" rel="stylesheet" type="text/css">';</php>
+	<link href="__STATIC__/datetimepicker/css/dropdown.css" rel="stylesheet" type="text/css">
+	<script type="text/javascript" src="__STATIC__/datetimepicker/js/bootstrap-datetimepicker.min.js"></script>
+	<script type="text/javascript" src="__STATIC__/datetimepicker/js/locales/bootstrap-datetimepicker.zh-CN.js" charset="UTF-8"></script>
 	<script src="__STATIC__/thinkbox/jquery.thinkbox.js"></script>
 
 	<script type="text/javascript">
@@ -99,6 +119,12 @@
 		}
 	});
     //导航高亮
-    $('.side-sub-menu').find('a[href="{:U('Car/index')}"]').closest('li').addClass('current');
+    $('.side-sub-menu').find('a[href="{:U('Attendance/index')}"]').closest('li').addClass('current');
+    $('.time').datetimepicker({
+        format: 'yyyy-mm-dd',
+        language:"zh-CN",
+        minView:2,
+        autoclose:true
+    });
 	</script>
 </block>

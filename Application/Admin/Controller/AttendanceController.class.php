@@ -21,6 +21,9 @@ class AttendanceController extends AdminController
         }else{
             $where = " id > 0 ";
         }
+        if(isset($_GET['car_status'])){
+            $where .= " and car_status = {$_GET['car_status']} ";
+        }
 
         $total = M('Attendance')->where($where)->count();
         $REQUEST    =   (array)I('request.');
@@ -42,7 +45,18 @@ class AttendanceController extends AdminController
 
         $this->assign('_list', $list);
 
+        //获取各个出行状态车辆数量
+        $result = M('Attendance')->field('car_status , count(id) total')->group('car_status')->select();
+        if(!empty($result)){
+            $car_status = array_column($result, 'total','car_status');
+            $all = array_sum(array_values($car_status));
+        }
+        
+        //print_r($car_status);
+        $this->assign('car_status',$car_status);
+        $this->assign('_all',$all);
         $this->meta_title = '出勤管理';
+        
         $this->display();
     }
 
@@ -74,7 +88,7 @@ class AttendanceController extends AdminController
 
     public function edit($id){
         $row = M('Attendance')->where(" id = {$id} ")->find();
-        print_r($row);
+        //print_r($row);
         if(IS_POST){
 
             $data = I('post.');
@@ -89,7 +103,9 @@ class AttendanceController extends AdminController
                 $data['car_licence'] = $row_['car_title'].'-'.$row_['car_licence'];
                 //print_r($row);die;
             }
+
             if(!M('Attendance')->save($data)){
+                //print_r(M('Attendance')->getLastSql());die;
                 $this->error('车辆出勤编辑失败！');
             }else{
                 $this->success('车辆出勤编辑成功！',U('index'));
@@ -99,6 +115,26 @@ class AttendanceController extends AdminController
             $this->meta_title = '出勤编辑';
             $this->assign('row',$row);
             $this->display('add');
+        }
+    }
+
+    public function remove(){
+        $data = I('id');
+
+        if(empty($data)){
+            $this->error('请选择要删除的数据');
+        }
+
+        if(is_array($data)){
+            $id = arr2str($data);
+        }else{
+            $id = $data;
+        }
+
+        if(!M('Attendance')->where(" id in({$id}) ")->delete()){
+            $this->error('出勤删除失败！');
+        }else{
+            $this->success('出勤删除成功！',U('index'));
         }
     }
 
